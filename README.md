@@ -1,48 +1,70 @@
-<center><h1>StudyNest</h1></center>
+# StudyNest
+StudyNest will be a course builder for self-learners. If you want to learn Philosophy, for example, you can create a self guided course with assignments and your own assessments. My app will allow you to track your progress in each course and subject, motivating you to continue your self-learning journey. You may even browse other courses to get inspiration for your own journey.
 
-## Goals by Week
+### Contributors 
+Just me =)  
+
+---
+# Goals by Week
 ### Nov 6
 - [ ] Create wireframes
 - [ ] Make database
-- [ ] Add authentication
-- [ ] Deployed to Kubernetes
+- [ ] User can log in and out using OICD
+- [ ] Deployed to Kubernetes and has a duckdns URL
 - [ ] Add landing page
+- [ ] Add CI/CD Pipeline
+
+**Points for this week**  
+5 pts - Technology: Developer type helping (typescript)  
+5 pts - Technology: CI/CD pipeline  
+5 pts - Technology: linting in pipeline  
+10 pts - Technology: authentication and user account support  
+
+Total: 15 / 146 pts
+<hr />
+
 ### Nov 9
 - [ ] Make style guide
 - [ ] Add a course
-- [ ] Upload a course image
-- [ ] Edit a course
 - [ ] Make course private or public
-### Nov 13
+- [ ] Use local storage to store courses
+- [ ] Show a success toast on course creation success
+- [ ] Use Tanstack for client side api calls
+- [ ] Make simple error boundary
+
+**Points for this week**
+5 pts - Technology: use local storage  
+5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
+5 pts - Technology: Toasts / global notifications or alerts  
+5 pts - Technology: Error handling (both on api requests and render errors)
+
+---
+## Nov 13
+- [ ] Edit a course
 - [ ] Add module to course
 - [ ] Edit module
 - [ ] Add assignment to module
 - [ ] Edit module assignment
 - [ ] Be able to update time spent on assignment
 - [ ] Link to assignment resources
-### Nov 16
+## Nov 16
 - [ ] Schedule user goals
 - [ ] Add module assessment
 - [ ] Add link to assessment flash cards
 - [ ] Be able to assign personal score on assessment
-### Nov 20
+## Nov 20
 - [ ] Update module progress based on assignment
 - [ ] Update user goals based on assignment progress
 - [ ] Update user streak
 - [ ] Update user progress and activity
-### Nov 23
+## Nov 23
 - [ ] Ability to complete an assignment
 - [ ] Order assignments based on completion
-### Nov 26
-### Dec 4
+## Nov 26
+## Dec 4
 
 <hr />
-
-### Elevator Pitch
-My app will be a course builder for self-learners. If you want to learn Philosophy, for example, you can create a self guided course with assignments and your own assessments. My app will allow you to track your progress in each course and subject, motivating you to continue your self-learning journey. You may even browse other courses to get inspiration for your own journey. 
-
-### Contributors 
-Just me =)
+<hr />
 
 ### Features
 1. Users should be able to view their dashboard of courses and an overview of their assignments.
