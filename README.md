@@ -20,7 +20,7 @@ Just me =)
 5 pts - Technology: linting in pipeline  
 10 pts - Technology: authentication and user account support  
 
-Total: 15 / 146 pts
+Total: 25 / 146 pts
 <hr />
 
 ### Nov 9
@@ -33,13 +33,13 @@ Total: 15 / 146 pts
 - [ ] Make simple error boundary
 
 **Points for this week**  
-5 pts - Technology: use local storage  
 5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
 5 pts - Technology: Toasts / global notifications or alerts  
 5 pts - Technology: Error handling (both on api requests and render errors)
 9 pts - Technology: 3+ generic form input components  
+5 pts - Technology: Network Calls that read and write data
 
-Total: 44 / 146 pts
+Total: 54 / 146 pts
 
 ---
 ## Nov 13
@@ -50,29 +50,53 @@ Total: 44 / 146 pts
 - [ ] Edit module assignment
 - [ ] Be able to update time spent on assignment
 - [ ] Link to assignment resources
+- [ ] Make sure other users can't see private courses
 
-**Points for this week**
+**Points for this week**  
+12 pts - Technology: 4+ generic layout components  
+5 pts - Technology: authorized pages and public pages  
+5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
 
-
-
+Total: 76 / 146 pts
 ---
 ## Nov 16
 - [ ] Schedule user goals
 - [ ] Add module assessment
 - [ ] Add link to assessment flash cards
 - [ ] Be able to assign personal score on assessment
+
+**Points for this week**  
+5 pts - Experience: 3 instances where elements re-order themselves on smaller screens    
+5 pts - Experience: all experiences mobile friendly  
+
+Total: 86 / 146 pts
+---
 ## Nov 20
 - [ ] Update module progress based on assignment
 - [ ] Update user goals based on assignment progress
 - [ ] Update user streak
 - [ ] Update user progress and activity
+
+--- 
 ## Nov 23
 - [ ] Ability to complete an assignment
 - [ ] Order assignments based on completion
+
+**Points for this week**  
+5 pts - Technology: 10+ pages or views  
+
+Total: 86 / 146 pts
+--- 
 ## Nov 26
+
+--- 
 ## Dec 4
 
-<hr />
+**Points for this week**  
+20 pts - Professional, organized and smooth experience  
+30 pts - Project scope is 2-3 times larger than Inventory Management (per group member)  
+
+Total: 146 / 146 pts
 <hr />
 
 ### Features
