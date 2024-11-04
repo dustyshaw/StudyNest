@@ -36,6 +36,7 @@
 ### Nov 26
 ### Dec 4
 
+<hr />
 
 ### Elevator Pitch
 My app will be a course builder for self-learners. If you want to learn Philosophy, for example, you can create a self guided course with assignments and your own assessments. My app will allow you to track your progress in each course and subject, motivating you to continue your self-learning journey. You may even browse other courses to get inspiration for your own journey. 
