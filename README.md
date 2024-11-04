@@ -25,18 +25,21 @@ Total: 15 / 146 pts
 
 ### Nov 9
 - [ ] Make style guide
-- [ ] Add a course
+- [ ] Add a course (text input, radio button input, reusable button)
 - [ ] Make course private or public
 - [ ] Use local storage to store courses
 - [ ] Show a success toast on course creation success
 - [ ] Use Tanstack for client side api calls
 - [ ] Make simple error boundary
 
-**Points for this week**
+**Points for this week**  
 5 pts - Technology: use local storage  
 5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
 5 pts - Technology: Toasts / global notifications or alerts  
 5 pts - Technology: Error handling (both on api requests and render errors)
+9 pts - Technology: 3+ generic form input components  
+
+Total: 44 / 146 pts
 
 ---
 ## Nov 13
@@ -47,6 +50,12 @@ Total: 15 / 146 pts
 - [ ] Edit module assignment
 - [ ] Be able to update time spent on assignment
 - [ ] Link to assignment resources
+
+**Points for this week**
+
+
+
+---
 ## Nov 16
 - [ ] Schedule user goals
 - [ ] Add module assessment
