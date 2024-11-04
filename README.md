@@ -1,4 +1,4 @@
-# StudyNest
+<center><h1>StudyNest</h1></center>
 
 ## Goals by Week
 ### Nov 6
