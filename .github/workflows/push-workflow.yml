@@ -13,6 +13,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: push api
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/studynest-api:${{ github.run_number }}
       
       -
         name: Build and push
@@ -21,13 +27,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/studynest:${{ github.run_number }}
 
-      -
-        name: Deploy to kube?
-        run:
-          export PATH=$PATH:~/.nix-profile/bin:/nix/var/nix/profiles/default/bin
+      # -
+      #   name: Deploy to kube?
+      #   run:
+      #     export PATH=$PATH:~/.nix-profile/bin:/nix/var/nix/profiles/default/bin
 
-          export IMAGE_TAG=${{ github.run_number }}
+      #     export IMAGE_TAG=${{ github.run_number }}
 
-          for file in Kubernetes/*; do 
-              cat "$file" | envsubst | kubectl apply -f -; 
-          done
+      #     for file in Kubernetes/*; do 
+      #         cat "$file" | envsubst | kubectl apply -f -; 
+      #     done
