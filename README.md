@@ -7,11 +7,11 @@ Just me =)
 ---
 # Goals by Week
 ### Nov 6
-- [ ] Create wireframes
-- [ ] Make database
+- [x] Create wireframes
+- [x] Make database schema
 - [ ] User can log in and out using OICD
-- [ ] Deployed to Kubernetes and has a duckdns URL
-- [ ] Add landing page
+- [ ] Deployed to Kubernetes and has a duckdns URL (studynest.duckdns.org)
+- [ ] Add simple landing page
 - [ ] Add CI/CD Pipeline
 
 **Points for this week**  
@@ -25,6 +25,7 @@ Total: 25 / 146 pts
 
 ### Nov 9
 - [ ] Make style guide
+- [ ] Make database in DBeaver
 - [ ] Add a course (text input, radio button input, reusable button)
 - [ ] Make course private or public
 - [ ] Use local storage to store courses
