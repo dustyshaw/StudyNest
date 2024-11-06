@@ -26,7 +26,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .  # This is the context directory (root of repo)
+          context: ./studynest  # This is the context directory (root of repo)
           file: ./studynest/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/studynest:${{ github.run_number }}
