@@ -1,8 +1,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY ./package*.json . 
-# RUN NODE_ENV=development npm i
-RUN npm i
+RUN NODE_ENV=development npm i
 COPY . .
 # ARG VITE_CERT
 # ENV VITE_URL "https://api.projectplaylist.duckdns.org"
