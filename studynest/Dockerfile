@@ -1,5 +1,5 @@
 FROM node:20-alpine AS builder
-WORKDIR /app
+WORKDIR /app/studynest
 COPY ./package*.json . 
 RUN NODE_ENV=development npm i
 COPY . .
