@@ -1,0 +1,6 @@
+@studynest_api_HostAddress = http://localhost:5101
+
+GET {{studynest_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
