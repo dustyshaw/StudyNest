@@ -7,7 +7,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: studynest-api 
+      app: studynest-api
   template:
     metadata:
       labels:
