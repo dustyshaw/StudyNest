@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: studynest-app
-          image: dustyshaw702/studynest:${IMAGE_TAG}
+          image: codebras/studynest:${IMAGE_TAG}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
