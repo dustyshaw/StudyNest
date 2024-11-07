@@ -14,7 +14,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: push api
+      - name: Build and Push SERVER
         uses: docker/build-push-action@v6
         with:
           context: .  # This is the context directory (root of repo)
@@ -23,7 +23,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/studynest-api:${{ github.run_number }}
       
       -
-        name: Build and push
+        name: Build and push CLIENT
         uses: docker/build-push-action@v6
         with:
           context: ./studynest  # This is the context directory (root of repo)
