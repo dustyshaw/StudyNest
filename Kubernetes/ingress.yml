@@ -14,7 +14,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: studynest-app-service # name of client deployment 
+            name: studynest-app # name of client deployment 
             port:
               number: 80
   - host: api.studynest.duckdns.org
@@ -24,6 +24,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: studynest-api-service # name of server deployment
+            name: studynest-api # name of server deployment
             port:
               number: 8080

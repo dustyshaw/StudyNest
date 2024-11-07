@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: studynest-api-service
+  name: studynest-api
   namespace: dusty-final
 spec:
   selector:
