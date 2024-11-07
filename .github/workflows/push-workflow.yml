@@ -31,13 +31,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/studynest:${{ github.run_number }}
 
-      # -
-      #   name: Deploy to kube?
-      #   run:
-      #     export PATH=$PATH:~/.nix-profile/bin:/nix/var/nix/profiles/default/bin
+      -
+        name: Deploy to kube?
+        run:
+          export PATH=$PATH:~/.nix-profile/bin:/nix/var/nix/profiles/default/bin
 
-      #     export IMAGE_TAG=${{ github.run_number }}
+          export IMAGE_TAG=${{ github.run_number }}
 
-      #     for file in Kubernetes/*; do 
-      #         cat "$file" | envsubst | kubectl apply -f -; 
-      #     done
+          for file in Kubernetes/*; do 
+              cat "$file" | envsubst | kubectl apply -f -; 
+          done

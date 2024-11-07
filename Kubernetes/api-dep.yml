@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: studynest-api
+  namespace: dusty-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: studynest-api 
+  template:
+    metadata:
+      labels:
+        app: studynest-api
+    spec:
+      containers:
+        - name: studynest-api
+          image: dustyshaw702/studynest-api:${IMAGE_TAG}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
