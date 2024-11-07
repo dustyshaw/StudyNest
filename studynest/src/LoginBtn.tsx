@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 
-
 function LoginButton() {
   const auth = useAuth();
 
