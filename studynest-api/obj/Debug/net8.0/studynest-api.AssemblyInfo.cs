@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef4e6e2a8cfffe36e2885a14d4829d0d9489d97b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b347ca9bae22840d126968801f83c9b78d3144e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
