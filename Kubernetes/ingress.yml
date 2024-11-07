@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: studynest-ingress
+  namespace: codebras
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    #cert-manager.io/cluster-issuer: cert-manager-webhook-duckdns-project-studynest-production
+spec:
+  tls:
+  - hosts:
+      - studynest.duckdns.org # Frontend Client
+      - api.studynest.duckdns.org # Backend Server
+    secretName: cert-manager-webhook-duckdns-project-studynest-webhook-tls
+  rules:
+  - host: studynest.duckdns.org # Main domain for the client
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: studynest-client
+            port:
+              number: 80
+  - host: api.studynest.duckdns.org # Main domain for the client
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: studynest-server
+            port:
+              number: 8080
