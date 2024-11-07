@@ -16,7 +16,7 @@ spec:
   - host: studynest.duckdns.org 
     http:
       paths:
-      - path: /
+      - path: /client
         pathType: Prefix
         backend:
           service:
@@ -26,7 +26,7 @@ spec:
   - host: api.studynest.duckdns.org
     http:
       paths:
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
