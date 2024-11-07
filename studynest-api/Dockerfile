@@ -17,4 +17,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:latest
 WORKDIR /App
 # COPY ./imageuploads ./imageuploads
 COPY --from=build-env /App/out .
-ENTRYPOINT ["dotnet", "book-api.dll"]
+ENTRYPOINT ["dotnet", "studynest-api.dll"]
