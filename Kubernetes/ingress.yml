@@ -20,7 +20,7 @@ spec:
   - host: api.studynest.duckdns.org
     http:
       paths:
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
