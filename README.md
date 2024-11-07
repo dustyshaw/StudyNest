@@ -9,10 +9,10 @@ Just me =)
 ### Nov 6
 - [x] Create wireframes
 - [x] Make database schema
-- [ ] User can log in and out using OICD (Client Side Authentication)
-- [ ] Deployed to Kubernetes and has a duckdns URL (studynest.duckdns.org)
-- [ ] Add simple landing page
-- [ ] Add CI/CD Pipeline
+- [x] User can log in and out using OICD (Client Side Authentication)
+- [x] Deployed to Kubernetes and has a duckdns URL (studynest.duckdns.org)
+- [x] Add simple landing page
+- [x] Add CI/CD Pipeline
 
 **Points for this week**  
 5 pts - Technology: Developer type helping (typescript)  
