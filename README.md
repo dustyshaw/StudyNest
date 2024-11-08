@@ -9,15 +9,14 @@ Just me =)
 ### Nov 6
 - [x] Create wireframes
 - [x] Make database schema
-- [ ] User can log in and out using OICD (Client Side Authentication)
-- [ ] Deployed to Kubernetes and has a duckdns URL (studynest.duckdns.org)
-- [ ] Add simple landing page
-- [ ] Add CI/CD Pipeline
+- [x] User can log in and out using OICD (Client Side Authentication)
+- [x] Deployed to Kubernetes and has a duckdns URL (studynest.duckdns.org)
+- [x] Add simple landing page
+- [x] Add CI/CD Pipeline
 
 **Points for this week**  
 5 pts - Technology: Developer type helping (typescript)  
 5 pts - Technology: CI/CD pipeline  
-5 pts - Technology: linting in pipeline  
 10 pts - Technology: authentication and user account support  
 
 Total: 25 / 146 pts
@@ -34,6 +33,7 @@ Total: 25 / 146 pts
 - [ ] Make simple error boundary
 
 **Points for this week**  
+5 pts - Technology: linting in pipeline  
 5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
 5 pts - Technology: Toasts / global notifications or alerts  
 5 pts - Technology: Error handling (both on api requests and render errors)
