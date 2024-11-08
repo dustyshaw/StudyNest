@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("e23f1420-0185-4e51-99b5-c77961589cab")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3620ccde2dbe8f3311fb2c2bcd63d9387675f2ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d4fafe7d8c6766059c9ba0c1c7c4b9ec22c8ece")]
 [assembly: System.Reflection.AssemblyProductAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
