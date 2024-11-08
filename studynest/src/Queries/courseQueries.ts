@@ -3,9 +3,9 @@ import { CourseService } from "../services/courseService"
 
 export const CourseQueries = {
     useGetAllCourses: () => {
-        useQuery({ 
+        return useQuery({ 
             queryKey: ['courses'], 
-            queryFn: CourseService.GetAllCourses
+            queryFn: () => CourseService.GetAllCourses()
         })
     },
 }

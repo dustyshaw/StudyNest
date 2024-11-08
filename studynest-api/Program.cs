@@ -11,14 +11,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors();
+
 builder.Services.AddDbContextFactory<DbDustyshaw25Context>(config => config.UseNpgsql(builder.Configuration.GetConnectionString("studynestdb"), builder =>
 {
     builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
 }));
 
+
 builder.Services.AddSingleton<ICourseService, CourseService>();
 
 var app = builder.Build();
+
+app.UseCors(p => p.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

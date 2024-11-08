@@ -11,5 +11,5 @@ export const CourseService = {
         } catch {
             console.error("Couldn't get courses")
         }
-    }
+    },
 }
