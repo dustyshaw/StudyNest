@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>studynest_api</RootNamespace>
+    <UserSecretsId>e23f1420-0185-4e51-99b5-c77961589cab</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
