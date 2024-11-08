@@ -31,12 +31,12 @@ function LoginButton() {
     return (
       <div>
         Hello {auth.user?.profile.sub}{" "}
-        <button onClick={() => {void auth.removeUser(); auth.removeUser()}}>Log out</button>
+        <button onClick={() => {void auth.removeUser(); auth.removeUser()}} className="bg-sky-600 rounded-lg text-white px-5 py-2 m-5 shadow hover:bg-sky-400 hover:shadow-none">Log out</button>
       </div>
     );
   }
 
-  return <button onClick={() => void auth.signinRedirect()}>Log in</button>;
+  return <button onClick={() => void auth.signinRedirect()} className="bg-sky-600 rounded-lg text-white px-5 py-2 m-5 shadow hover:bg-sky-400 hover:shadow-none">Log in</button>;
 }
 
 export default LoginButton;
