@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -24,10 +28,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,20 +45,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\dusty.shaw\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
-              "ToolTip": "C:\\Users\\dusty.shaw\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-08T03:26:35.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Program.cs",
               "RelativeDocumentMoniker": "studynest-api\\Program.cs",
@@ -71,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DtoConverter.cs",
               "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\DtoConverter.cs",
               "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\DtoConverter.cs",
@@ -84,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CourseDto.cs",
               "DocumentMoniker": "C:\\Users\\dusty.shaw\\Source\\Repos\\StudyNest\\studynest-api\\Data\\DTOs\\CourseDto.cs",
               "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\CourseDto.cs",
@@ -97,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ICourseService.cs",
               "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\ICourseService.cs",
               "RelativeDocumentMoniker": "studynest-api\\Services\\ICourseService.cs",
@@ -110,20 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CourseService.cs",
-              "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
-              "RelativeDocumentMoniker": "studynest-api\\Services\\CourseService.cs",
-              "ToolTip": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
-              "RelativeToolTip": "studynest-api\\Services\\CourseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T03:00:43.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "CourseController.cs",
               "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "studynest-api\\Controllers\\CourseController.cs",
@@ -132,6 +106,32 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T02:58:15.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\dusty.shaw\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
+              "ToolTip": "C:\\Users\\dusty.shaw\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e23f1420-0185-4e51-99b5-c77961589cab\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-08T03:26:35.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
+              "RelativeDocumentMoniker": "studynest-api\\Services\\CourseService.cs",
+              "ToolTip": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
+              "RelativeToolTip": "studynest-api\\Services\\CourseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T03:00:43.913Z",
               "EditorCaption": ""
             }
           ]
