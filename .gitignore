@@ -514,3 +514,8 @@ dist-ssr
 
 
 tsconfig.*.tsbuildinfo
+
+apphost.exe
+studynest-api.AssemblyInfo.cs
+studynest-api.AssemblyInfo.cache
+studynest-api.GeneratedMSBuildEditorConfig.editorconfig
