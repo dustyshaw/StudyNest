@@ -25,7 +25,7 @@ Total: 25 / 146 pts
 ### Nov 9
 - [x] Make style guide
 - [x] Make database in DBeaver
-- [ ] Add a course (text input, radio button input, reusable button)
+- [ ] Add a course (text input, reusable button)
 - [ ] Use local storage to store courses
 - [ ] Show a success toast on course creation success
 - [x] Use Tanstack for client side api calls
