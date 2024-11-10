@@ -46,8 +46,7 @@
               "RelativeToolTip": "studynest-api\\Services\\ICourseService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T01:32:14.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T01:32:14.782Z"
             },
             {
               "$type": "Document",
@@ -55,9 +54,9 @@
               "Title": "CourseService.cs",
               "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
               "RelativeDocumentMoniker": "studynest-api\\Services\\CourseService.cs",
-              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs",
-              "RelativeToolTip": "studynest-api\\Services\\CourseService.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAYwCwAAAAhAAAA",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\CourseService.cs*",
+              "RelativeToolTip": "studynest-api\\Services\\CourseService.cs*",
+              "ViewState": "AQIAACAAAAAAAAAAAAAuwCwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T01:26:20.641Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "studynest-api\\Controllers\\CourseController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T01:25:27.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T01:25:27.947Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "studynest-api\\Data\\Requests\\AddCourseRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T20:51:42.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T20:51:42.229Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "studynest-api\\Data\\Requests\\AddCourseEnrollRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T20:50:47.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T20:50:47.452Z"
             }
           ]
         }
