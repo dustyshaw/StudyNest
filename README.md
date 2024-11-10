@@ -50,7 +50,6 @@ Total: 54 / 146 pts
 - [ ] Edit module assignment
 - [ ] Be able to update time spent on assignment
 - [ ] Link to assignment resources
-- [ ] Make sure other users can't see private courses
 
 **Points for this week**  
 12 pts - Technology: 4+ generic layout components  
