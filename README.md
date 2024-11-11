@@ -25,24 +25,21 @@ Total: 25 / 146 pts
 ### Nov 9
 - [x] Make style guide
 - [x] Make database in DBeaver
-- [ ] Add a course (text input, reusable button)
-- [ ] Use local storage to store courses
-- [ ] Show a success toast on course creation success
+- [x] Add a course (text input, reusable button)
+- [x] Show a success toast on course creation success
 - [x] Use Tanstack for client side api calls
-- [ ] Make simple error boundary
 
 **Points for this week**  
-5 pts - Technology: linting in pipeline  
 5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
 5 pts - Technology: Toasts / global notifications or alerts  
-5 pts - Technology: Error handling (both on api requests and render errors)
 9 pts - Technology: 3+ generic form input components  
 5 pts - Technology: Network Calls that read and write data
 
-Total: 54 / 146 pts
+Total: 44 / 146 pts
 
 ---
 ## Nov 13
+- [ ] Make simple error boundary
 - [ ] Edit a course
 - [ ] Add module to course
 - [ ] Edit module
@@ -50,11 +47,12 @@ Total: 54 / 146 pts
 - [ ] Edit module assignment
 - [ ] Be able to update time spent on assignment
 - [ ] Link to assignment resources
-- [ ] Make sure other users can't see private courses
 
 **Points for this week**  
+5 pts - Technology: linting in pipeline  
 12 pts - Technology: 4+ generic layout components  
 5 pts - Technology: authorized pages and public pages  
+5 pts - Technology: Error handling (both on api requests and render errors)
 5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
 
 Total: 76 / 146 pts
