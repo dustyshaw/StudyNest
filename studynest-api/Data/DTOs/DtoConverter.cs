@@ -16,4 +16,15 @@ public static class DtoConverter
 
         return dto; 
     }
+
+    public static UserCourseDto ToDto(this Courseenroll course)
+    {
+        UserCourseDto dto = new UserCourseDto()
+        {
+            OwnerUsername = course.User?.Username ?? "",
+            CourseTitle = course.Course?.Title ?? "",
+        };
+
+        return dto;
+    }
 }

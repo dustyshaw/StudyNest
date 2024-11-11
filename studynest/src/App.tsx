@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LeftNav from "./components/LeftNav";
 import TopNav from "./components/TopNav";
+import { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient(); // stay OUTSIDE of App()
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Toaster />
       <BrowserRouter>
         {/* <LandingPage /> */}
         <LeftNav />

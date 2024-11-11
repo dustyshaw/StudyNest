@@ -20,6 +20,7 @@ builder.Services.AddDbContextFactory<DbDustyshaw25Context>(config => config.UseN
 
 
 builder.Services.AddSingleton<ICourseService, CourseService>();
+builder.Services.AddSingleton<IUserCourseService, UserCourseService>();
 
 var app = builder.Build();
 
