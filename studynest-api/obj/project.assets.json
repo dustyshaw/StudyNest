@@ -2835,30 +2835,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dusty.shaw\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\shust\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\MESCIUS\\ComponentOne\\WinForms\\bin\\v8\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\studynest-api.csproj",
+      "projectUniqueName": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\studynest-api.csproj",
       "projectName": "studynest-api",
-      "projectPath": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\studynest-api.csproj",
-      "packagesPath": "C:\\Users\\dusty.shaw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\obj\\",
+      "projectPath": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\studynest-api.csproj",
+      "packagesPath": "C:\\Users\\shust\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\MESCIUS\\ComponentOne\\WinForms\\bin\\v8\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\dusty.shaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\shust\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\ComponentOne.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\MESCIUS\\ComponentOne\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
@@ -2926,7 +2927,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

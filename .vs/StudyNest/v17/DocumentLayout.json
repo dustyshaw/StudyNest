@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\",
+  "WorkspaceRootPath": "C:\\Users\\shust\\source\\repos\\StudyNest\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,8 +19,12 @@
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\requests\\adduserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\controllers\\usercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\controllers\\usercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\controllers\\usercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\dusty.shaw\\source\\repos\\studynest\\studynest-api\\data\\requests\\adduserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\requests\\adduserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -66,11 +70,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\UserService.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "studynest-api\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\UserService.cs",
               "RelativeToolTip": "studynest-api\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowB4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T21:58:09.993Z",
               "EditorCaption": ""
@@ -79,9 +83,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AddUserRequest.cs",
-              "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Data\\Requests\\AddUserRequest.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\Requests\\AddUserRequest.cs",
               "RelativeDocumentMoniker": "studynest-api\\Data\\Requests\\AddUserRequest.cs",
-              "ToolTip": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Data\\Requests\\AddUserRequest.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\Requests\\AddUserRequest.cs",
               "RelativeToolTip": "studynest-api\\Data\\Requests\\AddUserRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -92,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UserCourseController.cs",
-              "DocumentMoniker": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
               "RelativeDocumentMoniker": "studynest-api\\Controllers\\UserCourseController.cs",
-              "ToolTip": "C:\\Users\\dusty.shaw\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
               "RelativeToolTip": "studynest-api\\Controllers\\UserCourseController.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

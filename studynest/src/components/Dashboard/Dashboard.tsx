@@ -6,8 +6,38 @@ const Dashboard = () => {
   // TODO get actual user id from database
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
+  console.log(userCourses);
 
-    console.log("User Courses: ", userCourses)
+  // useEffect(() => {
+  //   const fetchAuthData = async () => {
+  //     try {
+  //       // Assuming token is stored in localStorage, replace with your method of token management
+  //       const token = localStorage.getItem('authToken');
+        
+  //       // Fetching from the /authOnly endpoint
+  //       const response = await fetch('/authOnly', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Authorization': `Bearer ${token}`,
+  //           'Content-Type': 'application/json',
+  //         },
+  //       });
+
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch auth data');
+  //       }
+
+  //       const data = await response.json();
+  //       setAuthData(data);
+  //     } catch (err) {
+  //       setError(err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchAuthData();
+  // }, []); 
 
   return (
     <>
