@@ -32,6 +32,8 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
 
 builder.Services.AddSingleton<ICourseService, CourseService>();
 builder.Services.AddSingleton<IUserCourseService, UserCourseService>();
+builder.Services.AddSingleton<IUserService, UserService>();
+
 
 var app = builder.Build();
 

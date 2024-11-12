@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using studynest_api.Data;
 using studynest_api.Data.DTOs;
 using studynest_api.Data.Requests;
@@ -16,13 +17,20 @@ public class UserCourseController
         this.userCourseService = userCourseService;
     }
 
+
+
+    // Goal: Make it so if you're not logged in as user 1, you can't see it
     [HttpGet("/authOnly")]
+    [Authorize]
     public string authOnly(int userId, HttpContext context)
     {
         var identity = context.User.Identity;
         return $"AuthOnly {identity?.ToString()}";
     }
 
+
+
+    // Goal: Make it so that if you AREN'T this user, then you can't get their courses
     [HttpGet("/getByUser")]
     public Task<List<UserCourseDto>> GetCoursesByUser(int userId)
     {

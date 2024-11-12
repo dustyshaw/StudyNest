@@ -8,7 +8,7 @@ import TopNav from "./components/TopNav";
 import { Toaster } from 'react-hot-toast';
 import Browse from "./components/Browse/Browse";
 
-const queryClient = new QueryClient(); // stay OUTSIDE of App()
+const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
   return (

@@ -654,3 +654,45 @@ studynest-api/obj/Debug/net8.0/studynest-api.pdb
 studynest-api/obj/Debug/net8.0/studynest-api.sourcelink.json
 studynest-api/obj/Debug/net8.0/ref/studynest-api.dll
 studynest-api/obj/Debug/net8.0/refint/studynest-api.dll
+studynest-api/bin/Debug/net8.0/studynest-api.dll
+studynest-api/bin/Debug/net8.0/studynest-api.dll
+studynest-api/bin/Debug/net8.0/studynest-api.exe
+studynest-api/bin/Debug/net8.0/studynest-api.pdb
+studynest-api/obj/Debug/net8.0/apphost.exe
+studynest-api/obj/Debug/net8.0/studynest-api.AssemblyInfoInputs.cache
+studynest-api/obj/Debug/net8.0/studynest-api.csproj.CoreCompileInputs.cache
+studynest-api/obj/Debug/net8.0/studynest-api.dll
+studynest-api/obj/Debug/net8.0/studynest-api.pdb
+studynest-api/obj/Debug/net8.0/ref/studynest-api.dll
+studynest-api/obj/Debug/net8.0/refint/studynest-api.dll
+studynest-api/bin/Debug/net8.0/studynest-api.dll
+studynest-api/bin/Debug/net8.0/studynest-api.exe
+studynest-api/bin/Debug/net8.0/studynest-api.pdb
+studynest-api/obj/Debug/net8.0/apphost.exe
+studynest-api/obj/Debug/net8.0/studynest-api.AssemblyInfoInputs.cache
+studynest-api/obj/Debug/net8.0/studynest-api.csproj.CoreCompileInputs.cache
+studynest-api/obj/Debug/net8.0/studynest-api.dll
+studynest-api/obj/Debug/net8.0/studynest-api.pdb
+studynest-api/obj/Debug/net8.0/ref/studynest-api.dll
+studynest-api/obj/Debug/net8.0/refint/studynest-api.dll
+
+
+
+# Ignore bin and obj directories
+studynest-api/bin/
+studynest-api/obj/
+
+# Ignore specific Visual Studio configuration files
+.vs/
+
+# Ignore project-specific caches and other generated files
+studynest-api/obj/project.nuget.cache
+studynest-api/obj/project.assets.json
+studynest-api/obj/studynest-api.csproj.nuget.dgspec.json
+
+# Ignore source link and assembly info files in obj
+studynest-api/obj/Debug/net8.0/*.sourcelink.json
+studynest-api/obj/Debug/net8.0/*.csproj.CoreCompileInputs.cache
+studynest-api/obj/Debug/net8.0/*.AssemblyInfoInputs.cache
+studynest-api/obj/Debug/net8.0/*.csproj.FileListAbsolute.txt
+
