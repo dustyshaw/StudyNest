@@ -3,7 +3,7 @@ import AddCoursePage from "../AddCoursePage";
 
 const Dashboard = () => {
   const { data: userCourses } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(1);
+    UserCourseQueries.useGetAllUserCoursesByUserId(6);
   console.log(userCourses);
 
   // useEffect(() => {
