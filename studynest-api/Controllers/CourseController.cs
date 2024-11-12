@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using studynest_api.Data.DTOs;
 using studynest_api.Data.Requests;
 using studynest_api.Services;
@@ -24,8 +25,11 @@ public class CourseController : ControllerBase
     }
 
     [HttpPost("/addCourse")]
+    [Authorize]
     public async Task<bool> AddCourse(AddCourseRequest addCourseRequest)
-    { 
+    {
+        var userEmail = User?.FindFirst("email")?.Value;
+
         return await courseService.AddCourse(addCourseRequest);
     }
 }

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\shust\\source\\repos\\StudyNest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\data\\dtos\\dtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\dtos\\dtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\services\\usercourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\services\\usercourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\controllers\\usercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\services\\iusercourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\services\\iusercourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\data\\dtos\\usercoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\dtos\\usercoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\data\\dtos\\dtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\dtos\\dtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|c:\\users\\shust\\source\\repos\\studynest\\studynest-api\\data\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B13CFEDE-AA1C-4348-A866-D8797F6536FB}|studynest-api\\studynest-api.csproj|solutionrelative:studynest-api\\data\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,75 +34,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DtoConverter.cs",
-              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\DtoConverter.cs",
-              "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\DtoConverter.cs",
-              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\DtoConverter.cs",
-              "RelativeToolTip": "studynest-api\\Data\\DTOs\\DtoConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:52:38.838Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserCourseDto.cs",
-              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\UserCourseDto.cs",
-              "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\UserCourseDto.cs",
-              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\UserCourseDto.cs",
-              "RelativeToolTip": "studynest-api\\Data\\DTOs\\UserCourseDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAxAAAA",
+              "DocumentIndex": 0,
+              "Title": "DtoConverter.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\DtoConverter.cs",
+              "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\DtoConverter.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\DtoConverter.cs",
+              "RelativeToolTip": "studynest-api\\Data\\DTOs\\DtoConverter.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:49:23.052Z",
+              "WhenOpened": "2024-11-12T21:12:22.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IUserCourseService.cs",
-              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\IUserCourseService.cs",
-              "RelativeDocumentMoniker": "studynest-api\\Services\\IUserCourseService.cs",
-              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\IUserCourseService.cs",
-              "RelativeToolTip": "studynest-api\\Services\\IUserCourseService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
+              "DocumentIndex": 5,
+              "Title": "CourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\CourseDto.cs",
+              "RelativeDocumentMoniker": "studynest-api\\Data\\DTOs\\CourseDto.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Data\\DTOs\\CourseDto.cs",
+              "RelativeToolTip": "studynest-api\\Data\\DTOs\\CourseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:45:45.732Z",
+              "WhenOpened": "2024-11-12T21:12:06.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UserCourseController.cs",
               "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
               "RelativeDocumentMoniker": "studynest-api\\Controllers\\UserCourseController.cs",
               "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\UserCourseController.cs",
               "RelativeToolTip": "studynest-api\\Controllers\\UserCourseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAIwBMAAAAiAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAABkAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:38:07.663Z",
+              "WhenOpened": "2024-11-11T22:05:10.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserCourseService.cs",
               "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\UserCourseService.cs",
               "RelativeDocumentMoniker": "studynest-api\\Services\\UserCourseService.cs",
               "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Services\\UserCourseService.cs",
               "RelativeToolTip": "studynest-api\\Services\\UserCourseService.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAYwCYAAAAAAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAWwCgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:36:14.841Z",
+              "WhenOpened": "2024-11-11T22:02:25.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "studynest-api\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "studynest-api\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T21:50:18.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Program.cs",
+              "RelativeDocumentMoniker": "studynest-api\\Program.cs",
+              "ToolTip": "C:\\Users\\shust\\source\\repos\\StudyNest\\studynest-api\\Program.cs",
+              "RelativeToolTip": "studynest-api\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T21:39:38.993Z",
               "EditorCaption": ""
             }
           ]

@@ -1,4 +1,4 @@
 export interface AddCourseEnrollRequest {
-    title: string,
-    description: string,
+  courseId: number;
+  userId: number;
 }

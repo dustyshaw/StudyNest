@@ -16,6 +16,13 @@ public class UserCourseController
         this.userCourseService = userCourseService;
     }
 
+    [HttpGet("/authOnly")]
+    public string authOnly(int userId, HttpContext context)
+    {
+        var identity = context.User.Identity;
+        return $"AuthOnly {identity?.ToString()}";
+    }
+
     [HttpGet("/getByUser")]
     public Task<List<UserCourseDto>> GetCoursesByUser(int userId)
     {

@@ -6,9 +6,10 @@ import { AuthProvider, AuthProviderProps } from "react-oidc-context";
 const oidcConfig: AuthProviderProps = {
   authority: "https://auth.snowse.duckdns.org/realms/advanced-frontend/",
   client_id: "studynest-authclient",
-  redirect_uri: "http://localhost:5173/",
+  redirect_uri: "http://localhost:5173/", // TODO: Add duckdns url if in development
   onSigninCallback: async (user) => {
     console.log("USER TOKEN ----------", user?.id_token);
+    console.log("USERNAME", user?.profile.name)
     document.cookie = `jwt_token=${user?.id_token}`;
     window.history.replaceState({}, document.title, window.location.pathname);
   },

@@ -8,6 +8,10 @@ RUN dotnet restore
 
 COPY . .
 RUN dotnet publish -c Release -o out
+RUN dotnet format
+# TODO ADD ENVIRONMENT VARIABLES
+# ENV MY_VARIABLE=123
+
 
 FROM mcr.microsoft.com/dotnet/aspnet:latest
 WORKDIR /App

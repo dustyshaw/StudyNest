@@ -1,13 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using studynest_api.Data;
 using studynest_api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -17,6 +15,19 @@ builder.Services.AddDbContextFactory<DbDustyshaw25Context>(config => config.UseN
 {
     builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
 }));
+
+builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend/";
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidIssuer = "https://auth.snowse.duckdns.org/realms/advanced-frontend", //Found at https://auth.snowse.duckdns.org/realms/advanced-frontend/.well-known/openid-configuration
+            ValidAudience = "studynest-authclient", // Client in Keycloak
+        };
+    });
 
 
 builder.Services.AddSingleton<ICourseService, CourseService>();

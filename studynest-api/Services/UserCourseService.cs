@@ -20,7 +20,7 @@ public class UserCourseService : IUserCourseService
         {
             Userid = addCourseEnrollRequest.UserId,
             Courseid = addCourseEnrollRequest.CourseId,
-        };  
+        };
 
         await context.AddAsync(newCourseEnroll);
         await context.SaveChangesAsync();
@@ -30,9 +30,14 @@ public class UserCourseService : IUserCourseService
 
     public async Task<List<UserCourseDto>> GetCoursesByUserId(int userId)
     {
-        using var dbContext = dbContextFactory.CreateDbContext();   
+        using var dbContext = dbContextFactory.CreateDbContext();
 
-        var courses = await dbContext.Courseenrolls.Where(x => x.Userid == userId).ToListAsync();
-        return courses.Select(x => x.ToDto()).ToList();
+        //var courses = await dbContext.Courses.ToListAsync();
+        var courseenrolls = await dbContext.Courseenrolls
+            .Where(x => x.Userid == userId)
+            .Include(x => x.Course)
+            .Include(x => x.User)
+            .ToListAsync();
+        return courseenrolls.Select(x => x.ToDto()).ToList();
     }
 }

@@ -27,7 +27,7 @@ public class CourseService : ICourseService
             throw new ArgumentNullException(nameof(courses));
         }
 
-        return courses.Select(x => x.ToDto()).ToList(); 
+        return courses.Select(x => x.ToDto()).ToList();
     }
 
     public async Task<bool> AddCourse(AddCourseRequest addCourseRequest)

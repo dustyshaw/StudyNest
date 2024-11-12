@@ -8,13 +8,14 @@ public static class DtoConverter
     {
         CourseDto dto = new CourseDto()
         {
+            Id = course.Id,
             Courseenrolls = course.Courseenrolls,
             Courseunits = course.Courseunits,
             Title = course.Title,
             Description = course.Description,
         };
 
-        return dto; 
+        return dto;
     }
 
     public static UserCourseDto ToDto(this Courseenroll course)
