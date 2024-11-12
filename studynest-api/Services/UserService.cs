@@ -26,7 +26,7 @@ public class UserService : IUserService
 
         Useraccount newUser = new Useraccount()
         {
-            Username = newUserRequest.UserName,
+            Username = newUserRequest.UserName.Replace(" ", "").ToLower(),
             Email = newUserRequest.Email,
             AuthId = newUserRequest.AuthId,
         };
