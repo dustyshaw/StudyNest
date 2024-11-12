@@ -514,3 +514,4 @@ dist-ssr
 
 
 tsconfig.*.tsbuildinfo
+.vs/VSWorkspaceState.json
