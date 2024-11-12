@@ -697,3 +697,12 @@ studynest-api/obj/Debug/net8.0/*.AssemblyInfoInputs.cache
 studynest-api/obj/Debug/net8.0/*.csproj.FileListAbsolute.txt
 
 .vs/StudyNest/v17/DocumentLayout.json
+studynest-api/obj/project.assets.json
+studynest-api/obj/project.nuget.cache
+studynest-api/obj/studynest-api.csproj.nuget.dgspec.json
+studynest-api/obj/studynest-api.csproj.nuget.g.props
+studynest-api/obj/Debug/net8.0/apphost.exe
+studynest-api/obj/Debug/net8.0/studynest-api.AssemblyInfo.cs
+studynest-api/obj/Debug/net8.0/studynest-api.AssemblyInfoInputs.cache
+studynest-api/obj/Debug/net8.0/studynest-api.assets.cache
+studynest-api/obj/Debug/net8.0/studynest-api.GeneratedMSBuildEditorConfig.editorconfig
