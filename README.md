@@ -6,7 +6,7 @@ Just me =)
 
 ---
 # Goals by Week
-### Nov 6
+### Nov 6 - Design & Setup
 - [x] Create wireframes
 - [x] Make database schema
 - [x] User can log in and out using OICD (Client Side Authentication)
@@ -22,48 +22,41 @@ Just me =)
 Total: 25 / 146 pts
 <hr />
 
-### Nov 9
+### Nov 9 - Setup
 - [x] Make style guide
 - [x] Make database in DBeaver
-- [ ] Add a course (text input, radio button input, reusable button)
-- [ ] Use local storage to store courses
-- [ ] Show a success toast on course creation success
+- [x] Add a course (text input, reusable button)
+- [x] Show a success toast on course creation success
 - [x] Use Tanstack for client side api calls
-- [ ] Make simple error boundary
 
 **Points for this week**  
-5 pts - Technology: linting in pipeline  
 5 pts - Technology: Client side state stores (e.g. tanstack query or context)  
 5 pts - Technology: Toasts / global notifications or alerts  
-5 pts - Technology: Error handling (both on api requests and render errors)
 9 pts - Technology: 3+ generic form input components  
 5 pts - Technology: Network Calls that read and write data
 
-Total: 54 / 146 pts
+Total: 44 / 146 pts
 
 ---
-## Nov 13
+## Nov 13 - Courses
+- [ ] Make simple error boundary
+- [ ] Connect a user to a course (through add course enroll)
+- [ ] Display a users enrolled courses on the dashboard
 - [ ] Edit a course
-- [ ] Add module to course
-- [ ] Edit module
-- [ ] Add assignment to module
-- [ ] Edit module assignment
-- [ ] Be able to update time spent on assignment
-- [ ] Link to assignment resources
-- [ ] Make sure other users can't see private courses
 
 **Points for this week**  
+5 pts - Technology: linting in pipeline  
 12 pts - Technology: 4+ generic layout components  
 5 pts - Technology: authorized pages and public pages  
+5 pts - Technology: Error handling (both on api requests and render errors)
 5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
 
 Total: 76 / 146 pts
 ---
-## Nov 16
-- [ ] Schedule user goals
-- [ ] Add module assessment
-- [ ] Add link to assessment flash cards
-- [ ] Be able to assign personal score on assessment
+## Nov 16 - Modules
+- [ ] Add module to course
+- [ ] Show modules on dashboard
+- [ ] Edit module
 
 **Points for this week**  
 5 pts - Experience: 3 instances where elements re-order themselves on smaller screens    
@@ -71,14 +64,17 @@ Total: 76 / 146 pts
 
 Total: 86 / 146 pts
 ---
-## Nov 20
-- [ ] Update module progress based on assignment
-- [ ] Update user goals based on assignment progress
-- [ ] Update user streak
-- [ ] Update user progress and activity
+## Nov 20 - Assignments
+- [ ] Add module assessment
+- [ ] Be able to update time spent on assignment
+- [ ] Add link to assessment flash cards
+- [ ] Link to assignment resources
+- [ ] Be able to assign personal score on assessment
 
 --- 
-## Nov 23
+## Nov 23 - Steaks & Progress
+- [ ] Update user streak
+- [ ] Update module progress based on assignment
 - [ ] Ability to complete an assignment
 - [ ] Order assignments based on completion
 
@@ -87,7 +83,9 @@ Total: 86 / 146 pts
 
 Total: 86 / 146 pts
 --- 
-## Nov 26
+## Nov 26 - Edit Modules
+- [ ] Edit Module titles
+- [ ] Show User Progress on Dashboard
 
 --- 
 ## Dec 4

@@ -5,7 +5,6 @@ function LoginButton() {
   const auth = useAuth();
 
     useEffect(() => {
-        console.log("NEw yser");
         if (auth.user) {
             const date = new Date((auth.user.expires_at ?? 0)* 1000)
             document.cookie = `auth_token=${auth.user.id_token};expires=${date.toUTCString()}`
