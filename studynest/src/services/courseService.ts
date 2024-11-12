@@ -17,7 +17,7 @@ export const CourseService = {
   AddCourse: async (addCourseRequest: AddCourseRequest) => {
     try {
       const response = await axios.post<Course>(
-        "https://localhost:7021/addCourse",
+        "https://localhost:7021/course/addCourse",
         addCourseRequest,
         {
           headers: {

@@ -7,8 +7,12 @@ COPY . ./
 RUN dotnet restore
 
 COPY . .
-RUN dotnet publish -c Release -o out
+
+# Run linting in pipeline
 RUN dotnet format
+RUN dotnet publish -c Release -o out
+
+
 # TODO ADD ENVIRONMENT VARIABLES
 # ENV MY_VARIABLE=123
 

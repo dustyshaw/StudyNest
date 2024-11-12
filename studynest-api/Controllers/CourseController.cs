@@ -24,12 +24,9 @@ public class CourseController : ControllerBase
         return await courseService.GetAllCourses();
     }
 
-    [HttpPost("/addCourse")]
-    [Authorize]
+    [HttpPost("/course/addCourse")]
     public async Task<bool> AddCourse(AddCourseRequest addCourseRequest)
     {
-        var userEmail = User?.FindFirst("email")?.Value;
-
         return await courseService.AddCourse(addCourseRequest);
     }
 }

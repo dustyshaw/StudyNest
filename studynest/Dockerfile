@@ -4,8 +4,8 @@ COPY ./package*.json .
 RUN NODE_ENV=development npm i
 COPY . .
 
+# This also lints
 RUN npm run build
-RUN npm run lint
 
 FROM nginx:1.27.0
 RUN rm -rf /usr/share/nginx/html/*

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7aeecad6207cfcfb40cbb82a1d2fd5d7097a4525")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2238c19af858ea844b14a4adacdc355518220eea")]
 [assembly: System.Reflection.AssemblyProductAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("studynest-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

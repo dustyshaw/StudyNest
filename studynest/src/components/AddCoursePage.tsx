@@ -2,6 +2,7 @@ import React from "react";
 import TextInput from "./Inputs/TextInput";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import { CourseQueries } from "../Queries/courseQueries";
+import Button from "./Inputs/Button";
 
 const AddCoursePage = () => {
   const [formData, setFormData] = React.useState<Partial<AddCourseRequest>>({});
@@ -43,7 +44,6 @@ const AddCoursePage = () => {
     }
 
     addCourseAsync(newCourse)
-
   };
 
   return (
@@ -65,10 +65,9 @@ const AddCoursePage = () => {
           id="description"
           onChange={handleForm}
         />
-        {/* <Button onClick={(e) => handleSubmission(e)}>
+        <Button onClick={handleSubmission}>
           <p>Add Course</p>
-        </Button> */}
-        <button onClick={(e) => handleSubmission(e)}>Add Course</button>
+        </Button>
       </form>
     </div>
   );

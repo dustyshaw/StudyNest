@@ -34,8 +34,6 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var courses = await dbContext.Courses.ToListAsync();
-
         Course newCourse = new Course()
         {
             Title = addCourseRequest.Title,
