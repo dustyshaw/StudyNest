@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import starburst from "../../assets/starburst.svg";
 import Button from "../Inputs/Button";
-import AddCourse from "../Course/AddCourse";
 
 const Dashboard = () => {
   // TODO get actual user id from database
