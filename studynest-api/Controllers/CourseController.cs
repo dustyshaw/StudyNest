@@ -24,6 +24,12 @@ public class CourseController : ControllerBase
         return await courseService.GetAllCourses();
     }
 
+    [HttpGet("/coursebyid")]
+    public async Task<CourseDto> GetCourseById(int courseId)
+    {
+        return await courseService.GetCourseById(courseId);
+    }
+
     [HttpPost("/course/addCourse")]
     public async Task<bool> AddCourse(AddCourseRequest addCourseRequest)
     {

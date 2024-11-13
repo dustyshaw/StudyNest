@@ -1,28 +1,12 @@
 import React from "react";
-import TextInput from "./Inputs/TextInput";
-import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
-import { CourseQueries } from "../Queries/courseQueries";
-import Button from "./Inputs/Button";
+import { AddCourseRequest } from "../../@types/Requests/AddCourseRequest";
+import TextInput from "../Inputs/TextInput";
+import Button from "../Inputs/Button";
+import { CourseQueries } from "../../Queries/courseQueries";
 
-const AddCoursePage = () => {
+const AddCourseForm = () => {
   const [formData, setFormData] = React.useState<Partial<AddCourseRequest>>({});
-
   const { mutateAsync: addCourseAsync } = CourseQueries.useAddACourse();
-
-  //   export interface AddCourseEnrollRequest {
-  //     title: number,
-  //     description: number,
-  // }
-
-  //   const handleForm = (
-  //     e: React.FormEvent<HTMLInputElement>,
-  //     newVal: string
-  //   ): void => {
-  //     setFormData({
-  //       ...formData,
-  //       [e.currentTarget.id]: newVal,
-  //     });
-  //   };
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -39,15 +23,14 @@ const AddCoursePage = () => {
     console.log("Form Data", formData);
 
     const newCourse: AddCourseRequest = {
-        title: formData.title ?? "",
-        description: formData.description ?? ""
-    }
-
-    addCourseAsync(newCourse)
+      title: formData.title ?? "",
+      description: formData.description ?? "",
+    };
+    addCourseAsync(newCourse);
   };
 
   return (
-    <div className="bg-gray-200 rounded-md border-gray-400 border-solid border-2">
+    <div className="bg-gray-200 rounded-md border-gray-400 border-solid border-2 p-4">
       <form className="p-5">
         <TextInput
           label="* Course Title"
@@ -73,4 +56,4 @@ const AddCoursePage = () => {
   );
 };
 
-export default AddCoursePage;
+export default AddCourseForm;

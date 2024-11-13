@@ -7,7 +7,7 @@ public class CourseDto
 
     public string? Description { get; set; }
 
-    public virtual ICollection<Courseenroll> Courseenrolls { get; set; } = new List<Courseenroll>();
+    //public virtual ICollection<Courseenroll> Courseenrolls { get; set; } = new List<Courseenroll>();
 
-    public virtual ICollection<Courseunit> Courseunits { get; set; } = new List<Courseunit>();
+    //public virtual ICollection<Courseunit> Courseunits { get; set; } = new List<Courseunit>();
 }

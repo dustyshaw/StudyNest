@@ -9,8 +9,8 @@ public static class DtoConverter
         CourseDto dto = new CourseDto()
         {
             Id = course.Id,
-            Courseenrolls = course.Courseenrolls,
-            Courseunits = course.Courseunits,
+            //Courseenrolls = course.Courseenrolls,
+            //Courseunits = course.Courseunits,
             Title = course.Title,
             Description = course.Description,
         };
@@ -20,10 +20,11 @@ public static class DtoConverter
 
     public static UserCourseDto ToDto(this Courseenroll course)
     {
+        CourseDto cDto = course.Course.ToDto();
         UserCourseDto dto = new UserCourseDto()
         {
             OwnerUsername = course.User?.Username ?? "",
-            CourseTitle = course.Course?.Title ?? "",
+            Course = cDto ?? new CourseDto(),
         };
 
         return dto;

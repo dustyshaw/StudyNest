@@ -30,6 +30,20 @@ public class CourseService : ICourseService
         return courses.Select(x => x.ToDto()).ToList();
     }
 
+    public async Task<CourseDto> GetCourseById(int courseId)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        var course = await dbContext.Courses.Where(x => x.Id == courseId).FirstOrDefaultAsync();
+
+        if (course is null)
+        {
+            throw new ArgumentNullException(nameof(course));
+        }
+
+        return course.ToDto();
+    }
+
     public async Task<bool> AddCourse(AddCourseRequest addCourseRequest)
     {
         using var dbContext = dbContextFactory.CreateDbContext();

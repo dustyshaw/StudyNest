@@ -10,6 +10,12 @@ export const CourseQueries = {
       queryFn: () => CourseService.GetAllCourses(),
     });
   },
+  useGetCourseById: (courseNumber: number) => {
+    return useQuery({
+      queryKey: ["courses"],
+      queryFn: () => CourseService.GetCourseById(courseNumber)
+    })
+  },
   useAddACourse: () => {
     const queryClient = useQueryClient();
     return useMutation({

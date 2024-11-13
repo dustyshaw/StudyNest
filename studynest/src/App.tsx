@@ -5,8 +5,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LeftNav from "./components/LeftNav";
 import TopNav from "./components/TopNav";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import Browse from "./components/Browse/Browse";
+import Course from "./components/Course/Course";
+import AddCourse from "./components/Course/AddCourse";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -15,14 +17,14 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Toaster />
       <BrowserRouter>
-        {/* <LandingPage /> */}
         <LeftNav />
         <TopNav />
         <div className="sm:ml-24">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/browse" element={<Browse />} />
-
+            <Route path="/course/:courseId" element={<Course />} />
+            <Route path="/addcourse" element={<AddCourse />} />
           </Routes>
         </div>
       </BrowserRouter>

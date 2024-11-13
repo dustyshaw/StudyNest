@@ -14,6 +14,22 @@ export const CourseService = {
       console.error("Couldn't get courses");
     }
   },
+  GetCourseById: async (courseId: number) => {
+    try {
+      const response = await axios.get<Course>(
+        "https://localhost:7021/coursebyid",
+        {
+          params: {
+            courseId: courseId,
+          },
+        }
+      );
+
+      return response.data;
+    } catch {
+      console.error("Couldn't get courses");
+    }
+  },
   AddCourse: async (addCourseRequest: AddCourseRequest) => {
     try {
       const response = await axios.post<Course>(
