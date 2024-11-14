@@ -16,7 +16,7 @@ const EditCourse = () => {
     useEffect(() => {
         if (course)
             setFormData(course)
-    }, [])
+    }, [course])
 
     console.log(formData)
 
