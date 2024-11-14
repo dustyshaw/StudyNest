@@ -9,6 +9,8 @@ import { Toaster } from "react-hot-toast";
 import Browse from "./components/Browse/Browse";
 import Course from "./components/Course/Course";
 import AddCourse from "./components/Course/AddCourse";
+import FallbackComponent from "./components/FallbackComponent";
+import EditCourse from "./components/Course/EditCourse";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -18,15 +20,23 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <LeftNav />
-        <TopNav />
-        <div className="sm:ml-24">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/browse" element={<Browse />} />
-            <Route path="/course/:courseId" element={<Course />} />
-            <Route path="/addcourse" element={<AddCourse />} />
-          </Routes>
-        </div>
+        <TopNav />    
+        {/* <ErrorBoundary FallbackComponent={FallbackComponent}
+          onReset={() => {
+            // reset the state of your app here
+          }}
+          resetKeys={['someKey']}> */}
+          <div className="sm:ml-24">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/browse" element={<Browse />} />
+              <Route path="/course/:courseId" element={<Course />} />
+              <Route path="/addcourse" element={<AddCourse />} />
+              <Route path="/editcourse/:courseId" element={<EditCourse />} />
+              <Route path="*" element={<FallbackComponent />} />
+            </Routes>
+          </div>
+        {/* </ErrorBoundary> */}
       </BrowserRouter>
     </QueryClientProvider>
   );

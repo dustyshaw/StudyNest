@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { CourseService } from "../services/courseService";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import toast from "react-hot-toast";
+import { EditCourseRequest } from "../@types/Requests/EditCourseRequest";
 
 export const CourseQueries = {
   useGetAllCourses: () => {
@@ -26,4 +27,14 @@ export const CourseQueries = {
       },
     });
   },
+  useEditCourse: () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: (editCourseRequest: EditCourseRequest) => CourseService.EditCourse(editCourseRequest),
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["courses"] }); // Explicitly pass it as an array
+        toast.success("Successfully Edited Course")
+      },
+    });
+  }
 };

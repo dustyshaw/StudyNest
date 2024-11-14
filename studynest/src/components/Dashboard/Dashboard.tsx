@@ -7,13 +7,16 @@ const Dashboard = () => {
   // TODO get actual user id from database
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
-  console.log(userCourses);
 
   return (
     <>
-    {/* <AddCourse /> */}
+      {/* <AddCourse /> */}
+
       <div className="p-8">
         <div className="text-2xl">Your Dashboard</div>
+        <button onClick={() => {
+          throw new Error("Manually triggered error");
+        }}>Throw Error</button>
         <Link to={"/addcourse"}>
           <Button onClick={() => console.log("Adding Course")}>
             Add a Course

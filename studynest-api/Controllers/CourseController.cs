@@ -35,4 +35,10 @@ public class CourseController : ControllerBase
     {
         return await courseService.AddCourse(addCourseRequest);
     }
+
+    [HttpPatch("/course/editCourse")]
+    public async Task<bool> EditCourse(EditCourseRequest editCourseRequest)
+    {
+        return await courseService.EditCourse(editCourseRequest);
+    }
 }

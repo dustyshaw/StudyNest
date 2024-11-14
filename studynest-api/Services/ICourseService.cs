@@ -8,4 +8,5 @@ public interface ICourseService
     public Task<List<CourseDto>> GetAllCourses();
     public Task<CourseDto> GetCourseById(int courseId);
     public Task<bool> AddCourse(AddCourseRequest course);
+    public Task<bool> EditCourse(EditCourseRequest editCourseRequest);
 }

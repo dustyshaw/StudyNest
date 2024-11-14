@@ -60,4 +60,20 @@ public class CourseService : ICourseService
 
         return true;
     }
+
+    public async Task<bool> EditCourse(EditCourseRequest editCourseRequest)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        var course = await dbContext.Courses.Where(x => x.Id == editCourseRequest.CourseId)
+            .FirstOrDefaultAsync() ?? throw new Exception("Could not find course under change.");
+        
+        course.Title = editCourseRequest.Title;
+        course.Description = editCourseRequest.Description;
+
+        dbContext.Update(course);
+        await dbContext.SaveChangesAsync();
+
+        return true;
+    }
 }
