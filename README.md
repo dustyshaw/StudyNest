@@ -39,17 +39,15 @@ Total: 44 / 146 pts
 
 ---
 ## Nov 13 - Courses
-- [ ] Make simple error boundary
-- [ ] Connect a user to a course (through add course enroll)
-- [ ] Display a users enrolled courses on the dashboard
-- [ ] Edit a course
+- [x] Make simple error boundary
+- [x] Connect a user to a course (through add course enroll)
+- [x] Display a users enrolled courses on the dashboard
+- [x] Edit a course
 
 **Points for this week**  
 5 pts - Technology: linting in pipeline  
-12 pts - Technology: 4+ generic layout components  
 5 pts - Technology: authorized pages and public pages  
-5 pts - Technology: Error handling (both on api requests and render errors)
-5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
+5 pts - Technology: Error handling (both on api requests and render errors)  
 
 Total: 76 / 146 pts
 ---
@@ -57,8 +55,11 @@ Total: 76 / 146 pts
 - [ ] Add module to course
 - [ ] Show modules on dashboard
 - [ ] Edit module
+- [ ] Add a test
 
 **Points for this week**  
+12 pts - Technology: 4+ generic layout components  
+5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
 5 pts - Experience: 3 instances where elements re-order themselves on smaller screens    
 5 pts - Experience: all experiences mobile friendly  
 
