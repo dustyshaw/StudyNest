@@ -7,7 +7,19 @@ export const CourseService = {
   GetAllCourses: async () => {
     try {
       const response = await axios.get<Course[]>(
-        "https://localhost:7021/course"
+        "https://localhost:7021/course/getall"
+      );
+      console.log("courses")
+      console.log(response.data)
+      return response.data;
+    } catch {
+      console.error("Couldn't get courses");
+    }
+  },
+  GetAllPublicCourses: async () => {
+    try {
+      const response = await axios.get<Course[]>(
+        "https://localhost:7021/course/public"
       );
       console.log("courses")
       console.log(response.data)

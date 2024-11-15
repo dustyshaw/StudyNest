@@ -1,4 +1,4 @@
-﻿using studynest_api.Data.Requests;
+﻿using studynest_api.CustomData.Requests;
 
 namespace studynest_api.Services;
 

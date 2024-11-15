@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+using studynest_api.Data2;
 
-namespace studynest_api.Data.DTOs;
+namespace studynest_api.CustomData.DTOs;
 
 public static class DtoConverter
 {
@@ -13,6 +14,7 @@ public static class DtoConverter
             Courseunits = course.Courseunits,
             Title = course.Title,
             Description = course.Description,
+            Ispublic = course.Ispublic ?? true,
         };
 
         return dto;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using studynest_api.Data;
-using studynest_api.Data.Requests;
+using studynest_api.Data2;
+using studynest_api.CustomData.Requests;
 
 namespace studynest_api.Services;
 

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using studynest_api.Data2;
 
-namespace studynest_api.Data2;
+namespace studynest_api.CustomData.DTOs;
 
-public partial class Courseunit
+public class CourseUnitDto
 {
     public int Id { get; set; }
 
@@ -14,6 +13,4 @@ public partial class Courseunit
     public int? Courseid { get; set; }
 
     public virtual Course? Course { get; set; }
-
-    public virtual Unit? Unit { get; set; }
 }

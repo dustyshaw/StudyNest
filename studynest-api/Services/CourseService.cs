@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using studynest_api.Data;
-using studynest_api.Data.DTOs;
-using studynest_api.Data.Requests;
+using studynest_api.CustomData.DTOs;
+using studynest_api.CustomData.Requests;
+using studynest_api.Data2;
 using System.Runtime.CompilerServices;
 
 
@@ -21,6 +21,20 @@ public class CourseService : ICourseService
         using var dbContext = dbContextFactory.CreateDbContext();
 
         var courses = await dbContext.Courses.Include(x => x.Courseunits).ThenInclude(x => x.Unit).ToListAsync();
+
+        if (courses is null)
+        {
+            throw new ArgumentNullException(nameof(courses));
+        }
+
+        return courses.Select(x => x.ToDto()).ToList();
+    }
+
+    public async Task<List<CourseDto>> GetAllPublicCourses()
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        var courses = await dbContext.Courses.Include(x => x.Courseunits).ThenInclude(x => x.Unit).Where(x => x.Ispublic == true || x.Ispublic == null).ToListAsync();
 
         if (courses is null)
         {

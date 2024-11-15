@@ -11,6 +11,12 @@ export const CourseQueries = {
       queryFn: () => CourseService.GetAllCourses(),
     });
   },
+  useGetAllPublicCourses: () => {
+    return useQuery({
+      queryKey: ["courses"],
+      queryFn: () => CourseService.GetAllPublicCourses(),
+    });
+  },
   useGetCourseById: (courseNumber: number) => {
     return useQuery({
       queryKey: ["courses"],

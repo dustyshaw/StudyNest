@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace studynest_api.Data.Requests;
+namespace studynest_api.CustomData.Requests;
 
 public class AddCourseRequest
 {

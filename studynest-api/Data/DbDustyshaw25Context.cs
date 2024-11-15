@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace studynest_api.Data;
+namespace studynest_api.Data2;
 
 public partial class DbDustyshaw25Context : DbContext
 {
@@ -21,7 +21,7 @@ public partial class DbDustyshaw25Context : DbContext
 
     public virtual DbSet<Courseunit> Courseunits { get; set; }
 
-    public virtual DbSet<Task> Tasks { get; set; }
+    public virtual DbSet<StudyTask> Tasks { get; set; }
 
     public virtual DbSet<Unit> Units { get; set; }
 
@@ -45,6 +45,7 @@ public partial class DbDustyshaw25Context : DbContext
             entity.Property(e => e.Description)
                 .HasMaxLength(500)
                 .HasColumnName("description");
+            entity.Property(e => e.Ispublic).HasColumnName("ispublic");
             entity.Property(e => e.Title)
                 .HasMaxLength(30)
                 .HasColumnName("title");
@@ -89,7 +90,7 @@ public partial class DbDustyshaw25Context : DbContext
                 .HasConstraintName("courseunit_unitid_fkey");
         });
 
-        modelBuilder.Entity<Task>(entity =>
+        modelBuilder.Entity<StudyTask>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("task_pkey");
 

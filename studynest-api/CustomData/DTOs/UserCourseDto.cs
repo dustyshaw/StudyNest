@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace studynest_api.Data.DTOs;
+namespace studynest_api.CustomData.DTOs;
 
 public class UserCourseDto
 {

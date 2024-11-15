@@ -5,7 +5,7 @@ import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import starburst from "../../assets/starburst.svg"
 
 const Browse = () => {
-  const { data } = CourseQueries.useGetAllCourses();
+  const { data } = CourseQueries.useGetAllPublicCourses();
   const { mutateAsync } = UserCourseQueries.useAddACourse();
 
   console.log("courses: ", data)

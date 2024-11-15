@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studynest_api.Data;
+namespace studynest_api.Data2;
 
-public partial class Task
+public partial class StudyTask
 {
     public int Id { get; set; }
 

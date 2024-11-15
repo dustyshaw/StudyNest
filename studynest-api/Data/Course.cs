@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studynest_api.Data;
+namespace studynest_api.Data2;
 
 public partial class Course
 {
@@ -10,6 +10,8 @@ public partial class Course
     public string Title { get; set; } = null!;
 
     public string? Description { get; set; }
+
+    public bool? Ispublic { get; set; }
 
     public virtual ICollection<Courseenroll> Courseenrolls { get; set; } = new List<Courseenroll>();
 

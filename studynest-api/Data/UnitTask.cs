@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studynest_api.Data;
+namespace studynest_api.Data2;
 
 public partial class UnitTask
 {
@@ -13,7 +13,7 @@ public partial class UnitTask
 
     public int? Taskid { get; set; }
 
-    public virtual Task? Task { get; set; }
+    public virtual StudyTask? Task { get; set; }
 
     public virtual Unit? Unit { get; set; }
 }

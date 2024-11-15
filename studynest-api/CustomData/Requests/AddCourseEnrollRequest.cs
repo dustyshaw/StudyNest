@@ -1,4 +1,4 @@
-﻿namespace studynest_api.Data.Requests;
+﻿namespace studynest_api.CustomData.Requests;
 
 public class AddCourseEnrollRequest
 {

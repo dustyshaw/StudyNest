@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using studynest_api.Data.Requests;
+using studynest_api.CustomData.Requests;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;

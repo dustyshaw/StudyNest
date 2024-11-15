@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using studynest_api.Data.DTOs;
-using studynest_api.Data.Requests;
+using studynest_api.CustomData.DTOs;
+using studynest_api.CustomData.Requests;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;
@@ -18,10 +18,16 @@ public class CourseController : ControllerBase
         this.courseService = courseService;
     }
 
-    [HttpGet]
+    [HttpGet("/course/getall")]
     public async Task<List<CourseDto>> GetAllCourses()
     {
         return await courseService.GetAllCourses();
+    }
+
+    [HttpGet("/course/public")]
+    public async Task<List<CourseDto>> GetAllPublicCourses()
+    {
+        return await courseService.GetAllPublicCourses();
     }
 
     [HttpGet("/coursebyid")]
