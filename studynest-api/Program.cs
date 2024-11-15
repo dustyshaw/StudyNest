@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using studynest_api.Data;
 using studynest_api.Services;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,11 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
             ValidAudience = "studynest-authclient", // Client in Keycloak
         };
     });
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 
 builder.Services.AddSingleton<ICourseService, CourseService>();

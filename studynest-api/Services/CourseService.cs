@@ -20,7 +20,7 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var courses = await dbContext.Courses.ToListAsync();
+        var courses = await dbContext.Courses.Include(x => x.Courseunits).ThenInclude(x => x.Unit).ToListAsync();
 
         if (courses is null)
         {
@@ -34,7 +34,10 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var course = await dbContext.Courses.Where(x => x.Id == courseId).FirstOrDefaultAsync();
+        var course = await dbContext.Courses.Where(x => x.Id == courseId)
+            .Include(x => x.Courseunits)
+            .ThenInclude(x => x.Unit)
+            .FirstOrDefaultAsync();
 
         if (course is null)
         {

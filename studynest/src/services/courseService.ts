@@ -9,7 +9,8 @@ export const CourseService = {
       const response = await axios.get<Course[]>(
         "https://localhost:7021/course"
       );
-
+      console.log("courses")
+      console.log(response.data)
       return response.data;
     } catch {
       console.error("Couldn't get courses");

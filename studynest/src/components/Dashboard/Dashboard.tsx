@@ -14,9 +14,13 @@ const Dashboard = () => {
 
       <div className="p-8">
         <div className="text-2xl">Your Dashboard</div>
-        <button onClick={() => {
-          throw new Error("Manually triggered error");
-        }}>Throw Error</button>
+        <button
+          onClick={() => {
+            throw new Error("Manually triggered error");
+          }}
+        >
+          Throw Error
+        </button>
         <Link to={"/addcourse"}>
           <Button onClick={() => console.log("Adding Course")}>
             Add a Course
@@ -31,6 +35,7 @@ const Dashboard = () => {
                 </div>
                 <div className="bg-gray-100 p-2 rounded-b-lg">
                   <h2 className="text-xl text-gray-800">{x.course.title}</h2>
+                  <p></p>
                   <p className="text-gray-600">{x.ownerUsername}</p>
                 </div>
               </div>

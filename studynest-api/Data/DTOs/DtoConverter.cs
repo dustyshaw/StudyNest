@@ -10,7 +10,7 @@ public static class DtoConverter
         {
             Id = course.Id,
             //Courseenrolls = course.Courseenrolls,
-            //Courseunits = course.Courseunits,
+            Courseunits = course.Courseunits,
             Title = course.Title,
             Description = course.Description,
         };
