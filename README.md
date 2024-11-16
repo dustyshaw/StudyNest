@@ -52,7 +52,7 @@ Total: 44 / 146 pts
 Total: 76 / 146 pts
 ---
 ## Nov 16 - Modules
-- [ ] Add module to course
+- [x] Add module to course
 - [ ] Show modules on dashboard
 - [ ] Edit module
 - [ ] Add a test
