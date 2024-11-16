@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using studynest_api.CustomData.Requests;
+using studynest_api.Data2;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;
@@ -19,5 +20,11 @@ public class UserController : Controller
     public async Task<bool> AddUser(AddUserRequest request)
     {
         return await userService.AddUser(request); 
+    }
+
+    [HttpPost("/user/getByEmail")]
+    public async Task<Useraccount> GetUserByEmail([FromBody] string email)
+    {
+        return await userService.GetUserByEmail(email);
     }
 }

@@ -1,4 +1,3 @@
-
 import { AddCourseEnrollRequest } from "../../@types/Requests/AddCourseEnrollRequest";
 import { CourseQueries } from "../../Queries/courseQueries";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
@@ -8,7 +7,6 @@ const Browse = () => {
   const { data } = CourseQueries.useGetAllPublicCourses();
   const { mutateAsync } = UserCourseQueries.useAddACourse();
 
-  console.log("courses: ", data)
 
   // TODO: make this the actual user
   const handleAddCourseEnroll = async (courseId: number) => {

@@ -16,8 +16,8 @@ const oidcConfig: AuthProviderProps = {
       authId: user?.id_token ?? ""
     }
     UserService.AddNewUser(request);
-    console.log("USER TOKEN ----------", user?.id_token);
-    console.log("USERNAME", user?.profile.name)
+    // console.log("USER TOKEN ----------", user?.id_token);
+    // console.log("USERNAME", user?.profile.name)
     
     document.cookie = `jwt_token=${user?.id_token}`;
     window.history.replaceState({}, document.title, window.location.pathname);

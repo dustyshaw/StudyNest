@@ -5,7 +5,7 @@ const LandingPage = () => {
 
     const { data } = CourseQueries.useGetAllCourses();
 
-    console.log(data)
+    // console.log(data)
   return (
     <>
       <div className="flex justify-end w-full">

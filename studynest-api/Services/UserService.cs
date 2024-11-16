@@ -35,4 +35,19 @@ public class UserService : IUserService
         await context.SaveChangesAsync();
         return true;
     }
+
+    public async Task<Useraccount> GetUserByEmail(string email)
+    {
+        using var context = dbContextFactory.CreateDbContext();
+
+        var user = await context.Useraccounts.Where(x => x.Email == email).FirstOrDefaultAsync();
+
+
+        if (user == null)
+        {
+            throw new Exception("No user found");
+        }
+
+        return user;
+    }
 }

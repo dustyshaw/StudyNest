@@ -2,8 +2,26 @@ import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import starburst from "../../assets/starburst.svg";
 import Button from "../Inputs/Button";
+import { useAuth } from "react-oidc-context";
+import { UserQueries } from "../../Queries/userQueries";
 
 const Dashboard = () => {
+
+  // Auth stuff
+  const { user: authuser, isAuthenticated } = useAuth();
+
+  if ((authuser == undefined || null) || !isAuthenticated) {
+    return (<p className="text-2xl text-red-500">You're not logged in</p>)
+  }
+
+  const email = authuser.profile.email ?? "";
+  const { data: userFromQuery, refetch} = UserQueries.useGetUserByEmail("dusty.shaw@students.snow.edu");
+  
+
+  // const userFromQuery = UserService.GetUserByEmail(email);
+  console.log("user from query => ", userFromQuery)
+  // END Auth stuff
+
   // TODO get actual user id from database
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
@@ -22,7 +40,7 @@ const Dashboard = () => {
           Throw Error
         </button>
         <Link to={"/addcourse"}>
-          <Button onClick={() => console.log("Adding Course")}>
+          <Button onClick={() => {console.log("Adding Course"); refetch();}}>
             Add a Course
           </Button>
         </Link>

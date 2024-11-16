@@ -18,8 +18,6 @@ const EditCourse = () => {
             setFormData(course)
     }, [course])
 
-    console.log(formData)
-
 
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setFormData({
@@ -33,7 +31,6 @@ const EditCourse = () => {
     ) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log("Form Data", formData);
 
         if (!course) {
             throw new Error("No course found");

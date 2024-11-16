@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:latest AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 
 WORKDIR /App
 
@@ -17,7 +17,7 @@ RUN dotnet publish -c Release -o out
 # ENV MY_VARIABLE=123
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:latest
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "studynest-api.dll"]

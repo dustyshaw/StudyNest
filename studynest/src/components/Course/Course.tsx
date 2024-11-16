@@ -6,8 +6,6 @@ const Course = () => {
   const { courseId } = useParams();
   const { data: course } = CourseQueries.useGetCourseById(Number(courseId));
 
-  console.log(course?.courseunits[0].unit.title);
-
   return (
     <div className="m-8">
       <h1 className="text-3xl">{course?.title}</h1>

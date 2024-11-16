@@ -20,7 +20,6 @@ const AddCourseForm = () => {
   ) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Form Data", formData);
 
     const newCourse: AddCourseRequest = {
       title: formData.title ?? "",
