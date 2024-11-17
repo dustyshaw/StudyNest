@@ -59,9 +59,7 @@ Total: 76 / 146 pts
 
 **Points for this week**  
 12 pts - Technology: 4+ generic layout components  
-5 pts - Technology: tests run in pipeline, pipeline aborts if they fail
-5 pts - Experience: 3 instances where elements re-order themselves on smaller screens    
-5 pts - Experience: all experiences mobile friendly  
+5 pts - Technology: tests run in pipeline, pipeline aborts if they fail  
 
 Total: 86 / 146 pts
 ---
@@ -72,6 +70,8 @@ Total: 86 / 146 pts
 - [ ] Link to assignment resources
 - [ ] Be able to assign personal score on assessment
 
+5 pts - Experience: 3 instances where elements re-order themselves on smaller screens    
+5 pts - Experience: all experiences mobile friendly  
 --- 
 ## Nov 23 - Steaks & Progress
 - [ ] Update user streak
