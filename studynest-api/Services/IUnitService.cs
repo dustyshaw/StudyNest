@@ -1,4 +1,5 @@
-﻿using studynest_api.CustomData.Requests;
+﻿using studynest_api.CustomData.DTOs;
+using studynest_api.CustomData.Requests;
 
 namespace studynest_api.Services;
 

@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import starburst from "../../assets/starburst.svg";
 import Button from "../Inputs/Button";
+import UserCoursesList from "../genericComponents/DashboardCourse";
 
 const Dashboard = () => {
-
   // Auth stuff
   // const { user: authuser, isAuthenticated } = useAuth();
 
@@ -14,7 +13,6 @@ const Dashboard = () => {
 
   // const email = authuser.profile.email ?? "";
   // const { data: userFromQuery, refetch} = UserQueries.useGetUserByEmail("dusty.shaw@students.snow.edu");
-  
 
   // // const userFromQuery = UserService.GetUserByEmail(email);
   // console.log("user from query => ", userFromQuery)
@@ -24,7 +22,7 @@ const Dashboard = () => {
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
 
-    console.log(userCourses)
+  console.log(userCourses);
 
   return (
     <>
@@ -40,12 +38,17 @@ const Dashboard = () => {
           Throw Error
         </button>
         <Link to={"/addcourse"}>
-          <Button onClick={() => {console.log("Adding Course")}}>
+          <Button
+            onClick={() => {
+              console.log("Adding Course");
+            }}
+          >
             Add a Course
           </Button>
         </Link>
         <div className="flex flex-row flex-wrap">
-          {userCourses?.map((x, key) => (
+          <UserCoursesList userCourses={userCourses} />
+          {/* {userCourses?.map((x, key) => (
             <Link to={`/course/${x.userCourseId}`} key={key}>
               <div className="flex flex-col m-3">
                 <div className="h-full bg-lilac-300 text-sky-300 rounded-t-lg p-3">
@@ -58,7 +61,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </Link>
-          ))}
+          ))} */}
         </div>
       </div>
     </>

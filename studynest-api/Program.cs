@@ -40,6 +40,8 @@ builder.Services.AddSingleton<ICourseService, CourseService>();
 builder.Services.AddSingleton<IUserCourseService, UserCourseService>();
 builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSingleton<IUnitService, UnitService>();
+builder.Services.AddSingleton<ICourseUnitService, CourseUnitService>();
+
 
 
 var app = builder.Build();

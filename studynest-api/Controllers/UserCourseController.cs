@@ -38,7 +38,7 @@ public class UserCourseController
     }
 
     [HttpGet("/getUserCourse")]
-    public Task<Courseenroll> GetUserCourse(int userCourseId)
+    public Task<UserCourseDto> GetUserCourse(int userCourseId)
     {
         return userCourseService.GetUserCourseByCourseId(userCourseId);
     }

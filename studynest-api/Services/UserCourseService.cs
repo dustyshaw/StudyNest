@@ -36,17 +36,18 @@ public class UserCourseService : IUserCourseService
         var courseenrolls = await dbContext.Courseenrolls
             .Where(x => x.Userid == userId)
             .Include(x => x.Course)
+                .ThenInclude(x => x.Courseunits)
             .Include(x => x.User)
             .ToListAsync();
         return courseenrolls.Select(x => x.ToDto()).ToList();
     }
 
-    public async Task<Courseenroll> GetUserCourseByCourseId(int userCourseId)
+    public async Task<UserCourseDto> GetUserCourseByCourseId(int userCourseId)
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
         //var courses = await dbContext.Courses.ToListAsync();
-        var courseenrolls = await dbContext.Courseenrolls
+        var courseEnroll = await dbContext.Courseenrolls
             .Where(x => x.Id == userCourseId)
             .Include(x => x.Course)
                 .ThenInclude(x => x.Courseunits)
@@ -54,6 +55,23 @@ public class UserCourseService : IUserCourseService
             .Include(x => x.User)
             .FirstOrDefaultAsync();
 
-        return courseenrolls;
+        var courseEnrollDto = new UserCourseDto
+        {
+            UserCourseId = courseEnroll.Id,
+            OwnerUsername = courseEnroll.User.Username, // Assuming the User entity has a Username property
+            Course = new CourseDto
+            {
+                Id = courseEnroll.Course.Id,
+                Title = courseEnroll.Course.Title,
+                Courseunits = courseEnroll.Course.Courseunits
+            .Select(cu => new Courseunit
+            {
+                Id = cu.Unit.Id,
+            })
+            .ToList()
+            }
+        };
+
+        return courseEnrollDto;
     }
 }

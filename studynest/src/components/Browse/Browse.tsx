@@ -2,6 +2,7 @@ import { AddCourseEnrollRequest } from "../../@types/Requests/AddCourseEnrollReq
 import { CourseQueries } from "../../Queries/courseQueries";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import starburst from "../../assets/starburst.svg"
+import BrowseCourseList from "../genericComponents/BrowseCourse";
 
 const Browse = () => {
   const { data } = CourseQueries.useGetAllPublicCourses();
@@ -20,9 +21,8 @@ const Browse = () => {
   return (
     <div>
       <img src={starburst} />
-
-      <div className="flex flex-wrap w-full">
-
+      <BrowseCourseList data={data} handleAddCourseEnroll={handleAddCourseEnroll} />
+      {/* <div className="flex flex-wrap w-full">
         {data && data?.map((x, key) => (
           <div className="lg:w-1/4 w-1/2 bg-lime-300 p-6 mx-4 my-3 rounded-3xl" key={key}>
             <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-50 hidden">
@@ -40,7 +40,7 @@ const Browse = () => {
             </button>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

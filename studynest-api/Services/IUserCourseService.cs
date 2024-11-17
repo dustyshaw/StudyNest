@@ -8,5 +8,5 @@ public interface IUserCourseService
 {
     public Task<bool> AddUserCourse(AddCourseEnrollRequest addCourseEnrollRequest);
     public Task<List<UserCourseDto>> GetCoursesByUserId(int userId);
-    public Task<Courseenroll> GetUserCourseByCourseId(int userCourseId);
+    public Task<UserCourseDto> GetUserCourseByCourseId(int userCourseId);
 }
