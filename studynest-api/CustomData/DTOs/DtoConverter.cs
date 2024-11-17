@@ -25,6 +25,7 @@ public static class DtoConverter
         CourseDto cDto = course.Course.ToDto();
         UserCourseDto dto = new UserCourseDto()
         {
+            UserCourseId = course.Id,
             OwnerUsername = course.User?.Username ?? "",
             Course = cDto ?? new CourseDto(),
         };

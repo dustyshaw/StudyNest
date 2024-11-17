@@ -23,6 +23,25 @@ export const UserCourseService = {
       console.error("Couldn't get enrolled courses");
     }
   },
+  GetUserCourseById: async (userCourseId: number) => {
+    try {
+      const response = await axios.get<courseEnrollDto[]>(
+        "https://localhost:7021/getUserCourse",
+        {
+          params: {
+            userCourseId: userCourseId,
+          },
+          // headers: {
+          //   Authorization: `Bearer ${token}`,
+          // },
+        }
+      );
+
+      return response.data;
+    } catch {
+      console.error("Couldn't get enrolled courses");
+    }
+  },
   AddCourseEnroll: async (request: AddCourseEnrollRequest) => {
     try {
       const response = await axios.post<boolean>(

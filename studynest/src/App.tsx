@@ -12,14 +12,13 @@ import AddCourse from "./components/Course/AddCourse";
 import FallbackComponent from "./components/FallbackComponent";
 import EditCourse from "./components/Course/EditCourse";
 import { ErrorBoundary } from "react-error-boundary";
-import { UserContextProvidor } from "./context/userContextProvidor";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <UserContextProvidor>
+      {/* <UserContextProvidor> */}
         <Toaster />
         <BrowserRouter>
           <LeftNav />
@@ -41,7 +40,7 @@ function App() {
             </div>
           </ErrorBoundary>
         </BrowserRouter>
-      </UserContextProvidor>
+      {/* </UserContextProvidor> */}
     </QueryClientProvider>
   );
 }

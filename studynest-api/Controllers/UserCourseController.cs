@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using studynest_api.CustomData.DTOs;
 using studynest_api.CustomData.Requests;
+using studynest_api.Data2;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;
@@ -34,6 +35,12 @@ public class UserCourseController
     public Task<List<UserCourseDto>> GetCoursesByUser(int userId)
     {
         return userCourseService.GetCoursesByUserId(userId);
+    }
+
+    [HttpGet("/getUserCourse")]
+    public Task<Courseenroll> GetUserCourse(int userCourseId)
+    {
+        return userCourseService.GetUserCourseByCourseId(userCourseId);
     }
 
     [HttpPost("/addCourseEnroll")]

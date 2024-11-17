@@ -4,6 +4,6 @@ import { UnitTask } from "./UnitTask";
 export interface Unit {
     id: number,
     title: string,
-    courseunits: CourseUnit,
-    unitTasks: UnitTask
+    courseunits: CourseUnit[],
+    unitTasks: UnitTask[]
 }

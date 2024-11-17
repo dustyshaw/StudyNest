@@ -40,4 +40,20 @@ public class UserCourseService : IUserCourseService
             .ToListAsync();
         return courseenrolls.Select(x => x.ToDto()).ToList();
     }
+
+    public async Task<Courseenroll> GetUserCourseByCourseId(int userCourseId)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        //var courses = await dbContext.Courses.ToListAsync();
+        var courseenrolls = await dbContext.Courseenrolls
+            .Where(x => x.Id == userCourseId)
+            .Include(x => x.Course)
+                .ThenInclude(x => x.Courseunits)
+                .ThenInclude(x => x.Unit)
+            .Include(x => x.User)
+            .FirstOrDefaultAsync();
+
+        return courseenrolls;
+    }
 }
