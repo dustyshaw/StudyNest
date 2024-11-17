@@ -53,9 +53,9 @@ Total: 76 / 146 pts
 ---
 ## Nov 16 - Modules
 - [x] Add module to course
-- [ ] Show modules on dashboard
-- [ ] Edit module
-- [ ] Add a test
+- [x] Show modules on dashboard
+- [x] Edit module
+- [x] Add a test
 
 **Points for this week**  
 12 pts - Technology: 4+ generic layout components  
