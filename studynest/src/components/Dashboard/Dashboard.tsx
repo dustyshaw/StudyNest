@@ -27,28 +27,28 @@ const Dashboard = () => {
   return (
     <>
       {/* <AddCourse /> */}
-
-      <div className="p-8">
-        <div className="text-2xl">Your Dashboard</div>
-        <button
-          onClick={() => {
-            throw new Error("Manually triggered error");
-          }}
-        >
-          Throw Error
-        </button>
-        <Link to={"/addcourse"}>
-          <Button
+      <div className="flex flex-row">
+        <div className="w-full p-8">
+          <div className="text-2xl">Your Dashboard</div>
+          <button
             onClick={() => {
-              console.log("Adding Course");
+              throw new Error("Manually triggered error");
             }}
           >
-            Add a Course
-          </Button>
-        </Link>
-        <div className="flex flex-row flex-wrap">
-          <UserCoursesList userCourses={userCourses} />
-          {/* {userCourses?.map((x, key) => (
+            Throw Error
+          </button>
+          <Link to={"/addcourse"}>
+            <Button
+              onClick={() => {
+                console.log("Adding Course");
+              }}
+            >
+              Add a Course
+            </Button>
+          </Link>
+          <div className="flex flex-row flex-wrap">
+            <UserCoursesList userCourses={userCourses} />
+            {/* {userCourses?.map((x, key) => (
             <Link to={`/course/${x.userCourseId}`} key={key}>
               <div className="flex flex-col m-3">
                 <div className="h-full bg-lilac-300 text-sky-300 rounded-t-lg p-3">
@@ -62,6 +62,10 @@ const Dashboard = () => {
               </div>
             </Link>
           ))} */}
+          </div>
+        </div>
+        <div className="w-1/3 bg-gray-100 h-screen p-8">
+          <h1 className="text-2xl">Your Stats</h1>
         </div>
       </div>
     </>
