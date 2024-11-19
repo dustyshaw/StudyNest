@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import Button from "../Inputs/Button";
 import UserCoursesList from "../genericComponents/DashboardCourse";
+import BarChartComponent from "../Stats/StatsBoard";
 
 const Dashboard = () => {
   // Auth stuff
@@ -64,8 +65,9 @@ const Dashboard = () => {
           ))} */}
           </div>
         </div>
-        <div className="w-1/3 bg-gray-100 h-screen p-8">
+        <div className="w-1/3 bg-gray-100 h-screen">
           <h1 className="text-2xl">Your Stats</h1>
+          <BarChartComponent />
         </div>
       </div>
     </>

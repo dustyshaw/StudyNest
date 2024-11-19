@@ -14,6 +14,7 @@ import EditCourse from "./components/Course/EditCourse";
 import { ErrorBoundary } from "react-error-boundary";
 import Module from "./components/Module/Module";
 import ViewTask from "./components/Task/Task";
+import EditTask from "./components/Task/EditTask";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -39,6 +40,8 @@ function App() {
                 <Route path="/editcourse/:courseId" element={<EditCourse />} />
                 <Route path="/module/:unitId" element={<Module />} />
                 <Route path="/task/:taskId" element={<ViewTask />} />
+                <Route path="/task/edit/:taskId" element={<EditTask />} />
+                {/* <Route path="/dashboard/module/addTask/:courseUnitId" element={<AddTask />} /> */}
                 <Route path="*" element={<FallbackComponent />} />
               </Routes>
             </div>

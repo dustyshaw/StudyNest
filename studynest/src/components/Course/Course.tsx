@@ -9,14 +9,10 @@ const Course = () => {
   const { courseId: userCourseId } = useParams();
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
-  // console.log(userCourses)
   const [filteredUserCourse, setFilteredCourse] = useState<
     courseEnrollDto | undefined
   >();
 
-  console.log(userCourseId);
-
-  // useEffect to filter the user courses whenever userCourseId or userCourses change
   useEffect(() => {
     if (userCourses && userCourseId) {
       const foundCourse = userCourses.find(
@@ -29,8 +25,6 @@ const Course = () => {
   const { data: courseUnits } = CourseUnitQueries.useGetCourseById(
     Number(userCourseId)
   );
-
-  console.log("course units by course id: ", courseUnits);
 
   if (!userCourses) {
     return <div>Loading...</div>; // Loading state while data is being fetched
@@ -48,11 +42,12 @@ const Course = () => {
       {courseUnits && courseUnits.length <= 0 && <p>No modules yet...</p>}
       {courseUnits &&
         courseUnits.map((x, key) => (
-          <div key={key}>
-            <div className="bg-gray-100 rounded md:w-1/3">
+          <div key={key} className="mb-8">
+            <div className="bg-gray-100 rounded md:w-1/3 flex flex-row justify-between">
               <p className="text-xl p-3">
                 {x.unitid} - {x.unit.title}
               </p>
+              <Link to={`/dashboard/module/addTask/${x.id}`}><div className="bg-gray-400 text-white"><p>New task</p></div></Link>
             </div>
             {x.unit.unitTasks.map((unitTask, key) => (
               <Link to={`/task/${unitTask.taskid}`}>
