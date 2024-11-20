@@ -65,10 +65,11 @@ Total: 86 / 146 pts
 ---
 ## Nov 20 - Assignments
 - [ ] Add module assessment
-- [ ] Be able to update time spent on assignment
+- [x] Add a task to a module ( update last active day on user )
+- [ ] Be able to update time spent on task ( update last active day on user )
 - [ ] Add link to assessment flash cards
 - [ ] Link to assignment resources
-- [ ] Be able to assign personal score on assessment
+- [ ] Be able to assign personal score on assessment ( update last active day on user )
 
 **Points for this week**
 5 pts - Experience: 3 instances where elements re-order themselves on smaller screens     
