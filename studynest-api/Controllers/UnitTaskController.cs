@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using studynest_api.Services;
 
 namespace studynest_api.Controllers;
 
@@ -6,8 +7,11 @@ namespace studynest_api.Controllers;
 [Route("[controller]")]
 public class UnitTaskController : Controller
 {
-    public IActionResult Index()
+    private readonly IUnitTaskService unitTaskService;
+
+    public UnitTaskController(IUnitTaskService unitTaskService)
     {
-        return View();
+        this.unitTaskService = unitTaskService;
     }
+
 }

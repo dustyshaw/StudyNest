@@ -1,6 +1,6 @@
 ﻿namespace studynest_api.Services;
 
-public class UnitTaskService
+public class UnitTaskService : IUnitTaskService
 {
 
 }

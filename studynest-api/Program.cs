@@ -42,6 +42,7 @@ builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSingleton<IUnitService, UnitService>();
 builder.Services.AddSingleton<ICourseUnitService, CourseUnitService>();
 builder.Services.AddSingleton<ITaskService, TaskService>();
+builder.Services.AddSingleton<IUnitTaskService, UnitTaskService>();
 
 
 var app = builder.Build();
