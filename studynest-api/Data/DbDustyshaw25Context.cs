@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace studynest_api.Data2;
+namespace studynest_api.Data;
 
 public partial class DbDustyshaw25Context : DbContext
 {
@@ -21,7 +21,7 @@ public partial class DbDustyshaw25Context : DbContext
 
     public virtual DbSet<Courseunit> Courseunits { get; set; }
 
-    public virtual DbSet<StudyTask> Tasks { get; set; }
+    public virtual DbSet<Studytask> Studytasks { get; set; }
 
     public virtual DbSet<Unit> Units { get; set; }
 
@@ -90,17 +90,20 @@ public partial class DbDustyshaw25Context : DbContext
                 .HasConstraintName("courseunit_unitid_fkey");
         });
 
-        modelBuilder.Entity<StudyTask>(entity =>
+        modelBuilder.Entity<Studytask>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("task_pkey");
 
-            entity.ToTable("task", "studynestdb");
+            entity.ToTable("studytask", "studynestdb");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasDefaultValueSql("nextval('studynestdb.task_id_seq'::regclass)")
+                .HasColumnName("id");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Duedate).HasColumnName("duedate");
             entity.Property(e => e.Eventend).HasColumnName("eventend");
             entity.Property(e => e.Eventstart).HasColumnName("eventstart");
+            entity.Property(e => e.Iscomplete).HasColumnName("iscomplete");
             entity.Property(e => e.Title)
                 .HasMaxLength(30)
                 .HasColumnName("title");

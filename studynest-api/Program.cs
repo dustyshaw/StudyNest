@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using studynest_api.Data2;
+using studynest_api.Data;
 using studynest_api.Services;
 using System.Text.Json.Serialization;
 

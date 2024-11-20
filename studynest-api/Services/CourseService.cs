@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using studynest_api.CustomData.DTOs;
 using studynest_api.CustomData.Requests;
-using studynest_api.Data2;
+using studynest_api.Data;
 using System.Runtime.CompilerServices;
 
 

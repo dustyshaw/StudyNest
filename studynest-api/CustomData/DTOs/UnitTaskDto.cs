@@ -1,4 +1,4 @@
-﻿using studynest_api.Data2;
+﻿using studynest_api.Data;
 
 namespace studynest_api.CustomData.DTOs;
 
@@ -12,5 +12,5 @@ public class UnitTaskDto
 
     public int? Taskid { get; set; }
 
-    public virtual Task? Task { get; set; }
+    public virtual Studytask? Task { get; set; }
 }

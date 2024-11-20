@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studynest_api.Data2;
+namespace studynest_api.Data;
 
-public partial class StudyTask
+public partial class Studytask
 {
     public int Id { get; set; }
 
@@ -11,11 +11,13 @@ public partial class StudyTask
 
     public string? Description { get; set; }
 
-    public DateOnly? Eventstart { get; set; }
+    public DateTime? Eventstart { get; set; }
 
-    public DateOnly? Eventend { get; set; }
+    public DateTime? Eventend { get; set; }
 
-    public DateOnly? Duedate { get; set; }
+    public DateTime? Duedate { get; set; }
+
+    public bool? Iscomplete { get; set; }
 
     public virtual ICollection<UnitTask> UnitTasks { get; set; } = new List<UnitTask>();
 }

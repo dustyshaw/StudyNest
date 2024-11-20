@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using studynest_api.CustomData.DTOs;
 using studynest_api.CustomData.Requests;
-using studynest_api.Data2;
+using studynest_api.Data;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;

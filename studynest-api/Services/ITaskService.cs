@@ -1,9 +1,9 @@
-﻿using studynest_api.Data2;
+﻿using studynest_api.Data;
 
 namespace studynest_api.Services;
 
 public interface ITaskService
 {
-    public Task<StudyTask> GetTaskByTaskId(int taskId);
+    public Task<Studytask> GetTaskByTaskId(int taskId);
 
 }

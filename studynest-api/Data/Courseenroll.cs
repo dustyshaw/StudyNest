@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studynest_api.Data2;
+namespace studynest_api.Data;
 
 public partial class Courseenroll
 {

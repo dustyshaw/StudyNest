@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using studynest_api.Data2;
+using studynest_api.Data;
 using studynest_api.Services;
 
 namespace studynest_api.Controllers;
@@ -16,7 +16,7 @@ public class TaskController : Controller
     }
 
     [HttpGet("/task/gettaskbytaskid")]
-    public async Task<StudyTask> GetTaskByTaskId(int taskId)
+    public async Task<Studytask> GetTaskByTaskId(int taskId)
     {
         return await taskService.GetTaskByTaskId(taskId);
     }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using studynest_api.CustomData.DTOs;
-using studynest_api.Data2;
+using studynest_api.Data;
 
 namespace studynest_api.Services;
 
@@ -12,11 +11,11 @@ public class TaskService : ITaskService
         this.dbContextFactory = dbContextFactory;
     }
 
-    public async Task<StudyTask> GetTaskByTaskId(int taskId)
+    public async Task<Studytask> GetTaskByTaskId(int taskId)
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var task = await dbContext.Tasks.Where(x => x.Id == taskId).FirstOrDefaultAsync();
+        var task = await dbContext.Studytasks.Where(x => x.Id == taskId).FirstOrDefaultAsync();
 
         if (task is null)
         {
