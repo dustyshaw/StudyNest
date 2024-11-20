@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using studynest_api.CustomData.Requests;
 using studynest_api.Data;
 
 namespace studynest_api.Services;
@@ -23,5 +24,25 @@ public class TaskService : ITaskService
         }
 
         return task;
+    }
+
+    public async Task<Studytask> AddTask(AddTaskRequest request)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        Studytask newTask = new()
+        {
+            Title = request.Title,
+            Description = request.Description,
+            Eventstart = request.Eventstart,
+            Eventend = request.Eventend,
+            Duedate = request.Duedate,
+            Iscomplete = request.Iscomplete,
+        };
+
+        dbContext.Add(newTask);
+        await dbContext.SaveChangesAsync();
+
+        return newTask;
     }
 }

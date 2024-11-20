@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using studynest_api.CustomData.Requests;
 using studynest_api.Data;
 using studynest_api.Services;
 
@@ -19,5 +20,12 @@ public class TaskController : Controller
     public async Task<Studytask> GetTaskByTaskId(int taskId)
     {
         return await taskService.GetTaskByTaskId(taskId);
+    }
+
+
+    [HttpPost("/task/addtask")]
+    public async Task<Studytask> AddTask(AddTaskRequest request)
+    {
+        return await taskService.AddTask(request);
     }
 }

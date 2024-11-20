@@ -7,5 +7,6 @@ export interface Task {
     eventStart: Date,
     eventEnd: Date,
     dueDate: Date,
-    unitTasks: UnitTask
+    unitTasks: UnitTask,
+    isComplete: boolean,
 }
