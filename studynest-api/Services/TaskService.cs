@@ -43,6 +43,23 @@ public class TaskService : ITaskService
         dbContext.Add(newTask);
         await dbContext.SaveChangesAsync();
 
+        var task = await dbContext.Studytasks.Where(x => x.Equals(newTask)).FirstOrDefaultAsync();
+
+        if (task is null)
+        {
+            throw new Exception("failed to add task");
+        }
+
+        UnitTask newUnitTask = new()
+        {
+            Stackposition = 0,
+            Unitid = request.UnitId,
+            Taskid = task.Id
+        };
+
+        dbContext.Add(newUnitTask);
+        await dbContext.SaveChangesAsync();
+
         return newTask;
     }
 }

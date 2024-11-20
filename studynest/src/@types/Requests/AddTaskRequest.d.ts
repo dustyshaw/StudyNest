@@ -1,4 +1,5 @@
 export interface AddTaskRequest {
+    unitid: number,
     title: string,
     description: string,
     eventstart: Date,
