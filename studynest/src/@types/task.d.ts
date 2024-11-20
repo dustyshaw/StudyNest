@@ -4,9 +4,9 @@ export interface Task {
     id: number,
     title: string,
     description: string,
-    eventStart: Date,
-    eventEnd: Date,
-    dueDate: Date,
+    eventstart: Date,
+    eventend: Date,
+    duedate: Date,
     unitTasks: UnitTask,
-    isComplete: boolean,
+    iscomplete: boolean,
 }

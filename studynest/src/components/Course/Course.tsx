@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { courseEnrollDto } from "../../@types/Dtos/courseEnrollDto";
 import { Link } from "react-router-dom";
 import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
+import { PlusCircleIcon } from '@heroicons/react/24/solid'
+import formatDate from "../DateFormatter";
+
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
@@ -26,13 +29,16 @@ const Course = () => {
     Number(userCourseId)
   );
 
+  console.log(courseUnits)
+  console.log(courseUnits && courseUnits[0].unit.unitTasks[3].task.iscomplete)
+
   if (!userCourses) {
     return <div>Loading...</div>; // Loading state while data is being fetched
   }
 
   return (
     <div className="m-8">
-      <p className="mb-3">Dashboard / User Course</p>
+      <p className="mb-6">Dashboard / User Course</p>
       <h1 className="text-3xl">{filteredUserCourse?.course.title}</h1>
       <p className="text-xl text-gray-600 mb-8">
         {filteredUserCourse?.course?.description}
@@ -42,22 +48,27 @@ const Course = () => {
       {courseUnits && courseUnits.length <= 0 && <p>No modules yet...</p>}
       {courseUnits &&
         courseUnits.map((x, key) => (
-          <div key={key} className="mb-8">
-            <div className="bg-gray-100 rounded md:w-1/3 flex flex-row justify-between">
+          <div key={key} className="mb-8 md:w-1/2">
+            <div className="bg-gray-200 rounded-lg flex flex-row justify-between">
               <p className="text-xl p-3">
-                {x.unitid} - {x.unit.title}
+                {x.unit.title}
               </p>
-              <Link to={`/dashboard/module/addTask/${x.id}`}><div className="bg-gray-400 text-white"><p>New task</p></div></Link>
+              <Link to={`/dashboard/module/addTask/${x.id}`}>
+                <div className="">
+                  <PlusCircleIcon className="size-10 text-black m-3" />
+                </div>
+              </Link>
             </div>
             {x.unit.unitTasks.map((unitTask, key) => (
-              <Link to={`/task/${unitTask.taskid}`}>
-                <div key={key} className="px-3 border-b-2">
-                  {unitTask.task.title} -{" "}
-                  {unitTask.task.dueDate &&
-                    unitTask.task.dueDate.toDateString()}
+              <Link to={`/task/${unitTask.taskid}`} key={key}>
+                <div key={key} className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg ${unitTask.task.iscomplete ? "border-l-lime-400" : 'border-l-black'} my-2 ml-8`}>
+                  {unitTask.task.title} - {" "}
+                  {unitTask.task.duedate &&
+                  formatDate(unitTask.task.duedate)}
                 </div>
               </Link>
             ))}
+            {x.unit.unitTasks.length <= 0 && <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>}
           </div>
         ))}
     </div>
