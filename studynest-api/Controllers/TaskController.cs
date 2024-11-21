@@ -28,4 +28,10 @@ public class TaskController : Controller
     {
         return await taskService.AddTask(request);
     }
+
+    [HttpPatch("/task/updatetasktime")]
+    public async Task<Studytask> UpdateTaskTime(UpdateTaskTimeRequest request)
+    {
+        return await taskService.UpdateTaskTime(request);
+    }
 }

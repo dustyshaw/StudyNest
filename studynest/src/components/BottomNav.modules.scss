@@ -1,0 +1,10 @@
+.bottom-nav {
+    position: sticky;
+    bottom: 0;
+    background-color: rgb(25, 32, 63);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 4px;
+}

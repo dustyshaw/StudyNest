@@ -16,6 +16,7 @@ import Module from "./components/Module/Module";
 import ViewTask from "./components/Task/Task";
 import EditTask from "./components/Task/EditTask";
 import AddTask from "./components/Task/AddTask";
+import BottomNav from "./components/BottomNav";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -45,6 +46,9 @@ function App() {
                 <Route path="/dashboard/module/addTask/:courseUnitId" element={<AddTask />} />
                 <Route path="*" element={<FallbackComponent />} />
               </Routes>
+            </div>
+            <div className="md:hidden">
+              <BottomNav />
             </div>
           </ErrorBoundary>
         </BrowserRouter>

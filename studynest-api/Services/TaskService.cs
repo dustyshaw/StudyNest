@@ -62,4 +62,29 @@ public class TaskService : ITaskService
 
         return newTask;
     }
+
+    public async Task<Studytask> UpdateTaskTime(UpdateTaskTimeRequest request)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        var task = await dbContext.Studytasks.Where(x => x.Id == request.TaskId).FirstOrDefaultAsync();
+
+        if (task is null)
+        {
+            throw new ArgumentNullException(nameof(task));
+        }
+
+        if (task.Eventend == null)
+        {
+            task.Eventend = DateTime.Now;
+        }
+
+        task.Eventend.Value.AddHours(request.Hours);
+        task.Eventend.Value.AddMinutes(request.Minutes);
+
+        dbContext.Update(task);
+        await dbContext.SaveChangesAsync();
+
+        return task;
+    }
 }

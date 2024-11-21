@@ -2,11 +2,19 @@ import { useParams } from "react-router";
 import { TaskQueries } from "../../Queries/taskQueries";
 import Button from "../Inputs/Button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ViewTask = () => {
   const { taskId } = useParams();
 
   const { data: task } = TaskQueries.GetTasksByTaskIdQuery(Number(taskId));
+
+  const [hours, setHours] = useState(0); // Default to 0 hours
+  const [minutes, setMinutes] = useState(0); // Default to 0 minutes
+
+  const handleUpdateHours = () => {
+    
+  }
 
   return (
     <div className="bg-gray-200">
@@ -25,14 +33,25 @@ const ViewTask = () => {
               <div>
                 <form>
                   <p>Hours</p>
-                  <input type="number" className="rounded border border-gray-200 p-2" />
+                  <input
+                    type="number"
+                    value={hours}
+                    onChange={(e) => setHours(Number(e.target.value))}
+                    className="rounded border border-gray-200 p-2"
+                    min="0"
+                  />
                   <p>Minutes</p>
-                  <input type="number" />
+                  <input
+                    type="number"
+                    value={minutes}
+                    onChange={(e) => setMinutes(Number(e.target.value))}
+                    className="rounded border border-gray-200 p-2"
+                    min="0"
+                    max="59"
+                  />
                 </form>
                 <Button
-                  onClick={() => {
-                    console.log("Log Time");
-                  }}
+                  onClick={handleUpdateHours} // Call handleUpdateHours on button click
                 >
                   Log Hours
                 </Button>
