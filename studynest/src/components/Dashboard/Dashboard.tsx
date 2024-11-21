@@ -3,17 +3,23 @@ import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import Button from "../Inputs/Button";
 import UserCoursesList from "../genericComponents/DashboardCourse";
 import BarChartComponent from "../Stats/StatsBoard";
-import { useAuth } from "react-oidc-context";
-import { UserQueries } from "../../Queries/userQueries";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Dashboard = () => {
-    // Auth stuff
-    const { user: authuser } = useAuth();
-    const email = authuser?.profile.email ?? "";
-    const { data: user } = UserQueries.useGetUserByEmail(email);
+  // Auth stuff
+  // const { user: authuser } = useAuth();
+  // const email = authuser?.profile.email ?? "";
+  // const { data: user } = UserQueries.useGetUserByEmail(email);
+  const userContext = useContext(UserContext);
 
-  const { data: userCourses } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
+  console.log("User from context: ", userContext?.user)
+
+  const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
+    userContext?.user?.id ?? 0
+  );
+
+  console.log(userCourses)
 
   return (
     <>

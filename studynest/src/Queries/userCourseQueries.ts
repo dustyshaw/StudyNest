@@ -8,6 +8,7 @@ export const UserCourseQueries = {
     return useQuery({
       queryKey: ["usercourses"],
       queryFn: () => UserCourseService.GetAllUserCourses(userId),
+      enabled: !!userId
     });
   },
   useAddACourse: () => {

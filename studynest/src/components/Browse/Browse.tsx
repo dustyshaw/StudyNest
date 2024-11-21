@@ -7,8 +7,6 @@ const Browse = () => {
   const { data } = CourseQueries.useGetAllPublicCourses();
   const { mutateAsync } = UserCourseQueries.useAddACourse();
 
-
-  // TODO: make this the actual user
   const handleAddCourseEnroll = async (courseId: number) => {
     const newUserCourseRequest: AddCourseEnrollRequest = {
       courseId: courseId,
@@ -19,7 +17,6 @@ const Browse = () => {
 
   return (
     <div>
-      {/* <img src={starburst} /> */}
       <BrowseCourseList data={data} handleAddCourseEnroll={handleAddCourseEnroll} />
     </div>
   );

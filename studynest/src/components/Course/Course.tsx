@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { courseEnrollDto } from "../../@types/Dtos/courseEnrollDto";
 import { Link } from "react-router-dom";
 import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
-import { PlusCircleIcon } from '@heroicons/react/24/solid'
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import formatDate from "../DateFormatter";
 import { useAuth } from "react-oidc-context";
 import { UserQueries } from "../../Queries/userQueries";
@@ -12,14 +12,13 @@ import { UserQueries } from "../../Queries/userQueries";
 const Course = () => {
   const { courseId: userCourseId } = useParams();
 
-    // Auth stuff
-    const { user: authuser } = useAuth();
-    const email = authuser?.profile.email ?? "";
-    const { data: user } = UserQueries.useGetUserByEmail(email);
-  // TODO get user from auth
-  
-  const { data: userCourses } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
+  const { user: authuser } = useAuth();
+  const email = authuser?.profile.email ?? "";
+  const { data: user } = UserQueries.useGetUserByEmail(email);
+
+  const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
+    user?.id ?? 0
+  );
   const [filteredUserCourse, setFilteredCourse] = useState<
     courseEnrollDto | undefined
   >();
@@ -55,9 +54,7 @@ const Course = () => {
         courseUnits.map((x, key) => (
           <div key={key} className="mb-8 md:w-1/2">
             <div className="bg-gray-200 rounded-lg flex flex-row justify-between">
-              <p className="text-xl p-4">
-                {x.unit.title}
-              </p>
+              <p className="text-xl p-4">{x.unit.title}</p>
               <Link to={`/dashboard/module/addTask/${x.id}`}>
                 <div className="">
                   <PlusCircleIcon className="size-10 text-black m-3" />
@@ -66,14 +63,22 @@ const Course = () => {
             </div>
             {x.unit.unitTasks.map((unitTask, key) => (
               <Link to={`/task/${unitTask.taskid}`} key={key}>
-                <div key={key} className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg ${unitTask.task.iscomplete ? "border-l-lime-400" : 'border-l-black'} my-2 ml-8`}>
-                  {unitTask.task.title} - {" "}
-                  {unitTask.task.duedate &&
-                  formatDate(unitTask.task.duedate)}
+                <div
+                  key={key}
+                  className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg ${
+                    unitTask.task.iscomplete
+                      ? "border-l-lime-400"
+                      : "border-l-black"
+                  } my-2 ml-8`}
+                >
+                  {unitTask.task.title} -{" "}
+                  {unitTask.task.duedate && formatDate(unitTask.task.duedate)}
                 </div>
               </Link>
             ))}
-            {x.unit.unitTasks.length <= 0 && <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>}
+            {x.unit.unitTasks.length <= 0 && (
+              <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
+            )}
           </div>
         ))}
     </div>

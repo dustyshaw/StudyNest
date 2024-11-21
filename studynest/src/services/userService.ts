@@ -20,8 +20,6 @@ export const UserService = {
     }
   },
   GetUserByEmail: async (email: string) => {
-    console.log("---------------")
-    console.log("Useremail in service: ", email)
     try {
       const response = await axios.post<UserAccount>(
         "https://localhost:7021/user/getByEmail",
