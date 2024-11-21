@@ -7,9 +7,10 @@ import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
 import { PlusCircleIcon } from '@heroicons/react/24/solid'
 import formatDate from "../DateFormatter";
 
-
 const Course = () => {
   const { courseId: userCourseId } = useParams();
+
+  // TODO get user from auth
   const { data: userCourses } =
     UserCourseQueries.useGetAllUserCoursesByUserId(6);
   const [filteredUserCourse, setFilteredCourse] = useState<
@@ -29,9 +30,6 @@ const Course = () => {
     Number(userCourseId)
   );
 
-  console.log(courseUnits)
-  console.log(courseUnits && courseUnits[0].unit.unitTasks[3].task.iscomplete)
-
   if (!userCourses) {
     return <div>Loading...</div>; // Loading state while data is being fetched
   }
@@ -39,7 +37,7 @@ const Course = () => {
   return (
     <div className="m-8">
       <p className="mb-6">Dashboard / User Course</p>
-      <h1 className="text-3xl">{filteredUserCourse?.course.title}</h1>
+      <h1 className="text-3xl mb-4">{filteredUserCourse?.course.title}</h1>
       <p className="text-xl text-gray-600 mb-8">
         {filteredUserCourse?.course?.description}
       </p>
@@ -50,7 +48,7 @@ const Course = () => {
         courseUnits.map((x, key) => (
           <div key={key} className="mb-8 md:w-1/2">
             <div className="bg-gray-200 rounded-lg flex flex-row justify-between">
-              <p className="text-xl p-3">
+              <p className="text-xl p-4">
                 {x.unit.title}
               </p>
               <Link to={`/dashboard/module/addTask/${x.id}`}>
