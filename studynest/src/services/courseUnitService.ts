@@ -4,7 +4,6 @@ import { CourseUnit } from "../@types/courseUnit";
 
 export const CourseUnitService = {
     GetCourseunitsByCourseId: async (courseId: number) => {
-        // console.log("courseId2: ", courseId)
       try {
         const response = await axios.get<CourseUnit[]>(
           "https://localhost:7021/courseunit/getallbycourseid",
@@ -14,7 +13,6 @@ export const CourseUnitService = {
             },
           }
         );
-        // console.log("response.data:", response.data)
         return response.data;
       } catch {
         console.error("Couldn't get course units by course id");

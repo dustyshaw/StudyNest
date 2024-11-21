@@ -82,8 +82,21 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var course = await dbContext.Courses.Where(x => x.Id == editCourseRequest.CourseId)
-            .FirstOrDefaultAsync() ?? throw new Exception("Could not find course under change.");
+        var userCourse = await dbContext.Courseenrolls.Where(x => x.Id == editCourseRequest.CourseId).FirstOrDefaultAsync();
+        if (userCourse is null)
+        {
+            throw new Exception($"No user course found with the given id: {editCourseRequest.CourseId}");
+
+        }
+
+
+        var course = await dbContext.Courses.Where(x => x.Id == userCourse.Courseid)
+            .FirstOrDefaultAsync();
+
+        if (course == null)
+        {
+            throw new Exception($"No course found with the given id: {course?.Id}");
+        }
         
         course.Title = editCourseRequest.Title;
         course.Description = editCourseRequest.Description;

@@ -25,6 +25,7 @@ export const CourseService = {
     }
   },
   GetCourseById: async (courseId: number) => {
+    console.log("HHHHAHAA: course id: ", courseId)
     try {
       const response = await axios.get<Course>(
         "https://localhost:7021/coursebyid",
@@ -56,11 +57,12 @@ export const CourseService = {
       console.error("Couldn't add course.");
     }
   },
-  EditCourse: async(newCourse: EditCourseRequest) => {
+  EditCourse: async(editCourseRequest: EditCourseRequest) => {
+    console.log(editCourseRequest)
     try {
       const response = await axios.patch<Course>(
         "https://localhost:7021/course/editCourse",
-        newCourse,
+        editCourseRequest,
         {
           headers: {
             "Content-Type": "application/json",

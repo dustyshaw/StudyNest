@@ -16,7 +16,6 @@ export const UserContextProvidor: FC<{ children: ReactNode }> = ({
     error,
   } = UserQueries.useGetUserByEmail(email ?? "");
 
-  //console.log("const { data: userdata, isLoading, error } = useQuery({ => ", userdata)
 
   return (
     <UserContext.Provider

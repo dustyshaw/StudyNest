@@ -13,13 +13,11 @@ const Dashboard = () => {
   // const { data: user } = UserQueries.useGetUserByEmail(email);
   const userContext = useContext(UserContext);
 
-  console.log("User from context: ", userContext?.user)
 
   const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
     userContext?.user?.id ?? 0
   );
 
-  console.log(userCourses)
 
   return (
     <>

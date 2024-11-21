@@ -7,7 +7,6 @@ import { useParams } from 'react-router';
 
 const AddTask = () => {
     const { courseUnitId } = useParams();
-    console.log("BLAHHHHH", courseUnitId)
     const [formData, setFormData] = React.useState<Partial<AddTaskRequest>>({});
     const { mutateAsync: addTaskAsync } = TaskQueries.useAddTask();
 
