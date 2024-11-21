@@ -25,6 +25,14 @@ const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 function App() {
   const { user: authuser } = useAuth();
 
+  if (!authuser) {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <LandingPage />
+      </QueryClientProvider>
+    );
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* <UserContextProvidor> */}
@@ -36,7 +44,6 @@ function App() {
             <TopNav />
           </>
         )}
-        {!authuser && <LandingPage />}
         <ErrorBoundary
           FallbackComponent={FallbackComponent}
           onReset={() => {

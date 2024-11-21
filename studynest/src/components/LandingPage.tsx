@@ -1,11 +1,7 @@
 import LoginButton from '../LoginBtn'
-import { CourseQueries } from '../Queries/courseQueries';
 
 const LandingPage = () => {
 
-    const { data } = CourseQueries.useGetAllCourses();
-
-    // console.log(data)
   return (
     <>
       <div className="flex justify-end w-full">
@@ -16,9 +12,6 @@ const LandingPage = () => {
           <div className="text-3xl mt-8">StudyNest</div>
           <p className="text-xl mb-8">Create your own study plans</p>
         </div>
-      </div>
-      <div>
-        {data?.map((x, key) => (<p key={key}>{x.title}</p>))}
       </div>
       <div className="bg-slate-800 text-white flex justify-center">
         <div className="w-full" style={{ maxWidth: "1200px" }}>
