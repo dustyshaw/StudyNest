@@ -64,11 +64,8 @@ Total: 76 / 146 pts
 Total: 86 / 146 pts
 ---
 ## Nov 20 - Assignments
-- [ ] Add module assessment
 - [x] Add a task to a module ( update last active day on user )
-- [ ] Be able to update time spent on task ( update last active day on user )
-- [ ] Add link to assessment flash cards
-- [ ] Link to assignment resources
+- [x] Link to assignment resources
 - [ ] Be able to assign personal score on assessment ( update last active day on user )
 
 **Points for this week**
@@ -76,6 +73,8 @@ Total: 86 / 146 pts
 5 pts - Experience: all experiences mobile friendly  
 --- 
 ## Nov 23 - Steaks & Progress
+- [ ] Be able to update time spent on task ( update last active day on user )
+- [ ] Add module assessment
 - [ ] Update user streak
 - [ ] Update module progress based on assignment
 - [ ] Ability to complete an assignment
