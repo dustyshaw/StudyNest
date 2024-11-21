@@ -17,41 +17,55 @@ import ViewTask from "./components/Task/Task";
 import EditTask from "./components/Task/EditTask";
 import AddTask from "./components/Task/AddTask";
 import BottomNav from "./components/BottomNav";
+import { useAuth } from "react-oidc-context";
+import LandingPage from "./components/LandingPage";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
+  const { user: authuser } = useAuth();
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* <UserContextProvidor> */}
-        <Toaster />
-        <BrowserRouter>
-          <LeftNav />
-          <TopNav />
-          <ErrorBoundary FallbackComponent={FallbackComponent}
-            onReset={() => {
-              // reset the state of your app here
-            }}
-            resetKeys={['someKey']}>
-            <div className="sm:ml-24">
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/browse" element={<Browse />} />
-                <Route path="/course/:courseId" element={<Course />} />
-                <Route path="/addcourse" element={<AddCourse />} />
-                <Route path="/editcourse/:courseId" element={<EditCourse />} />
-                <Route path="/module/:unitId" element={<Module />} />
-                <Route path="/task/:taskId" element={<ViewTask />} />
-                <Route path="/task/edit/:taskId" element={<EditTask />} />
-                <Route path="/dashboard/module/addTask/:courseUnitId" element={<AddTask />} />
-                <Route path="*" element={<FallbackComponent />} />
-              </Routes>
-            </div>
-            <div className="md:hidden">
-              <BottomNav />
-            </div>
-          </ErrorBoundary>
-        </BrowserRouter>
+      <Toaster />
+      <BrowserRouter>
+        {authuser && (
+          <>
+            <LeftNav />
+            <TopNav />
+          </>
+        )}
+        {!authuser && <LandingPage />}
+        <ErrorBoundary
+          FallbackComponent={FallbackComponent}
+          onReset={() => {
+            // reset the state of your app here
+          }}
+          resetKeys={["someKey"]}
+        >
+          <div className="sm:ml-24">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/browse" element={<Browse />} />
+              <Route path="/course/:courseId" element={<Course />} />
+              <Route path="/addcourse" element={<AddCourse />} />
+              <Route path="/editcourse/:courseId" element={<EditCourse />} />
+              <Route path="/module/:unitId" element={<Module />} />
+              <Route path="/task/:taskId" element={<ViewTask />} />
+              <Route path="/task/edit/:taskId" element={<EditTask />} />
+              <Route
+                path="/dashboard/module/addTask/:courseUnitId"
+                element={<AddTask />}
+              />
+              <Route path="*" element={<FallbackComponent />} />
+            </Routes>
+          </div>
+          <div className="md:hidden">
+            <BottomNav />
+          </div>
+        </ErrorBoundary>
+      </BrowserRouter>
       {/* </UserContextProvidor> */}
     </QueryClientProvider>
   );

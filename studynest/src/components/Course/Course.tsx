@@ -6,13 +6,20 @@ import { Link } from "react-router-dom";
 import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
 import { PlusCircleIcon } from '@heroicons/react/24/solid'
 import formatDate from "../DateFormatter";
+import { useAuth } from "react-oidc-context";
+import { UserQueries } from "../../Queries/userQueries";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
 
+    // Auth stuff
+    const { user: authuser } = useAuth();
+    const email = authuser?.profile.email ?? "";
+    const { data: user } = UserQueries.useGetUserByEmail(email);
   // TODO get user from auth
+  
   const { data: userCourses } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(6);
+    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
   const [filteredUserCourse, setFilteredCourse] = useState<
     courseEnrollDto | undefined
   >();

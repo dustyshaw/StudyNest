@@ -3,25 +3,17 @@ import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import Button from "../Inputs/Button";
 import UserCoursesList from "../genericComponents/DashboardCourse";
 import BarChartComponent from "../Stats/StatsBoard";
+import { useAuth } from "react-oidc-context";
+import { UserQueries } from "../../Queries/userQueries";
 
 const Dashboard = () => {
-  // Auth stuff
-  // const { user: authuser, isAuthenticated } = useAuth();
+    // Auth stuff
+    const { user: authuser } = useAuth();
+    const email = authuser?.profile.email ?? "";
+    const { data: user } = UserQueries.useGetUserByEmail(email);
 
-  // if ((authuser == undefined || null) || !isAuthenticated) {
-  //   return (<p className="text-2xl text-red-500">You're not logged in</p>)
-  // }
-
-  // const email = authuser.profile.email ?? "";
-  // const { data: userFromQuery, refetch} = UserQueries.useGetUserByEmail("dusty.shaw@students.snow.edu");
-
-  // // const userFromQuery = UserService.GetUserByEmail(email);
-  // console.log("user from query => ", userFromQuery)
-  // END Auth stuff
-
-  // TODO get actual user id from database
   const { data: userCourses } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(6);
+    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
 
   return (
     <>

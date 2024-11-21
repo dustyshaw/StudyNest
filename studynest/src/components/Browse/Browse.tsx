@@ -1,7 +1,6 @@
 import { AddCourseEnrollRequest } from "../../@types/Requests/AddCourseEnrollRequest";
 import { CourseQueries } from "../../Queries/courseQueries";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import starburst from "../../assets/starburst.svg"
 import BrowseCourseList from "../genericComponents/BrowseCourse";
 
 const Browse = () => {
