@@ -2,6 +2,7 @@ import axios from "axios";
 import { Task } from "../@types/task";
 import { AddTaskRequest } from "../@types/Requests/AddTaskRequest";
 import { UpdateTaskRequest } from "../@types/Requests/UpdateTaskRequest";
+import { UpdateTaskTimeRequest } from "../@types/Requests/UpdateTaskTimeRequest";
 
 export const TaskService = {
   GetTaskByTaskId: async (taskId: number) => {
@@ -35,8 +36,23 @@ export const TaskService = {
       console.error("Failed to add Task");
     }
   },
+  UpdateTaskTime: async (request: UpdateTaskTimeRequest) => {
+    try {
+      const response = await axios.patch<Task>(
+        "https://localhost:7021/task/updatetasktime",
+        request,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch {
+      console.error("Failed to update Task");
+    }
+  },
   UpdateTask: async (request: UpdateTaskRequest) => {
-    console.log("RAHH")
     try {
       const response = await axios.patch<Task>(
         "https://localhost:7021/task/updatetask",

@@ -9,4 +9,6 @@ export interface Task {
     duedate: Date,
     unitTasks: UnitTask,
     iscomplete: boolean,
+    hours: number,
+    minutes: number,
 }

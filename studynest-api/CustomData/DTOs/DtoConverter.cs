@@ -32,4 +32,27 @@ public static class DtoConverter
 
         return dto;
     }
+
+    public static StudytaskDto ToDto(this Studytask task)
+    {
+        var timeDifference = task.Eventend.Value - task.Eventstart.Value;
+        // Get the total hours and minutes from the TimeSpan
+        int hoursSpent = (int)timeDifference.TotalHours;
+        int minutesSpent = (int)timeDifference.TotalMinutes % 60;
+
+        StudytaskDto dto = new()
+        {
+            Id=task.Id,
+            Description=task.Description,
+            Title=task.Title,
+            Eventend=task.Eventend,
+            Eventstart=task.Eventstart,
+            Duedate=task.Duedate,
+            UnitTasks=task.UnitTasks,
+            Hours=hoursSpent,
+            Minutes=minutesSpent,
+        };
+        
+        return dto;
+    }
 }

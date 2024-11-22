@@ -1,14 +1,15 @@
-﻿using studynest_api.CustomData.Requests;
+﻿using studynest_api.CustomData.DTOs;
+using studynest_api.CustomData.Requests;
 using studynest_api.Data;
 
 namespace studynest_api.Services;
 
 public interface ITaskService
 {
-    public Task<Studytask> GetTaskByTaskId(int taskId);
-    public Task<Studytask> AddTask(AddTaskRequest request);
-    public Task<Studytask> UpdateTaskTime(UpdateTaskTimeRequest request);
-    public Task<Studytask> UpdateTask(UpdateTaskRequest request);
+    public Task<StudytaskDto> GetTaskByTaskId(int taskId);
+    public Task<StudytaskDto> AddTask(AddTaskRequest request);
+    public Task<StudytaskDto> UpdateTaskTime(UpdateTaskTimeRequest request);
+    public Task<StudytaskDto> UpdateTask(UpdateTaskRequest request);
 
 
 }
