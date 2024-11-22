@@ -25,7 +25,6 @@ export const CourseService = {
     }
   },
   GetCourseById: async (courseId: number) => {
-    console.log("HHHHAHAA: course id: ", courseId)
     try {
       const response = await axios.get<Course>(
         "https://localhost:7021/coursebyid",

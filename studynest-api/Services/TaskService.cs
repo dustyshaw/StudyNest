@@ -87,4 +87,25 @@ public class TaskService : ITaskService
 
         return task;
     }
+
+    public async Task<Studytask> UpdateTask(UpdateTaskRequest request)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+
+        var task = await dbContext.Studytasks.Where(x => x.Id == request.TaskId).FirstOrDefaultAsync();
+
+        if (task is null)
+        {
+            throw new ArgumentNullException(nameof(task));
+        }
+
+        task.Description = request.Description;
+        task.Title = request.Title;
+        task.Duedate = request.Duedate;
+
+        dbContext.Update(task);
+        await dbContext.SaveChangesAsync();
+
+        return task;
+    }
 }

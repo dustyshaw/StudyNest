@@ -4,6 +4,8 @@ import Button from "../Inputs/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import formatDate from "../DateFormatter";
+import './DatePicker.modules.css';
+
 
 const ViewTask = () => {
   const { taskId } = useParams();

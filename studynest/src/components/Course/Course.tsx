@@ -42,7 +42,7 @@ const Course = () => {
 
   return (
     <div className="m-8">
-      <p className="mb-6">Dashboard / User Course</p>
+      <p className="mb-6">Dashboard / {filteredUserCourse?.course.title}</p>
       <h1 className="text-3xl mb-4">{filteredUserCourse?.course.title}</h1>
       <p className="text-xl text-gray-600 mb-8">
         {filteredUserCourse?.course?.description}

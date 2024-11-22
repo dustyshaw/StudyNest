@@ -8,5 +8,7 @@ public interface ITaskService
     public Task<Studytask> GetTaskByTaskId(int taskId);
     public Task<Studytask> AddTask(AddTaskRequest request);
     public Task<Studytask> UpdateTaskTime(UpdateTaskTimeRequest request);
+    public Task<Studytask> UpdateTask(UpdateTaskRequest request);
+
 
 }

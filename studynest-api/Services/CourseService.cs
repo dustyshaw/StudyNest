@@ -2,8 +2,6 @@
 using studynest_api.CustomData.DTOs;
 using studynest_api.CustomData.Requests;
 using studynest_api.Data;
-using System.Runtime.CompilerServices;
-
 
 namespace studynest_api.Services;
 
@@ -20,7 +18,7 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
-        var courses = await dbContext.Courses.Include(x => x.Courseunits).ThenInclude(x => x.Unit).ToListAsync();
+        var courses = await dbContext.Courses.Where(x => x.Ispublic == true).Include(x => x.Courseunits).ThenInclude(x => x.Unit).ToListAsync();
 
         if (courses is null)
         {
@@ -89,9 +87,7 @@ public class CourseService : ICourseService
 
         }
 
-
-        var course = await dbContext.Courses.Where(x => x.Id == userCourse.Courseid)
-            .FirstOrDefaultAsync();
+        var course = await dbContext.Courses.Where(x => x.Id == userCourse.Courseid).FirstOrDefaultAsync();
 
         if (course == null)
         {

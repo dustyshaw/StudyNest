@@ -8,7 +8,6 @@ import Button from "../Inputs/Button";
 
 const EditCourse = () => {
   const { courseId } = useParams();
-  console.log("JJJJJJJJJJJJJJJJJ ", courseId);
   const { data: course } = CourseQueries.useGetCourseById(Number(courseId));
   const [formData, setFormData] = React.useState<Partial<Course>>({});
   const { mutateAsync: editCourseAsync } = CourseQueries.useEditCourse();
@@ -29,7 +28,6 @@ const EditCourse = () => {
   ) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("course", course);
 
     if (!course) {
       throw new Error("No course found");

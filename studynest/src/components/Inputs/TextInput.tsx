@@ -6,6 +6,7 @@ interface TextInputProps {
   error: string;
   required: boolean;
   id: string;
+  defaultValue: string; // Default empty string if no defaultValue is passed
   onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void; // Update onChange type
 }
 
@@ -15,10 +16,11 @@ const TextInput: React.FC<TextInputProps> = ({
   error,
   required,
   id,
+  defaultValue,
   onChange,
   ...otherProps
 }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
   const [isTouched, setIsTouched] = useState(false);
   const [isEmpty, setIsEmpty] = useState(true);
 
