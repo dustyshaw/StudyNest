@@ -8,6 +8,7 @@ import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import formatDate from "../DateFormatter";
 import { useAuth } from "react-oidc-context";
 import { UserQueries } from "../../Queries/userQueries";
+import { CheckCircleIcon } from "@heroicons/react/16/solid";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
@@ -67,13 +68,13 @@ const Course = () => {
               <Link to={`/task/${unitTask.taskid}`} key={key}>
                 <div
                   key={key}
-                  className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg ${
+                  className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg flex flex-row ${
                     unitTask.task.iscomplete
-                      ? "border-l-lime-400 text-gray-400"
+                      ? "border-l-lime-400 text-gray-600"
                       : "border-l-black"
                   } my-2 ml-8`}
                 >
-                  {unitTask.task?.iscomplete ? "Complete " : "Incomplete "}
+                  {unitTask.task?.iscomplete ? <CheckCircleIcon className="w-6 me-2 text-lime-600" /> : ""}
                   {unitTask.task.title} -{" "}
                   {unitTask.task.duedate && formatDate(unitTask.task.duedate)}
                 </div>
