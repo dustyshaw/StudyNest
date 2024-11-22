@@ -2,7 +2,7 @@ import React from "react";
 import { AddTaskRequest } from "../../@types/Requests/AddTaskRequest";
 import { TaskQueries } from "../../Queries/taskQueries";
 import TextInput from "../Inputs/TextInput";
-import Button from "../Inputs/Button";
+import Button from "../genericComponents/Button";
 import { useParams } from "react-router";
 
 const AddTask = () => {

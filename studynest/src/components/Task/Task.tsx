@@ -1,10 +1,10 @@
 import { useParams } from "react-router";
 import { TaskQueries } from "../../Queries/taskQueries";
-import Button from "../Inputs/Button";
 import { Link } from "react-router-dom";
 import formatDate from "../DateFormatter";
 import './DatePicker.modules.css';
 import LogHours from "./LogHours";
+import SecondaryBtn from "../genericComponents/SecondaryBtn";
 
 
 const ViewTask = () => {
@@ -31,13 +31,9 @@ const ViewTask = () => {
           </div>
         </div>
         <Link to={`/task/edit/${taskId}`}>
-          <Button
-            onClick={() => {
-              console.log(true);
-            }}
-          >
+          <SecondaryBtn>
             Edit Task
-          </Button>
+          </SecondaryBtn>
         </Link>
       </div>
     </div>

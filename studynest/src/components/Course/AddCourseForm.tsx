@@ -1,7 +1,7 @@
 import React from "react";
 import { AddCourseRequest } from "../../@types/Requests/AddCourseRequest";
 import TextInput from "../Inputs/TextInput";
-import Button from "../Inputs/Button";
+import Button from "../genericComponents/Button";
 import { CourseQueries } from "../../Queries/courseQueries";
 
 const AddCourseForm = () => {

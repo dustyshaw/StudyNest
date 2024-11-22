@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import Button from "../Inputs/Button";
+import Button from "../genericComponents/Button";
 import UserCoursesList from "../genericComponents/DashboardCourse";
 import BarChartComponent from "../Stats/StatsBoard";
 import { useContext } from "react";

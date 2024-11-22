@@ -7,6 +7,11 @@ namespace studynest_api.Services;
 public class UserService : IUserService
 {
     private readonly IDbContextFactory<DbDustyshaw25Context> dbContextFactory;
+
+    public UserService()
+    {
+    }
+
     public UserService(IDbContextFactory<DbDustyshaw25Context> dbContextFactory)
     {
         this.dbContextFactory = dbContextFactory;
@@ -49,5 +54,28 @@ public class UserService : IUserService
         }
 
         return user;
+    }
+
+    public async Task<int> UpdateUserStreak(int userId)
+    {
+        using var context = dbContextFactory.CreateDbContext();
+
+        var user = await context.Useraccounts.Where(x => x.Id == userId).FirstOrDefaultAsync();
+
+        if (user == null)
+        {
+            return 0;
+        }
+
+        var yesterday = DateOnly.FromDateTime(DateTime.Today.AddDays(-1));
+
+        if (user.Lastactivedate == yesterday)
+        {
+            user.Streak = (user.Streak ?? 0) + 1;
+            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today); 
+            await context.SaveChangesAsync();
+        }
+
+        return user.Streak ?? 0;
     }
 }

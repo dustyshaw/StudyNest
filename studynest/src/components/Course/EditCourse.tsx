@@ -4,7 +4,7 @@ import TextInput from "../Inputs/TextInput";
 import React, { useEffect } from "react";
 import { Course } from "../../@types/course";
 import { EditCourseRequest } from "../../@types/Requests/EditCourseRequest";
-import Button from "../Inputs/Button";
+import Button from "../genericComponents/Button";
 
 const EditCourse = () => {
   const { courseId } = useParams();

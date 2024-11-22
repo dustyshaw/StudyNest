@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
 import { TaskQueries } from "../../Queries/taskQueries";
 import TextInput from "../Inputs/TextInput";
-import Button from "../Inputs/Button";
 import React, { useEffect, useState } from "react";
 import { UpdateTaskRequest } from "../../@types/Requests/UpdateTaskRequest";
+import SecondaryBtn from "../genericComponents/SecondaryBtn";
 
 const EditTask = () => {
   const { taskId } = useParams();
@@ -91,9 +91,9 @@ const EditTask = () => {
             onChange={handleForm}
           />
         </div>
-        <Button onClick={handleSubmission}>
+        <SecondaryBtn onClick={handleSubmission}>
           <p>Edit Task</p>
-        </Button>
+        </SecondaryBtn>
       </form>
     </div>
   );
