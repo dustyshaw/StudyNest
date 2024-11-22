@@ -27,4 +27,10 @@ public class UserController : Controller
     {
         return await userService.GetUserByEmail(email);
     }
+
+    [HttpPost("/user/updatestreak")]
+    public async Task<int> UpdateUserStreak([FromBody] string email)
+    {
+        return await userService.UpdateUserStreak(email);
+    }
 }

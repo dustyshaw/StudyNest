@@ -56,11 +56,11 @@ public class UserService : IUserService
         return user;
     }
 
-    public async Task<int> UpdateUserStreak(int userId)
+    public async Task<int> UpdateUserStreak(string email)
     {
         using var context = dbContextFactory.CreateDbContext();
 
-        var user = await context.Useraccounts.Where(x => x.Id == userId).FirstOrDefaultAsync();
+        var user = await context.Useraccounts.Where(x => x.Email == email).FirstOrDefaultAsync();
 
         if (user == null)
         {
@@ -69,10 +69,17 @@ public class UserService : IUserService
 
         var yesterday = DateOnly.FromDateTime(DateTime.Today.AddDays(-1));
 
+        if (user.Lastactivedate == null)
+        {
+            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
+            user.Streak = (user.Streak ?? 0) + 1;
+            await context.SaveChangesAsync();
+        }
+
         if (user.Lastactivedate == yesterday)
         {
             user.Streak = (user.Streak ?? 0) + 1;
-            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today); 
+            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
             await context.SaveChangesAsync();
         }
 

@@ -2,18 +2,12 @@ import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import Button from "../genericComponents/Button";
 import UserCoursesList from "../genericComponents/DashboardCourse";
-import BarChartComponent from "../Stats/StatsBoard";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import Stats from "../Stats/Stats";
 
 const Dashboard = () => {
-  // Auth stuff
-  // const { user: authuser } = useAuth();
-  // const email = authuser?.profile.email ?? "";
-  // const { data: user } = UserQueries.useGetUserByEmail(email);
   const userContext = useContext(UserContext);
-
-
   const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
     userContext?.user?.id ?? 0
   );
@@ -39,7 +33,9 @@ const Dashboard = () => {
         </div>
         <div className="md:w-1/3 w-full bg-gray-100 md:h-screen md:order-2 order-1">
           <h1 className="text-2xl">Your Stats</h1>
-          <BarChartComponent />
+          {userContext?.user &&
+            <Stats user={userContext?.user} />
+          }
         </div>
       </div>
     </>

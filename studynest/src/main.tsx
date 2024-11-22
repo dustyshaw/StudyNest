@@ -16,6 +16,7 @@ const oidcConfig: AuthProviderProps = {
       authId: user?.id_token ?? ""
     }
     UserService.AddNewUser(request);
+    UserService.UpdateUserStreak(user?.profile.email ?? "");
     // console.log("USER TOKEN ----------", user?.id_token);
     // console.log("USERNAME", user?.profile.name)
     

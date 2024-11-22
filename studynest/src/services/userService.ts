@@ -34,5 +34,21 @@ export const UserService = {
     } catch {
       console.error("Couldn't find user.");
     }
+  },
+  UpdateUserStreak: async (email: string) => {
+    try {
+      const response = await axios.post<number>(
+        "https://localhost:7021/user/updatestreak",
+        email,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch {
+      console.error("Couldn't find user.");
+    }
   }
 }
