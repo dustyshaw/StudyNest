@@ -40,6 +40,8 @@ const Course = () => {
     return <div>Loading...</div>; // Loading state while data is being fetched
   }
 
+  console.log(courseUnits)
+
   return (
     <div className="m-8">
       <p className="mb-6">Dashboard / {filteredUserCourse?.course.title}</p>
@@ -67,10 +69,11 @@ const Course = () => {
                   key={key}
                   className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg ${
                     unitTask.task.iscomplete
-                      ? "border-l-lime-400"
+                      ? "border-l-lime-400 text-gray-400"
                       : "border-l-black"
                   } my-2 ml-8`}
                 >
+                  {unitTask.task?.iscomplete ? "Complete " : "Incomplete "}
                   {unitTask.task.title} -{" "}
                   {unitTask.task.duedate && formatDate(unitTask.task.duedate)}
                 </div>
