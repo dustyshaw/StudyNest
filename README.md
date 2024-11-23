@@ -73,7 +73,7 @@ Total: 86 / 146 pts
 --- 
 ## Nov 23 - Steaks & Progress
 - [x] Be able to update time spent on task ( update last active day on user )
-- [ ] Add module assessment
+- [x] Add module assignment
 - [x] Update user streak
 - [ ] Update module progress based on assignment
 - [ ] Ability to complete an assignment
