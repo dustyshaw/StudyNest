@@ -66,16 +66,15 @@ Total: 86 / 146 pts
 ## Nov 20 - Assignments
 - [x] Add a task to a module ( update last active day on user )
 - [x] Link to assignment resources
-- [ ] Be able to assign personal score on assessment ( update last active day on user )
 
 **Points for this week**
 5 pts - Experience: 3 instances where elements re-order themselves on smaller screens     
 5 pts - Experience: all experiences mobile friendly  
 --- 
 ## Nov 23 - Steaks & Progress
-- [ ] Be able to update time spent on task ( update last active day on user )
+- [x] Be able to update time spent on task ( update last active day on user )
 - [ ] Add module assessment
-- [ ] Update user streak
+- [x] Update user streak
 - [ ] Update module progress based on assignment
 - [ ] Ability to complete an assignment
 - [ ] Order assignments based on completion
