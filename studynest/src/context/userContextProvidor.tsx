@@ -8,13 +8,14 @@ export const UserContextProvidor: FC<{ children: ReactNode }> = ({
 }) => {
   const authuser = useAuth();
 
-  const email = authuser.user?.profile.email ?? "";
+  // TODO change this back to the right thing
+  const email = authuser.user?.profile.email ?? "dusty.shaw@students.snow.edu";
 
   const {
     data: userdata,
     isLoading,
     error,
-  } = UserQueries.useGetUserByEmail(email ?? "");
+  } = UserQueries.useGetUserByEmail(email ?? "dusty.shaw@students.snow.edu");
 
 
   return (
