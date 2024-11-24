@@ -23,12 +23,8 @@ const Dashboard = () => {
       <div className="flex md:flex-row flex-col">
         <div className="w-full p-8 md:order-1 order-2">
           <div className="text-2xl">Your Dashboard</div>
-          <Link to={"/addcourse"}>
-            <Button
-              onClick={() => {
-                console.log("Adding Course");
-              }}
-            >
+          <Link to={"/addcoursewithunits"}>
+            <Button>
               Add a Course
             </Button>
           </Link>
@@ -37,7 +33,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="md:w-1/3 w-full bg-gray-100 md:h-screen md:order-2 order-1">
-          <h1 className="text-2xl">Your Stats</h1>
+          
           {userContext?.user &&
             <Stats user={userContext?.user} />
           }

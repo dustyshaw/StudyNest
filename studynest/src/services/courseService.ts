@@ -2,6 +2,7 @@ import axios from "axios";
 import { Course } from "../@types/course";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import { EditCourseRequest } from "../@types/Requests/EditCourseRequest";
+import { CourseWithUnitsAndTasksRequest } from "../@types/Requests/CourseWithUnitsRequest";
 
 export const CourseService = {
   GetAllCourses: async () => {
@@ -56,8 +57,24 @@ export const CourseService = {
       console.error("Couldn't add course.");
     }
   },
-  EditCourse: async(editCourseRequest: EditCourseRequest) => {
-    console.log(editCourseRequest)
+  AddCourseWithUnits: async (requests: CourseWithUnitsAndTasksRequest) => {
+    try {
+      const response = await axios.post<Course>(
+        "https://localhost:7021/course/addCourse",
+        requests,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch {
+      console.error("Couldn't add course.");
+    }
+  },
+  EditCourse: async (editCourseRequest: EditCourseRequest) => {
+    console.log(editCourseRequest);
     try {
       const response = await axios.patch<Course>(
         "https://localhost:7021/course/editCourse",
@@ -72,5 +89,5 @@ export const CourseService = {
     } catch {
       console.error("Couldn't add course.");
     }
-  }
+  },
 };

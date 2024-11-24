@@ -22,12 +22,19 @@ public static class DtoConverter
 
     public static UserCourseDto ToDto(this Courseenroll course)
     {
+        //var units = course.Course.Courseunits.Select(x => x.Unit).ToList();
+        //var unittasks = units.Select(x => x.UnitTasks).ToList();
+        //var tasks = unittasks.SelectMany(unittasks => unittasks);
+
+
         CourseDto cDto = course.Course.ToDto();
         UserCourseDto dto = new UserCourseDto()
         {
             UserCourseId = course.Id,
             OwnerUsername = course.User?.Username ?? "",
             Course = cDto ?? new CourseDto(),
+            //Hours = course.Course.Courseunits.Select(x => x.Unit).Select(x => x.UnitTasks)
+            //Minutes = 
         };
 
         return dto;

@@ -3,6 +3,7 @@ export interface UpdateTaskRequest {
     title: string,
     description: string,
     duedate: string | Date,
+    iscomplete: boolean,
 }
 
 

@@ -3,6 +3,7 @@ import { CourseService } from "../services/courseService";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import toast from "react-hot-toast";
 import { EditCourseRequest } from "../@types/Requests/EditCourseRequest";
+import { CourseWithUnitsAndTasksRequest } from "../@types/Requests/CourseWithUnitsRequest";
 
 export const CourseQueries = {
   useGetAllCourses: () => {
@@ -20,27 +21,40 @@ export const CourseQueries = {
   useGetCourseById: (courseNumber: number) => {
     return useQuery({
       queryKey: ["courses"],
-      queryFn: () => CourseService.GetCourseById(courseNumber)
-    })
+      queryFn: () => CourseService.GetCourseById(courseNumber),
+    });
   },
   useAddACourse: () => {
     const queryClient = useQueryClient();
     return useMutation({
-      mutationFn: (addCourseRequest: AddCourseRequest) => CourseService.AddCourse(addCourseRequest),
+      mutationFn: (addCourseRequest: AddCourseRequest) =>
+        CourseService.AddCourse(addCourseRequest),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["courses"] }); // Explicitly pass it as an array
-        toast.success("Successfully Added Course")
+        toast.success("Successfully Added Course");
+      },
+    });
+  },
+  useAddCourseWithUnits: () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: (addCourseRequest: CourseWithUnitsAndTasksRequest) =>
+        CourseService.AddCourseWithUnits(addCourseRequest),
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["courses"] }); // Explicitly pass it as an array
+        toast.success("Successfully Added Course");
       },
     });
   },
   useEditCourse: () => {
     const queryClient = useQueryClient();
     return useMutation({
-      mutationFn: (editCourseRequest: EditCourseRequest) => CourseService.EditCourse(editCourseRequest),
+      mutationFn: (editCourseRequest: EditCourseRequest) =>
+        CourseService.EditCourse(editCourseRequest),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["courses"] }); // Explicitly pass it as an array
-        toast.success("Successfully Edited Course")
+        toast.success("Successfully Edited Course");
       },
     });
-  }
+  },
 };

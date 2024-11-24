@@ -49,14 +49,15 @@ const EditTask = () => {
       const taskIdNumber = Number(taskId)
       console.log(duedate)
 
-      const newCourse: UpdateTaskRequest = {
+      const request: UpdateTaskRequest = {
         title: formData.title ?? "",
         description: formData.description ?? "",
         taskid: taskIdNumber,
         duedate: duedate ? duedate : new Date(),
+        iscomplete: false
       };
-      console.log("New Due Date: ",  newCourse.duedate)
-      await updateTaskAsync(newCourse);
+      console.log("New Due Date: ",  request.duedate)
+      await updateTaskAsync(request);
     };
 
   return (
@@ -70,8 +71,7 @@ const EditTask = () => {
           required={true}
           id="title"
           defaultValue={task?.title || ""}
-          onChange={handleForm}
-        />
+          onChange={handleForm} className={""} helperText={""}        />
         <TextInput
           label="Task Description"
           placeholder="Enter Task Description"
@@ -79,8 +79,7 @@ const EditTask = () => {
           required={true}
           id="description"
           defaultValue={task?.description || ''}
-          onChange={handleForm}
-        />
+          onChange={handleForm} className={""} helperText={""}        />
         <p className="mt-6">Due Date</p>
         <div className="">
           <input

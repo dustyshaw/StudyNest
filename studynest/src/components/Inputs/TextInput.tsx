@@ -6,8 +6,10 @@ interface TextInputProps {
   error: string;
   required: boolean;
   id: string;
-  defaultValue: string; // Default empty string if no defaultValue is passed
-  onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void; // Update onChange type
+  defaultValue: string;
+  className: string;
+  helperText: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -18,6 +20,8 @@ const TextInput: React.FC<TextInputProps> = ({
   id,
   defaultValue,
   onChange,
+  className,
+  helperText,
   ...otherProps
 }) => {
   const [value, setValue] = useState(defaultValue);
@@ -28,7 +32,7 @@ const TextInput: React.FC<TextInputProps> = ({
     const newValue = event.target.value;
     setValue(newValue);
     setIsEmpty(newValue.length === 0);
-    onChange(event, newValue); // Send the event and the new value to the parent
+    onChange(event, newValue); 
   };
 
   const handleFieldTouched = () => {
@@ -38,9 +42,10 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <div className="mt-6">
       <label htmlFor={id} className="">{label}</label>
+      <p className="text-sm text-gray-500 mt-1 mb-1">{helperText}</p>
       <input
         type="text"
-        className="block w-1/2 bg-white border-gray-400 text-gray-800 focus:ring-navy-550 focus:border-navy-500 placeholder-gray-500 rounded-md px-2 py-1"
+        className={`block bg-white border-gray-400 text-gray-800 focus:ring-sky-500 focus:border-sky-500 placeholder-gray-500 rounded-md ${className}`}
         id={id}
         value={value}
         onChange={handleChange}

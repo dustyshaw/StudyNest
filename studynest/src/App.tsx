@@ -20,6 +20,7 @@ import { useAuth } from "react-oidc-context";
 import LandingPage from "./components/LandingPage";
 import { UserContextProvidor } from "./context/userContextProvidor";
 import AddUnit from "./components/Units/AddUnit";
+import AddCourseWithUnitsForm from "./components/Course/AddCourseWithUnits/AddCourseWithUnits";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -54,6 +55,7 @@ function App() {
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/browse" element={<Browse />} />
                   <Route path="/course/:courseId" element={<Course />} />
+                  <Route path="/addcoursewithunits" element={<AddCourseWithUnitsForm />}/>
                   <Route path="/addcourse" element={<AddCourse />} />
                   <Route
                     path="/editcourse/:courseId"

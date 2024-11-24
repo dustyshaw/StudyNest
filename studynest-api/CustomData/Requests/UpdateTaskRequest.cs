@@ -9,5 +9,6 @@ public class UpdateTaskRequest
     public string? Description { get; set; }
 
     public DateTime? Duedate { get; set; }
+    public bool IsComplete { get; set; }
 
 }

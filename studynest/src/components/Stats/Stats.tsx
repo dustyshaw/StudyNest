@@ -8,31 +8,24 @@ interface StatsProps {
 
 const Stats: React.FC<StatsProps> = ({ user }) => {
   const streak = user.streak;
-
   const dayNumber = new Date().getDay();
-
   const daysOfWeekAbreviated = ["Su", "M", "T", "W", "Th", "F", "Sa"];
 
   const [streakDots, setStreakDots] = useState<string[]>([]);
   useEffect(() => {
-    const newStreakDots: string[] = [];
     const threshold = dayNumber - streak;
 
-    for (let i = 0; i < 7; i++) {
-      if (i > threshold) {
-        newStreakDots.push("active");
-      } else {
-        newStreakDots.push("inactive");
-      }
-    }
+    const newStreakDots = Array.from({ length: 7 }, (_, i) =>
+      i > threshold ? "active" : "inactive"
+    );
 
     setStreakDots(newStreakDots);
-  }, [streak]);
+  }, [streak, dayNumber]);
 
   return (
-    <>
-      <div>{user.streak} day streak</div>
-      <div className="flex justify-between mt-2">
+    <div className="m-8">
+      <h1 className="text-2xl">Your Stats</h1>
+      <div className="mt-8 flex justify-between lg:px-16 md:px-10 px-3">
         {daysOfWeekAbreviated.map((day, index) => (
           <div key={index} className="text-sm">
             {day}
@@ -40,19 +33,25 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
         ))}
       </div>
 
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between mt-2 lg:px-16 md:px-10 px-3">
         {streakDots.map((dot, key) => (
           <div key={key} className="flex flex-col items-center">
             <div
-              className={`w-3 h-3 rounded-full ${
-                dot === "active" ? "bg-lime-500" : "bg-gray-300"
+              className={`w-4 h-4 rounded-full ${
+                dot === "active"
+                  ? "bg-lime-500 border border-lime-600"
+                  : "bg-gray-300 border border-gray-400"
               }`}
             ></div>
           </div>
         ))}
       </div>
+      <div className="px-16 text-gray-600">
+        <span className="font-semibold text-gray-700">{user.streak}</span> day
+        streak
+      </div>
       <BarChartComponent />
-    </>
+    </div>
   );
 };
 

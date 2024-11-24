@@ -103,6 +103,7 @@ public class TaskService : ITaskService
         task.Description = request.Description;
         task.Title = request.Title;
         task.Duedate = request.Duedate;
+        task.Iscomplete = request.IsComplete;
 
         dbContext.Update(task);
         await dbContext.SaveChangesAsync();
