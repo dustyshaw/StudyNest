@@ -19,19 +19,20 @@ import BottomNav from "./components/BottomNav";
 import { useAuth } from "react-oidc-context";
 import LandingPage from "./components/LandingPage";
 import { UserContextProvidor } from "./context/userContextProvidor";
+import AddUnit from "./components/Units/AddUnit";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
   const { user: authuser } = useAuth();
 
-  if (!authuser) {
-    return (
-      <QueryClientProvider client={queryClient}>
-        <LandingPage />
-      </QueryClientProvider>
-    );
-  }
+  // if (!authuser) {
+  //   return (
+  //     <QueryClientProvider client={queryClient}>
+  //       <LandingPage />
+  //     </QueryClientProvider>
+  //   );
+  // }
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,12 +40,8 @@ function App() {
         <>
           <Toaster />
           <BrowserRouter>
-            {authuser && (
-              <>
-                <LeftNav />
-                <TopNav />
-              </>
-            )}
+            <LeftNav />
+            <TopNav />
             <ErrorBoundary
               FallbackComponent={FallbackComponent}
               onReset={() => {
@@ -68,6 +65,7 @@ function App() {
                     path="/dashboard/module/addTask/:courseUnitId"
                     element={<AddTask />}
                   />
+                  <Route path="/addunit/:courseId" element={<AddUnit />}/>
                   <Route path="*" element={<FallbackComponent />} />
                 </Routes>
               </div>

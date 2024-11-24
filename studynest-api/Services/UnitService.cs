@@ -22,7 +22,18 @@ public class UnitService : IUnitService
         };
 
         dbContext.Add(newUnit);
+        await dbContext.SaveChangesAsync();
 
+        var unitJustAdded = await dbContext.Units.Where(x => x.Equals(newUnit)).FirstOrDefaultAsync();
+
+        Courseunit unit = new Courseunit()
+        {
+            Stackposition = 0,
+            Unitid = newUnit.Id,
+            Courseid = addUnitRequest.CourseId,
+        };
+
+        dbContext.Add(unit);
         await dbContext.SaveChangesAsync();
 
         return true;

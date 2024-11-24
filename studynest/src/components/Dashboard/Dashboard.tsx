@@ -9,7 +9,7 @@ import Stats from "../Stats/Stats";
 const Dashboard = () => {
   const userContext = useContext(UserContext);
   const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
-    userContext?.user?.id ?? 0
+    userContext?.user?.id ?? 6
   );
 
 

@@ -3,4 +3,5 @@
 public class AddUnitRequest
 {
     public string Title { get; set; } = null!;
+    public int CourseId { get; set; }
 }

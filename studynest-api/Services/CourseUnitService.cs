@@ -14,15 +14,15 @@ public class CourseUnitService : ICourseUnitService
     }
 
     // Change this to get by user course id?
-    public async Task<List<Courseunit>> GetCourseunitsByCourseId(int courseId)
+    public async Task<List<Courseunit>> GetCourseunitsByCourseId(int courseUnitId)
     {
         using var context = dbContextFactory.CreateDbContext();
 
-        var course = await context.Courseenrolls.Where(x => x.Id == courseId).FirstOrDefaultAsync();
+        var course = await context.Courseenrolls.Where(x => x.Id == courseUnitId).FirstOrDefaultAsync();
 
         if (course == null)
         {
-            throw new Exception($"Could not find course associated with course id: {courseId}");
+            throw new Exception($"Could not find course associated with course id: {courseUnitId}");
         }
 
         var courseUnits = await context.Courseunits
