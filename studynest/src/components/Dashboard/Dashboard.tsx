@@ -8,10 +8,15 @@ import Stats from "../Stats/Stats";
 
 const Dashboard = () => {
   const userContext = useContext(UserContext);
-  const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
-    userContext?.user?.id ?? 6
+
+  // TODO change this back to userContext?.user?.id ?? 0
+  const { data: userCourses, isLoading } = UserCourseQueries.useGetAllUserCoursesByUserId(
+   6
   );
 
+  if (isLoading) {
+    return <p>Loading your courses...</p>
+  }
 
   return (
     <>

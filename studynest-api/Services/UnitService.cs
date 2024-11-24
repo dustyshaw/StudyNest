@@ -26,14 +26,14 @@ public class UnitService : IUnitService
 
         var unitJustAdded = await dbContext.Units.Where(x => x.Equals(newUnit)).FirstOrDefaultAsync();
 
-        Courseunit unit = new Courseunit()
+        Courseunit courseunit = new Courseunit()
         {
             Stackposition = 0,
             Unitid = newUnit.Id,
             Courseid = addUnitRequest.CourseId,
         };
 
-        dbContext.Add(unit);
+        dbContext.Add(courseunit);
         await dbContext.SaveChangesAsync();
 
         return true;

@@ -14,6 +14,7 @@ import Button from "../genericComponents/Button";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
+  console.log("userCourseId: " , userCourseId)
 
   const { user: authuser } = useAuth();
   const email = authuser?.profile.email ?? "";

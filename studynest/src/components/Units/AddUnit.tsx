@@ -6,7 +6,7 @@ import { UnitQueries } from "../../Queries/unitQueries";
 import { useParams } from "react-router";
 
 const AddUnit = () => {
-    const courseId  = useParams();
+  const courseId = useParams();
   const [formData, setFormData] = React.useState<Partial<AddUnitRequest>>({});
   const { mutateAsync: addUnitAsync } = UnitQueries.useAddUnit();
 
@@ -17,13 +17,20 @@ const AddUnit = () => {
     });
   };
 
-  const handleSubmission = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmission = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     e.stopPropagation();
+    console.log(courseId.courseId)
+    const userCourseIdNum = Number(courseId.courseId)
+    console.log(userCourseIdNum)
     const request: AddUnitRequest = {
-        title: formData.title ?? "Untitled",
-        courseId: Number(courseId),
+      title: formData.title ?? "Untitled",
+      courseId: userCourseIdNum,
     };
+
+    console.log(request);
 
     await addUnitAsync(request);
   };
