@@ -75,9 +75,7 @@ Total: 86 / 146 pts
 - [x] Be able to update time spent on task ( update last active day on user )
 - [x] Add module assignment
 - [x] Update user streak
-- [ ] Update module progress based on assignment
-- [ ] Ability to complete an assignment
-- [ ] Order assignments based on completion
+- [x] Ability to complete an assignment
 
 **Points for this week**  
 5 pts - Technology: 10+ pages or views  
@@ -85,6 +83,8 @@ Total: 86 / 146 pts
 Total: 86 / 146 pts
 --- 
 ## Nov 26 - Edit Modules
+- [ ] Order assignments based on completion
+- [ ] Update module progress based on assignment
 - [ ] Edit Module titles
 - [ ] Show User Progress on Dashboard
 
