@@ -5,7 +5,6 @@ import Button from "../../genericComponents/Button";
 import { CourseQueries } from "../../../Queries/courseQueries";
 import { CourseWithUnitsAndTasksRequest } from "../../../@types/Requests/CourseWithUnitsRequest";
 import toast from "react-hot-toast";
-import AddCourseBtn from "../AddCourseBtn";
 import { PlusCircleIcon } from "@heroicons/react/16/solid";
 
 const AddCourseWithUnitsForm = () => {

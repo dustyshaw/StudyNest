@@ -1,6 +1,10 @@
 import LoginButton from "../LoginBtn";
+import { CourseQueries } from "../Queries/courseQueries";
+import BrowseCourseList from "./genericComponents/BrowseCourse";
 
 const LandingPage = () => {
+  const { data } = CourseQueries.useGetAllPublicCourses();
+
   return (
     <>
       <div className="flex justify-end w-full">
@@ -29,6 +33,14 @@ const LandingPage = () => {
               <p className="my-8">Browse Courses</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <h2>Enroll in user made courses</h2>
+        <div>
+          {/* <BrowseCourseList data={data} handleAddCourseEnroll={function (1): void {
+            throw new Error("Function not implemented.");
+          } } /> */}
         </div>
       </div>
     </>
