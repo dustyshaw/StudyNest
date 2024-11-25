@@ -100,6 +100,99 @@ Total: 86 / 146 pts
 Total: 146 / 146 pts
 <hr />
 
+### Point Breakdown
+<table>
+
+  <th>
+    <tr>
+      <td>
+        pts
+      </td>
+      <td>
+        desc
+      </td>
+       <td>
+        file
+      </td>
+    </tr>
+  </th>
+  <tr>
+    <td>5</td>
+    <td>Technology: Client side state stores (e.g. tanstack query or context)</td>
+    <td><a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/Queries/courseQueries.ts">tanstack ex</a> - <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/context/UserContext.tsx">Context ex</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: Toasts / global notifications or alerts</td>
+    <td><a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/Queries/courseQueries.ts">toasts on success or err</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: Error handling (both on api requests and render errors)</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td>Technology: Network Calls that read and write data</td>
+    <td><a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/services/courseService.ts">services read and write</a></td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td>Technology: Developer type helping (typescript)</td>
+    <td>Whole repo is in ts</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: 10+ pages or views</td>
+    <td><a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/App.tsx">App.tsx has 10+ pages</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: CI/CD pipeline</td>
+    <td>[https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/App.tsx](https://github.com/dustyshaw/StudyNest/blob/main/.github/workflows/push-workflow.yml)</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: tests run in pipeline, pipeline aborts if they fail</td>
+    <td>[https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/App.tsx](https://github.com/dustyshaw/StudyNest/blob/main/.github/workflows/push-workflow.yml)</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: linting in pipeline</td>
+    <td>[https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/App.tsx](https://github.com/dustyshaw/StudyNest/blob/main/.github/workflows/push-workflow.yml)</td>
+  </tr>
+  <tr style="background-color: red">
+    <td>5</td>
+    <td>Technology: 4+ generic layout components</td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Inputs/TextInput.tsx">Text Input</a><br />2.<br />3. </td>
+  </tr>
+   <tr style="background-color: red">
+    <td>5</td>
+    <td>Technology: 3+ generic form input components</td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/DashboardCourse.tsx">Courses in List Component</a><br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/Button.tsx">Button Component</a><br />3. <a>Dynamic Layout Component</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Technology: authentication and user account support</td>
+    <td><a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/main.tsx">Uses OICD to log in to Keycloak</a></td>
+  </tr>
+  <tr style="background-color: red">
+    <td>5</td>
+    <td>Technology: authorized pages and public pages</td>
+    <td>I want landing page and browse page to be public. Rest is authorized pages only.</td>
+  </tr>
+  <tr style="color: red">
+    <td>5</td>
+    <td>Experience: all experiences mobile friendly</td>
+    <td>Have to go through and make sure they are all correct.</td>
+  </tr>
+   <tr style="background-color: red">
+    <td>5</td>
+    <td>Experience: 3 instances where elements re-order themselves on smaller screens</td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Dashboard/Dashboard.tsx">Stats shift to top of the screen on mobile</a><br />2. <br />3. </td>
+  </tr>
+</table>
+
 ### Features
 1. Users should be able to view their dashboard of courses and an overview of their assignments.
 2. Users will be able to add a course with a title and a short description. The description may include their own goal for learning this topic.
