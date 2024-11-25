@@ -54,14 +54,22 @@ const EditCourse = () => {
             error="Course Title is Required"
             required={true}
             id="title"
-            onChange={handleForm} defaultValue={""} />
+            onChange={handleForm}
+            defaultValue={""}
+            className={""}
+            helperText={""}
+          />
           <TextInput
             label="Course Description"
             placeholder="Enter Course Description"
             error="Course Description is Required"
             required={true}
             id="description"
-            onChange={handleForm} defaultValue={""} />
+            onChange={handleForm}
+            defaultValue={""}
+            className={""}
+            helperText={""}
+          />
           <Button onClick={handleSubmission}>
             <p>Edit Course</p>
           </Button>
