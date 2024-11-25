@@ -51,6 +51,8 @@ const AddTask = () => {
           id="title"
           onChange={handleForm}
           defaultValue={""}
+          className={""}
+          helperText={""}
         />
         <TextInput
           label="Task Description"
@@ -60,6 +62,8 @@ const AddTask = () => {
           id="description"
           onChange={handleForm}
           defaultValue={""}
+          className={""}
+          helperText={""}
         />
         <p className="mt-6">Event Start</p>
         <div className="">

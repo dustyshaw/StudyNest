@@ -8,10 +8,10 @@ interface CourseListProps {
 
 const BrowseCourseList: FC<CourseListProps> = ({ data, handleAddCourseEnroll }) => {
   return (
-    <div className="flex flex-wrap w-full">
+    <div className="ml-16 flex flex-wrap w-full">
       {data?.map((x, key) => (
         <div
-          className="lg:w-1/4 md:w-1/2 w-full bg-lime-300 p-6 mx-4 my-3 rounded-3xl"
+          className="lg:w-1/4 md:w-1/2 w-full bg-yellow-100 p-6 mx-4 my-3 rounded-3xl"
           key={key}
         >
           <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-50 hidden">

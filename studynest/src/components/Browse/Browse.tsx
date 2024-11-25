@@ -20,12 +20,10 @@ const Browse = () => {
   };
 
   return (
-    <div>
-      <BrowseCourseList
-        data={data}
-        handleAddCourseEnroll={handleAddCourseEnroll}
-      />
-    </div>
+    <BrowseCourseList
+      data={data}
+      handleAddCourseEnroll={handleAddCourseEnroll}
+    />
   );
 };
 

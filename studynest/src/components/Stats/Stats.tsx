@@ -25,7 +25,7 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
   return (
     <div className="m-8">
       <h1 className="text-2xl">Your Stats</h1>
-      <div className="mt-8 flex justify-between lg:px-16 md:px-10 px-3">
+      <div className="mt-8 flex justify-between xl:px-16 px-3">
         {daysOfWeekAbreviated.map((day, index) => (
           <div key={index} className="text-sm">
             {day}
@@ -33,7 +33,7 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
         ))}
       </div>
 
-      <div className="flex justify-between mt-2 lg:px-16 md:px-10 px-3">
+      <div className="flex justify-between mt-2 xl:px-16 px-3">
         {streakDots.map((dot, key) => (
           <div key={key} className="flex flex-col items-center">
             <div
@@ -46,7 +46,7 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
           </div>
         ))}
       </div>
-      <div className="px-16 text-gray-600">
+      <div className="xl:px-16 text-gray-600">
         <span className="font-semibold text-gray-700">{user.streak}</span> day
         streak
       </div>

@@ -16,13 +16,11 @@ import ViewTask from "./components/Task/Task";
 import EditTask from "./components/Task/EditTask";
 import AddTask from "./components/Task/AddTask";
 import BottomNav from "./components/BottomNav";
-import { useAuth } from "react-oidc-context";
 import { UserContextProvidor } from "./context/userContextProvidor";
 import AddUnit from "./components/Units/AddUnit";
 import AddCourseWithUnitsForm from "./components/Course/AddCourseWithUnits/AddCourseWithUnits";
 import { DynamicLayoutContext } from "./context/DynamicLayoutContext";
 import { useContext } from "react";
-// import DynamicNavbarLayout from "./components/LayoutComponents/DynamicNavbarLayout";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
