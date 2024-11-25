@@ -17,6 +17,7 @@ const Course = () => {
   console.log("userCourseId: " , userCourseId)
 
   const { user: authuser } = useAuth();
+  
   const email = authuser?.profile.email ?? "";
   const { data: user } = UserQueries.useGetUserByEmail(email);
 

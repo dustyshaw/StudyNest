@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { AuthProvider, AuthProviderProps } from "react-oidc-context";
 import { UserService } from "./services/userService.ts";
 import { AddUserRequest } from "./@types/Requests/AddUserRequest";
+import { DynamicLayoutContextProvider } from "./context/DynamicLayoutProvidor.tsx";
 
 const oidcConfig: AuthProviderProps = {
   authority: "https://auth.snowse.duckdns.org/realms/advanced-frontend/",
@@ -13,13 +14,13 @@ const oidcConfig: AuthProviderProps = {
     const request: AddUserRequest = {
       userName: user?.profile.name ?? "",
       email: user?.profile.email ?? "",
-      authId: user?.id_token ?? ""
-    }
+      authId: user?.id_token ?? "",
+    };
     UserService.AddNewUser(request);
     UserService.UpdateUserStreak(user?.profile.email ?? "");
     // console.log("USER TOKEN ----------", user?.id_token);
     // console.log("USERNAME", user?.profile.name)
-    
+
     document.cookie = `jwt_token=${user?.id_token}`;
     window.history.replaceState({}, document.title, window.location.pathname);
   },
@@ -29,7 +30,9 @@ const oidcConfig: AuthProviderProps = {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <AuthProvider {...oidcConfig}>
-      <App />
+      <DynamicLayoutContextProvider>
+        <App />
+      </DynamicLayoutContextProvider>
     </AuthProvider>
   </StrictMode>
 );

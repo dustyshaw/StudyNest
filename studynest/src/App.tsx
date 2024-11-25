@@ -17,15 +17,20 @@ import EditTask from "./components/Task/EditTask";
 import AddTask from "./components/Task/AddTask";
 import BottomNav from "./components/BottomNav";
 import { useAuth } from "react-oidc-context";
-import LandingPage from "./components/LandingPage";
 import { UserContextProvidor } from "./context/userContextProvidor";
 import AddUnit from "./components/Units/AddUnit";
 import AddCourseWithUnitsForm from "./components/Course/AddCourseWithUnits/AddCourseWithUnits";
+import { DynamicLayoutContext } from "./context/DynamicLayoutContext";
+import { useContext } from "react";
+// import DynamicNavbarLayout from "./components/LayoutComponents/DynamicNavbarLayout";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
-  const { user: authuser } = useAuth();
+  // const { user: authuser } = useAuth();
+
+  const layoutContext = useContext(DynamicLayoutContext);
+  const marginLeft = "ml-" + layoutContext?.navbarWidth?.slice(2,4);
 
   // if (!authuser) {
   //   return (
@@ -38,24 +43,20 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <UserContextProvidor>
-        <>
           <Toaster />
           <BrowserRouter>
             <LeftNav />
             <TopNav />
-            <ErrorBoundary
-              FallbackComponent={FallbackComponent}
-              onReset={() => {
-                // reset the state of your app here
-              }}
-              resetKeys={["someKey"]}
-            >
-              <div className="sm:ml-24">
+            <ErrorBoundary FallbackComponent={FallbackComponent}>
+              <div className={`${marginLeft} transition-all duration-300`}>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/browse" element={<Browse />} />
                   <Route path="/course/:courseId" element={<Course />} />
-                  <Route path="/addcoursewithunits" element={<AddCourseWithUnitsForm />}/>
+                  <Route
+                    path="/addcoursewithunits"
+                    element={<AddCourseWithUnitsForm />}
+                  />
                   <Route path="/addcourse" element={<AddCourse />} />
                   <Route
                     path="/editcourse/:courseId"
@@ -67,7 +68,7 @@ function App() {
                     path="/dashboard/module/addTask/:courseUnitId"
                     element={<AddTask />}
                   />
-                  <Route path="/addunit/:courseId" element={<AddUnit />}/>
+                  <Route path="/addunit/:courseId" element={<AddUnit />} />
                   <Route path="*" element={<FallbackComponent />} />
                 </Routes>
               </div>
@@ -76,7 +77,6 @@ function App() {
               </div>
             </ErrorBoundary>
           </BrowserRouter>
-        </>
       </UserContextProvidor>
     </QueryClientProvider>
   );
