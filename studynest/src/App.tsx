@@ -31,6 +31,7 @@ function App() {
 
   const layoutContext = useContext(DynamicLayoutContext);
   const marginLeft = "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
+  console.log("MARGIN LEFT APP.TSX: ", marginLeft)
 
   if (!authuser) {
     return (
@@ -48,7 +49,7 @@ function App() {
           <LeftNav />
           <TopNav />
           <ErrorBoundary FallbackComponent={FallbackComponent}>
-            <div className={`${marginLeft} transition-all duration-300`}>
+            <div className={`${marginLeft === "ml-48" ? "ml-48" : "ml-16"} transition-all duration-300`}>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/browse" element={<Browse />} />

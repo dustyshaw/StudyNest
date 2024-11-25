@@ -14,10 +14,9 @@ import Button from "../genericComponents/Button";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
-  console.log("userCourseId: " , userCourseId)
 
   const { user: authuser } = useAuth();
-  
+
   const email = authuser?.profile.email ?? "";
   const { data: user } = UserQueries.useGetUserByEmail(email);
 
@@ -87,16 +86,17 @@ const Course = () => {
                   ) : (
                     ""
                   )}
-                  {unitTask.task.title} -{" "}
-                  {unitTask.task.duedate && formatDate(unitTask.task.duedate)}
+                  <span className="flex flex-row justify-between w-full">
+                    <p>{unitTask.task.title}</p>
+                    <p className="text-sm">due {unitTask.task.duedate && formatDate(unitTask.task.duedate)}</p>
+                  </span>
                 </div>
               </Link>
             ))}
-            <AddCourseBtn courseUnitId={x.id} />
-
             {x.unit.unitTasks.length <= 0 && (
               <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
             )}
+            <AddCourseBtn courseUnitId={x.id} />
           </div>
         ))}
     </div>

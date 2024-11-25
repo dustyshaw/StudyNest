@@ -47,7 +47,6 @@ const EditTask = () => {
       e.stopPropagation();
       
       const taskIdNumber = Number(taskId)
-      console.log(duedate)
 
       const request: UpdateTaskRequest = {
         title: formData.title ?? "",
@@ -56,7 +55,6 @@ const EditTask = () => {
         duedate: duedate ? duedate : new Date(),
         iscomplete: false
       };
-      console.log("New Due Date: ",  request.duedate)
       await updateTaskAsync(request);
     };
 

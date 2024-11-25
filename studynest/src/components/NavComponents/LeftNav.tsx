@@ -4,7 +4,7 @@ import { HomeIcon } from "@heroicons/react/24/solid";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { RectangleGroupIcon } from "@heroicons/react/24/solid";
-import { DynamicLayoutContext } from "../context/DynamicLayoutContext";
+import { DynamicLayoutContext } from "../../context/DynamicLayoutContext";
 
 const LeftNav = () => {
   const layoutContext = useContext(DynamicLayoutContext);

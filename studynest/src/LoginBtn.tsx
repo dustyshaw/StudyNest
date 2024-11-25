@@ -29,7 +29,7 @@ function LoginButton() {
   if (auth.isAuthenticated) {
     return (
       <div>
-        Hello {auth.user?.profile.sub}{" "}
+        Hello, {auth.user?.profile.name?.split(" ")[0]}!{" "}
         <button onClick={() => {void auth.removeUser(); auth.removeUser()}} className="bg-navy-600 rounded-lg text-white px-5 py-2 m-5 shadow hover:bg-navy-550 hover:shadow-none">Log out</button>
       </div>
     );

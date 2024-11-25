@@ -22,15 +22,11 @@ const AddUnit = () => {
   ) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log(courseId.courseId);
     const userCourseIdNum = Number(courseId.courseId);
-    console.log(userCourseIdNum);
     const request: AddUnitRequest = {
       title: formData.title ?? "Untitled",
       courseId: userCourseIdNum,
     };
-
-    console.log(request);
 
     await addUnitAsync(request);
   };

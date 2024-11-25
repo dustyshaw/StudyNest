@@ -2,7 +2,7 @@ import axios from "axios";
 import { Course } from "../@types/course";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import { EditCourseRequest } from "../@types/Requests/EditCourseRequest";
-import { CourseWithUnitsAndTasksRequest } from "../@types/Requests/CourseWithUnitsRequest";
+import { CourseWithUnitsRequest } from "../@types/Requests/CourseWithUnitsRequest";
 
 export const CourseService = {
   GetAllCourses: async () => {
@@ -57,7 +57,7 @@ export const CourseService = {
       console.error("Couldn't add course.");
     }
   },
-  AddCourseWithUnits: async (requests: CourseWithUnitsAndTasksRequest) => {
+  AddCourseWithUnits: async (requests: CourseWithUnitsRequest) => {
     try {
       const response = await axios.post<Course>(
         "https://localhost:7021/course/addCourse",
@@ -74,7 +74,6 @@ export const CourseService = {
     }
   },
   EditCourse: async (editCourseRequest: EditCourseRequest) => {
-    console.log(editCourseRequest);
     try {
       const response = await axios.patch<Course>(
         "https://localhost:7021/course/editCourse",

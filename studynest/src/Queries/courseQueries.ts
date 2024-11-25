@@ -3,7 +3,7 @@ import { CourseService } from "../services/courseService";
 import { AddCourseRequest } from "../@types/Requests/AddCourseRequest";
 import toast from "react-hot-toast";
 import { EditCourseRequest } from "../@types/Requests/EditCourseRequest";
-import { CourseWithUnitsAndTasksRequest } from "../@types/Requests/CourseWithUnitsRequest";
+import { CourseWithUnitsRequest } from "../@types/Requests/CourseWithUnitsRequest";
 
 export const CourseQueries = {
   useGetAllCourses: () => {
@@ -38,7 +38,7 @@ export const CourseQueries = {
   useAddCourseWithUnits: () => {
     const queryClient = useQueryClient();
     return useMutation({
-      mutationFn: (addCourseRequest: CourseWithUnitsAndTasksRequest) =>
+      mutationFn: (addCourseRequest: CourseWithUnitsRequest) =>
         CourseService.AddCourseWithUnits(addCourseRequest),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["courses"] }); // Explicitly pass it as an array
