@@ -189,7 +189,7 @@ Total: 146 / 146 pts
    <tr style="background-color: red">
     <td>5</td>
     <td>Experience: 3 instances where elements re-order themselves on smaller screens</td>
-    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Dashboard/Dashboard.tsx">Stats shift to top of the screen on mobile</a><br />2. <br />3. </td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Dashboard/Dashboard.tsx">Stats shift to top of the screen on mobile</a><br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/DashboardCourse.tsx">Dashboard cards go from horizontal layout to vertical on mobile</a><br />3. </td>
   </tr>
 </table>
 
