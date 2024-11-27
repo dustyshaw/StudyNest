@@ -88,7 +88,9 @@ Total: 86 / 146 pts
 - [ ] Edit Module titles
 - [ ] Show User Progress on Dashboard
 
---- 
+5 pts - Local Storage  
+
+---   
 ## Dec 4
 - [ ] Final Polishing
 - [ ] Improve experience to be professional and organized
