@@ -3,7 +3,7 @@ import { TaskQueries } from "../../Queries/taskQueries";
 import TextInput from "../Inputs/TextInput";
 import React, { useEffect, useState } from "react";
 import { UpdateTaskRequest } from "../../@types/Requests/UpdateTaskRequest";
-import SecondaryBtn from "../genericComponents/SecondaryBtn";
+import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 
 const EditTask = () => {
   const { taskId } = useParams();

@@ -1,7 +1,7 @@
 import { AddCourseEnrollRequest } from "../../@types/Requests/AddCourseEnrollRequest";
 import { CourseQueries } from "../../Queries/courseQueries";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import BrowseCourseList from "../genericComponents/BrowseCourse";
+import BrowseCourseList from "../LayoutComponents/BrowseCourse";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 

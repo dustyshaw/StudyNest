@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Button from "../genericComponents/Button";
+import Button from "../LayoutComponents/Button";
 import { TaskQueries } from "../../Queries/taskQueries";
 import { Task } from "../../@types/task";
 import { UpdateTaskRequest } from "../../@types/Requests/UpdateTaskRequest";

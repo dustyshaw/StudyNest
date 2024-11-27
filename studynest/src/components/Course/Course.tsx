@@ -8,9 +8,9 @@ import formatDate from "../DateFormatter";
 import { useAuth } from "react-oidc-context";
 import { UserQueries } from "../../Queries/userQueries";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
-import SecondaryBtn from "../genericComponents/SecondaryBtn";
+import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 import AddCourseBtn from "./AddCourseBtn";
-import Button from "../genericComponents/Button";
+import Button from "../LayoutComponents/Button";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
@@ -65,40 +65,68 @@ const Course = () => {
         <Button>Add Unit</Button>
       </Link>
       {courseUnits && courseUnits.length <= 0 && <p>No units yet...</p>}
+
       {courseUnits &&
-        courseUnits.map((x, key) => (
-          <div key={key} className="mb-8 md:w-1/2">
-            <div className="bg-gray-200 rounded-lg flex flex-row justify-between">
-              <p className="text-xl p-4">{x.unit.title}</p>
+        courseUnits
+          .map((x) => ({
+            ...x,
+            unitTasks: x.unit.unitTasks.sort((a) =>
+              a.task.iscomplete ? -1 : 1
+            ), // Sort tasks by completion
+          }))
+          .sort((a, b) => {
+            // Sort units based on the completion of their tasks (completed tasks come first)
+            const allTasksACompleted = a.unitTasks.every(
+              (task) => task.task.iscomplete
+            );
+            const allTasksBCompleted = b.unitTasks.every(
+              (task) => task.task.iscomplete
+            );
+            if (allTasksACompleted && !allTasksBCompleted) {
+              return -1; // Unit A is completed, Unit B is not
+            }
+            if (!allTasksACompleted && allTasksBCompleted) {
+              return 1; // Unit B is completed, Unit A is not
+            }
+            return 0; // If both have the same completion status, no change
+          })
+          .map((x, key) => (
+            <div key={key} className="mb-8 md:w-1/2">
+              <div className="bg-gray-200 rounded-lg flex flex-row justify-between">
+                <p className="text-xl p-4">{x.unit.title}</p>
+              </div>
+              {x.unitTasks.map((unitTask, key) => (
+                <Link to={`/task/${unitTask.taskid}`} key={key}>
+                  <div
+                    key={key}
+                    className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg flex flex-row ${
+                      unitTask.task.iscomplete
+                        ? "border-l-lime-400 text-gray-600"
+                        : "border-l-black"
+                    } my-2 ml-8`}
+                  >
+                    {unitTask.task?.iscomplete ? (
+                      <CheckCircleIcon className="w-6 me-2 text-lime-600" />
+                    ) : (
+                      ""
+                    )}
+                    <span className="flex flex-row justify-between w-full">
+                      <p>{unitTask.task.title}</p>
+                      <p className="text-sm">
+                        due{" "}
+                        {unitTask.task.duedate &&
+                          formatDate(unitTask.task.duedate)}
+                      </p>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+              {x.unitTasks.length <= 0 && (
+                <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
+              )}
+              <AddCourseBtn courseUnitId={x.id} />
             </div>
-            {x.unit.unitTasks.map((unitTask, key) => (
-              <Link to={`/task/${unitTask.taskid}`} key={key}>
-                <div
-                  key={key}
-                  className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg flex flex-row ${
-                    unitTask.task.iscomplete
-                      ? "border-l-lime-400 text-gray-600"
-                      : "border-l-black"
-                  } my-2 ml-8`}
-                >
-                  {unitTask.task?.iscomplete ? (
-                    <CheckCircleIcon className="w-6 me-2 text-lime-600" />
-                  ) : (
-                    ""
-                  )}
-                  <span className="flex flex-row justify-between w-full">
-                    <p>{unitTask.task.title}</p>
-                    <p className="text-sm">due {unitTask.task.duedate && formatDate(unitTask.task.duedate)}</p>
-                  </span>
-                </div>
-              </Link>
-            ))}
-            {x.unit.unitTasks.length <= 0 && (
-              <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
-            )}
-            <AddCourseBtn courseUnitId={x.id} />
-          </div>
-        ))}
+          ))}
     </div>
   );
 };

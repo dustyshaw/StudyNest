@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import formatDate from "../DateFormatter";
 import "./DatePicker.modules.css";
 import LogHours from "./LogHours";
-import SecondaryBtn from "../genericComponents/SecondaryBtn";
+import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 import CompleteTask from "./CompleteTask";
 
 const ViewTask = () => {

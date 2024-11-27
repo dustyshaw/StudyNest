@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { AddCourseRequest } from "../../../@types/Requests/AddCourseRequest";
 import TextInput from "../../Inputs/TextInput";
-import Button from "../../genericComponents/Button";
+import Button from "../../LayoutComponents/Button";
 import { CourseQueries } from "../../../Queries/courseQueries";
 import { CourseWithUnitsRequest } from "../../../@types/Requests/CourseWithUnitsRequest";
 import toast from "react-hot-toast";

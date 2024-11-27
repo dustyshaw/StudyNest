@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from '../genericComponents/Button';
+import Button from '../LayoutComponents/Button';
 import { TaskQueries } from '../../Queries/taskQueries';
 import { UpdateTaskTimeRequest } from '../../@types/Requests/UpdateTaskTimeRequest';
 

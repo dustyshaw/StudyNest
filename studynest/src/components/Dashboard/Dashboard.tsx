@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import Button from "../genericComponents/Button";
-import UserCoursesList from "../genericComponents/DashboardCourse";
+import Button from "../LayoutComponents/Button";
+import UserCoursesList from "../LayoutComponents/DashboardCourse";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import Stats from "../Stats/Stats";
@@ -23,7 +23,7 @@ const Dashboard = () => {
       <div className="flex md:flex-row flex-col">
         <div className="w-full p-8 md:order-1 order-2">
           <div className="text-2xl">Your Dashboard</div>
-          <Link to={"/addcoursewithunits"}>
+          <Link to={"/addcourse"}>
             <Button>
               Add a Course
             </Button>

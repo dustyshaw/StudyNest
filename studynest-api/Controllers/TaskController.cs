@@ -25,7 +25,7 @@ public class TaskController : Controller
 
 
     [HttpPost("/task/addtask")]
-    public async Task<StudytaskDto> AddTask(AddTaskRequest request)
+    public async Task<StudytaskDto> AddTask([FromBody] AddTaskRequest request)
     {
         return await taskService.AddTask(request);
     }

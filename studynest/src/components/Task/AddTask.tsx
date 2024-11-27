@@ -2,8 +2,9 @@ import React from "react";
 import { AddTaskRequest } from "../../@types/Requests/AddTaskRequest";
 import { TaskQueries } from "../../Queries/taskQueries";
 import TextInput from "../Inputs/TextInput";
-import Button from "../genericComponents/Button";
+import Button from "../LayoutComponents/Button";
 import { useParams } from "react-router";
+import DatePicker from "../Inputs/DatePicker";
 
 const AddTask = () => {
   const { courseUnitId } = useParams();
@@ -11,11 +12,31 @@ const AddTask = () => {
   const { mutateAsync: addTaskAsync } = TaskQueries.useAddTask();
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setFormData({
-      ...formData,
-      [e.currentTarget.id]: e.currentTarget.value,
-    });
+    const { id, value } = e.currentTarget;
+  
+    // If it's a date input, convert to ISO string and format it to match the required format
+    if (id === "eventstart" || id === "eventend" || id === "duedate") {
+      const date = new Date(value);
+      // Format the date as 'yyyy-MM-ddTHH:mm'
+      const formattedDate = date.toISOString().slice(0, 16); // Removes seconds and timezone
+      setFormData({
+        ...formData,
+        [id]: formattedDate, // Store the formatted date string
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [id]: value,
+      });
+    }
   };
+  
+  // const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.currentTarget.id]: e.currentTarget.value,
+  //   });
+  // };
 
   const handleSubmission = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -24,6 +45,8 @@ const AddTask = () => {
     e.stopPropagation();
 
     const courseUnitIdNum = Number(courseUnitId);
+
+    console.log("EVENT START", formData.eventstart);
 
     const newTask: AddTaskRequest = {
       unitid: courseUnitIdNum ?? 0,
@@ -65,33 +88,46 @@ const AddTask = () => {
           className={""}
           helperText={""}
         />
-        <p className="mt-6">Event Start</p>
-        <div className="">
-          <input
-            aria-label="Event Start"
-            type="datetime-local"
-            id="eventstart"
-            value={
-              formData.eventstart != undefined
-                ? formData.eventstart.toString()
-                : ""
-            }
-            onChange={handleForm}
-          />
-        </div>
+        {/* <DatePicker
+          id={"eventstart"}
+          label={"Event End"}
+          value={formData.eventstart?.toString()}
+          onChange={handleForm}
+        /> */}
 
-        <p className="mt-6">Event End</p>
-        <div className="">
-          <input
+        <input
+          aria-label="Event Start"
+          type="datetime-local"
+          id="eventstart"
+          value={
+            formData.eventstart != undefined
+              ? formData.eventstart.toString()
+              : ""
+          }
+          onChange={handleForm}
+        />
+
+        <DatePicker
+          id={"eventend"}
+          label={"Event End"}
+          value={formData.eventend?.toString()}
+          onChange={handleForm}
+        />
+        {/* <input
             aria-label="Event End"
             type="datetime-local"
             id="eventend"
             value={formData.eventend ? formData.eventend.toString() : ""}
             onChange={handleForm}
-          />
-        </div>
+          /> */}
 
-        <p className="mt-6">Due Date</p>
+        <DatePicker
+          id={"duedate"}
+          label={"Due Date"}
+          value={formData.duedate?.toString()}
+          onChange={handleForm}
+        />
+        {/* <p className="mt-6">Due Date</p>
         <div className="">
           <input
             aria-label="Due Date"
@@ -100,7 +136,7 @@ const AddTask = () => {
             value={formData.duedate ? formData.duedate.toString() : ""}
             onChange={handleForm}
           />
-        </div>
+        </div> */}
 
         <Button onClick={handleSubmission}>
           <p>Add Task</p>

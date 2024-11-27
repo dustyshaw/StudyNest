@@ -1,7 +1,7 @@
 import React from "react";
 import TextInput from "../Inputs/TextInput";
 import { AddUnitRequest } from "../../@types/Requests/AddUnitRequest";
-import Button from "../genericComponents/Button";
+import Button from "../LayoutComponents/Button";
 import { UnitQueries } from "../../Queries/unitQueries";
 import { useParams } from "react-router";
 
