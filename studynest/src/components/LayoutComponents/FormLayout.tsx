@@ -1,15 +1,20 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode } from "react";
 
 interface FormLayoutProps {
-    children: ReactNode;
+  children: ReactNode;
+  formTitle?: string;
 }
 
-const FormLayout: FC<FormLayoutProps> = ({ children }) => { 
+const FormLayout: FC<FormLayoutProps> = ({ children, formTitle }) => {
+
   return (
-    <div>
+    <div className="md:m-8 m-3 p-5">
+      <h2 className="text-xl mb-5">{formTitle}</h2>
+      <div className="bg-gray-200 rounded-md border-gray-400 border-solid border-2 p-5">
         {children}
+      </div>
     </div>
   );
-}
+};
 
 export default FormLayout;

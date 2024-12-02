@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { courseEnrollDto } from "../../@types/Dtos/courseEnrollDto";
 import { Link } from "react-router-dom";
 import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
-import formatDate from "../DateFormatter";
+import formatDate from "../../services/DateFormatter";
 import { useAuth } from "react-oidc-context";
 import { UserQueries } from "../../Queries/userQueries";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";

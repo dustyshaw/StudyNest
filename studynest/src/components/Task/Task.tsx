@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { TaskQueries } from "../../Queries/taskQueries";
 import { Link } from "react-router-dom";
-import formatDate from "../DateFormatter";
+import formatDate from "../../services/DateFormatter";
 import "./DatePicker.modules.css";
 import LogHours from "./LogHours";
 import SecondaryBtn from "../LayoutComponents/SecondaryBtn";

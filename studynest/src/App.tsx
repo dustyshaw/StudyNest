@@ -32,15 +32,14 @@ function App() {
 
   const layoutContext = useContext(DynamicLayoutContext);
   const marginLeft = "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
-  console.log("MARGIN LEFT APP.TSX: ", marginLeft)
 
-  // if (!authuser) {
-  //   return (
-  //     <QueryClientProvider client={queryClient}>
-  //       <LandingPage />
-  //     </QueryClientProvider>
-  //   );
-  // }
+  if (!authuser) {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <LandingPage />
+      </QueryClientProvider>
+    );
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
