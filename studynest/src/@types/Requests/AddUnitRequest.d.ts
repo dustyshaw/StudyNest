@@ -1,4 +1,4 @@
 export interface AddUnitRequest {
-    title: string;
-    courseId: number;
+  title: string;
+  courseId: number;
 }

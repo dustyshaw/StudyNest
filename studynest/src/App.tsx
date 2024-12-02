@@ -23,6 +23,7 @@ import { useAuth } from "react-oidc-context";
 import LandingPage from "./components/LandingPage";
 import LeftNav from "./components/NavComponents/LeftNav";
 import BottomNav from "./components/NavComponents/BottomNav";
+import EditUnit from "./components/Units/EditUnit";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -33,13 +34,13 @@ function App() {
   const marginLeft = "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
   console.log("MARGIN LEFT APP.TSX: ", marginLeft)
 
-  if (!authuser) {
-    return (
-      <QueryClientProvider client={queryClient}>
-        <LandingPage />
-      </QueryClientProvider>
-    );
-  }
+  // if (!authuser) {
+  //   return (
+  //     <QueryClientProvider client={queryClient}>
+  //       <LandingPage />
+  //     </QueryClientProvider>
+  //   );
+  // }
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -67,6 +68,7 @@ function App() {
                   element={<AddTask />}
                 />
                 <Route path="/addunit/:courseId" element={<AddUnit />} />
+                <Route path="/editunit/:unitId" element={<EditUnit />} />
                 <Route path="*" element={<FallbackComponent />} />
               </Routes>
             </div>

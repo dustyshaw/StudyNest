@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AddUnitRequest } from "../@types/Requests/AddUnitRequest";
+import { EditUnitRequest } from "../@types/Requests/EditUnitRequest";
 
 export const UnitService = {
   AddUnit: async (request: AddUnitRequest) => {
@@ -15,7 +16,23 @@ export const UnitService = {
       );
       return response.data;
     } catch {
-      console.error("Couldn't add course.");
+      console.error("Couldn't add unit.");
+    }
+  },
+  EditUnit: async (request: EditUnitRequest) => {
+    try {
+      const response = await axios.patch<boolean>(
+        "https://localhost:7021/unit/editunit",
+        request,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch {
+      console.error("Couldn't edit unit.");
     }
   },
 };

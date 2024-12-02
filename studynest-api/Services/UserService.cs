@@ -82,6 +82,12 @@ public class UserService : IUserService
             user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
             await context.SaveChangesAsync();
         }
+        else
+        {
+            user.Streak = 0;
+            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
+            await context.SaveChangesAsync();
+        }
 
         return user.Streak ?? 0;
     }

@@ -16,8 +16,14 @@ public class UnitController : Controller
     }
 
     [HttpPost("/unit/addUnit")]
-    public async Task<bool> AddCourse(AddUnitRequest addUnitRequest)
+    public async Task<bool> AddUnit(AddUnitRequest addUnitRequest)
     {
         return await unitService.AddUnit(addUnitRequest);
+    }
+
+    [HttpPatch("/unit/editunit")]
+    public async Task<bool> EditUnit(EditUnitRequest editUnitRequest)
+    {
+        return await unitService.EditUnit(editUnitRequest);
     }
 }

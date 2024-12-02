@@ -39,6 +39,20 @@ public class UnitService : IUnitService
         return true;
     }
 
+    public async Task<bool> EditUnit(EditUnitRequest request)
+    {
+        using var dbContext = dbContextFactory.CreateDbContext();
+      
+        var uuc = await dbContext.Units.Where(u => u.Id == request.Id).FirstOrDefaultAsync();
+
+        uuc.Title = request.Title;  
+
+        dbContext.Update(uuc);
+        await dbContext.SaveChangesAsync();
+
+        return true;
+    }
+
     //public async Task<List<UnitDto>> GetUnitByCourseId(int courseId)
     //{
     //    using var dbContext = dbContextFactory.CreateDbContext();

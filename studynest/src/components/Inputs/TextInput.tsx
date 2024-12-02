@@ -45,7 +45,7 @@ const TextInput: React.FC<TextInputProps> = ({
       <p className="text-sm text-gray-500 mt-1 mb-1">{helperText}</p>
       <input
         type="text"
-        className={`block bg-white border-gray-400 text-gray-800 focus:ring-sky-500 focus:border-sky-500 placeholder-gray-500 rounded-md ${className}`}
+        className={`block bg-white border-gray-400 text-gray-800 focus:ring-sky-500 focus:border-sky-500 placeholder-gray-500 rounded-md px-2 py-1 ${className}`}
         id={id}
         value={value}
         onChange={handleChange}

@@ -6,4 +6,5 @@ namespace studynest_api.Services;
 public interface IUnitService
 {
     public Task<bool> AddUnit(AddUnitRequest addUnitRequest);
+    public Task<bool> EditUnit(EditUnitRequest editUnitRequest);
 }
