@@ -14,7 +14,7 @@ RUN dotnet publish -c Release -o out
 
 
 # TODO ADD ENVIRONMENT VARIABLES
-# ENV MY_VARIABLE=123
+# ENV VITE=123
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0

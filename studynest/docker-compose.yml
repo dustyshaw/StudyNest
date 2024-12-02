@@ -14,7 +14,7 @@ services:
   
   api:
     container_name: api
-    image: dustyshaw702/studynest-api:latest
+    image: codebras/studynest-api:latest
     ports:
       - 5225:8080
     # volumes:
