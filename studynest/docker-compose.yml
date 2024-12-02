@@ -14,11 +14,11 @@ services:
   
   api:
     container_name: api
-    image: dustyshaw702/books-api:latest
+    image: dustyshaw702/studynest-api:latest
     ports:
       - 5225:8080
-    volumes:
-      - images:/App/imageuploads
+    # volumes:
+    #   - images:/App/imageuploads
 
 
 volumes:

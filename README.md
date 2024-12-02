@@ -166,12 +166,12 @@ Total: 146 / 146 pts
   <tr style="background-color: red">
     <td>5</td>
     <td>Technology: 4+ generic layout components</td>
-    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Inputs/TextInput.tsx">Text Input</a><br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/context/DynamicLayoutProvidor.tsx">Dynamic Layout Component</a><br />3. </td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/context/DynamicLayoutProvidor.tsx">Dynamic Layout Component</a><br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/LayoutComponents/BrowseCourse.tsx">Browse Course Layouts</a><br /> 3. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/LayoutComponents/FormLayout.tsx">Form Layout</a><br /> 4. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/LayoutComponents/DashboardCourse.tsx">Dashboard Layout Component</a><br /> 5. <a href="https://github.com/dustyshaw/StudyNest/tree/main/studynest/src/components/LayoutComponents">3+ Buttons</a><br /> </td>
   </tr>
    <tr style="background-color: red">
     <td>5</td>
     <td>Technology: 3+ generic form input components</td>
-    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/DashboardCourse.tsx">Courses in List Component</a><br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/Button.tsx">Button Component</a><br />3. </td>
+    <td>1. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Inputs/DatePicker.tsx">Date Picker</a> <br />2. <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/genericComponents/Button.tsx">Button Component</a><br />3.  <a href="https://github.com/dustyshaw/StudyNest/blob/main/studynest/src/components/Inputs/TextInput.tsx">Text Input</a></td>
   </tr>
   <tr>
     <td>5</td>
