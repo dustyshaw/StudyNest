@@ -6,7 +6,7 @@ export const UserService = {
   AddNewUser: async (request: AddUserRequest) => {
     try {
       const response = await axios.post<boolean>(
-        "https://localhost:7021/addUser",
+        `${import.meta.env.VITE_URL}/addUser`,
         request,
         {
           headers: {
@@ -22,7 +22,7 @@ export const UserService = {
   GetUserByEmail: async (email: string) => {
     try {
       const response = await axios.post<UserAccount>(
-        "https://localhost:7021/user/getByEmail",
+        `${import.meta.env.VITE_URL}/user/getByEmail`,
         email,
         {
           headers: {
@@ -38,7 +38,7 @@ export const UserService = {
   UpdateUserStreak: async (email: string) => {
     try {
       const response = await axios.post<number>(
-        "https://localhost:7021/user/updatestreak",
+        `${import.meta.env.VITE_URL}/user/updatestreak`,
         email,
         {
           headers: {

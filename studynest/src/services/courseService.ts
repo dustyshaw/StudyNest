@@ -8,7 +8,7 @@ export const CourseService = {
   GetAllCourses: async () => {
     try {
       const response = await axios.get<Course[]>(
-        "https://localhost:7021/course/getall"
+        `${import.meta.env.VITE_URL}/course/getall`
       );
       return response.data;
     } catch {
@@ -18,7 +18,7 @@ export const CourseService = {
   GetAllPublicCourses: async () => {
     try {
       const response = await axios.get<Course[]>(
-        "https://localhost:7021/course/public"
+        `${import.meta.env.VITE_URL}/course/public`
       );
       return response.data;
     } catch {
@@ -28,7 +28,7 @@ export const CourseService = {
   GetCourseById: async (courseId: number) => {
     try {
       const response = await axios.get<Course>(
-        "https://localhost:7021/coursebyid",
+        `${import.meta.env.VITE_URL}/coursebyid`,
         {
           params: {
             courseId: courseId,
@@ -44,7 +44,7 @@ export const CourseService = {
   AddCourse: async (addCourseRequest: AddCourseRequest) => {
     try {
       const response = await axios.post<Course>(
-        "https://localhost:7021/course/addCourse",
+        `${import.meta.env.VITE_URL}/course/addCourse`,
         addCourseRequest,
         {
           headers: {
@@ -60,7 +60,7 @@ export const CourseService = {
   AddCourseWithUnits: async (requests: CourseWithUnitsRequest) => {
     try {
       const response = await axios.post<Course>(
-        "https://localhost:7021/course/addCourse",
+        `${import.meta.env.VITE_URL}/course/addCourse`,
         requests,
         {
           headers: {
@@ -76,7 +76,7 @@ export const CourseService = {
   EditCourse: async (editCourseRequest: EditCourseRequest) => {
     try {
       const response = await axios.patch<Course>(
-        "https://localhost:7021/course/editCourse",
+        `${import.meta.env.VITE_URL}/course/editCourse`,
         editCourseRequest,
         {
           headers: {

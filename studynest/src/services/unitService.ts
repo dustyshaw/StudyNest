@@ -6,7 +6,7 @@ export const UnitService = {
   AddUnit: async (request: AddUnitRequest) => {
     try {
       const response = await axios.post<boolean>(
-        "https://localhost:7021/unit/addUnit",
+        `${import.meta.env.VITE_URL}/unit/addUnit`,
         request,
         {
           headers: {
@@ -22,7 +22,7 @@ export const UnitService = {
   EditUnit: async (request: EditUnitRequest) => {
     try {
       const response = await axios.patch<boolean>(
-        "https://localhost:7021/unit/editunit",
+        `${import.meta.env.VITE_URL}/unit/editunit`,
         request,
         {
           headers: {

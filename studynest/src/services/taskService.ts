@@ -8,7 +8,7 @@ export const TaskService = {
   GetTaskByTaskId: async (taskId: number) => {
     try {
       const response = await axios.get<Task>(
-        "https://localhost:7021/task/gettaskbytaskid",
+        "${import.meta.env.VITE_URL}/task/gettaskbytaskid",
         {
           params: {
             taskId: taskId,
@@ -23,7 +23,7 @@ export const TaskService = {
   AddTask: async (request: AddTaskRequest) => {
     try {
       const response = await axios.post<Task>(
-        "https://localhost:7021/task/addtask",
+        `${import.meta.env.VITE_URL}/task/addtask`,
         request,
         {
           headers: {
@@ -39,7 +39,7 @@ export const TaskService = {
   UpdateTaskTime: async (request: UpdateTaskTimeRequest) => {
     try {
       const response = await axios.patch<Task>(
-        "https://localhost:7021/task/updatetasktime",
+        `${import.meta.env.VITE_URL}/task/updatetasktime`,
         request,
         {
           headers: {
@@ -55,7 +55,7 @@ export const TaskService = {
   UpdateTask: async (request: UpdateTaskRequest) => {
     try {
       const response = await axios.patch<Task>(
-        "https://localhost:7021/task/updatetask",
+        `${import.meta.env.VITE_URL}/task/updatetask`,
         request,
         {
           headers: {

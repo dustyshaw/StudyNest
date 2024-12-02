@@ -7,7 +7,7 @@ export const UserCourseService = {
   GetAllUserCourses: async (userId: number) => {
     try {
       const response = await axios.get<courseEnrollDto[]>(
-        "https://localhost:7021/getByUser",
+        `${import.meta.env.VITE_URL}/getByUser`,
         {
           params: {
             userId: userId,
@@ -26,7 +26,7 @@ export const UserCourseService = {
   GetUserCourseById: async (userCourseId: number) => {
     try {
       const response = await axios.get<courseEnrollDto[]>(
-        "https://localhost:7021/getUserCourse",
+        `${import.meta.env.VITE_URL}/getUserCourse`,
         {
           params: {
             userCourseId: userCourseId,
@@ -45,7 +45,7 @@ export const UserCourseService = {
   AddCourseEnroll: async (request: AddCourseEnrollRequest) => {
     try {
       const response = await axios.post<boolean>(
-        "https://localhost:7021/addCourseEnroll",
+        `${import.meta.env.VITE_URL}/addCourseEnroll`,
         request,
         {
           headers: {

@@ -6,7 +6,7 @@ export const CourseUnitService = {
     GetCourseunitsByCourseId: async (courseId: number) => {
       try {
         const response = await axios.get<CourseUnit[]>(
-          "https://localhost:7021/courseunit/getallbycourseid",
+          `${import.meta.env.VITE_URL}/courseunit/getallbycourseid`,
           {
             params: {
               courseId: courseId,
