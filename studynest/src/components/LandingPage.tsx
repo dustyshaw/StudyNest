@@ -1,4 +1,4 @@
-import LoginButton from "../LoginBtn";
+import LoginButton from "../features/LoginBtn";
 
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { RectangleGroupIcon } from "@heroicons/react/24/outline";

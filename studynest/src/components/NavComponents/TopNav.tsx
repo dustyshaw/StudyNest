@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import LoginButton from "../../LoginBtn";
+import LoginButton from "../../features/LoginBtn";
 import { DynamicLayoutContext } from "../../context/DynamicLayoutContext";
 
 const TopNav = () => {
