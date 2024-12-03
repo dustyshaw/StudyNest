@@ -21,10 +21,17 @@ public class StatsService : IStatsService
         var courseIds = userCourseEnrolls.Select(x => x.Courseid).ToList();
 
         var userCourses = await dbContext.Courses
-    .Where(course => courseIds.Contains(course.Id))
-    .ToListAsync();
+            .Where(course => courseIds.Contains(course.Id))
+            .ToListAsync();
+
         var courseNames = userCourses.Select(x => x.Title).ToList();    
 
+        var courseUnits = await dbContext.Courseunits.Select(x => x.Unit).ToListAsync();
+        
+        var unitTasks = await dbContext.UnitTasks.Where(x => courseUnits.Contains(x.Unit)).ToListAsync();
+        var unitTaskIds = unitTasks.Select(x => x.Taskid).ToList();
+
+        var tasks = await dbContext.Studytasks.Where(x => unitTaskIds.Contains(x.Id)).ToListAsync();
 
 
         StatsReport statsReport = new StatsReport()
