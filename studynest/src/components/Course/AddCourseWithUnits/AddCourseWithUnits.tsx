@@ -47,6 +47,8 @@ const AddCourseWithUnitsForm = () => {
     const newCourse: AddCourseRequest = {
       title: formData.course.title,
       description: formData.course.description,
+      isPrivate: true,
+      userEmail: "dusty.shaw@students.snow.edu"
     };
 
     const newCourseWithUnits: CourseWithUnitsRequest = {

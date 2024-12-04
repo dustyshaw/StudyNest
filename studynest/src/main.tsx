@@ -13,8 +13,8 @@ const oidcConfig: AuthProviderProps = {
   //   import.meta.env.MODE === "production"
   //     ? "https://studynest.duckdns.org"
   //     : "https://localhost:5173/",
-  redirect_uri: "https://studynest.duckdns.org/",
-  // redirect_uri: "http://localhost:5173/", // TODO: Add duckdns url if in development
+  // redirect_uri: "https://studynest.duckdns.org/",
+  redirect_uri: "http://localhost:5173/", // TODO: Add duckdns url if in development
   onSigninCallback: async (user) => {
     const request: AddUserRequest = {
       userName: user?.profile.name ?? "",
@@ -23,9 +23,6 @@ const oidcConfig: AuthProviderProps = {
     };
     UserService.AddNewUser(request);
     UserService.UpdateUserStreak(user?.profile.email ?? "");
-    // console.log("USER TOKEN ----------", user?.id_token);
-    // console.log("USERNAME", user?.profile.name)
-
     document.cookie = `jwt_token=${user?.id_token}`;
     window.history.replaceState({}, document.title, window.location.pathname);
   },
