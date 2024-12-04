@@ -12,7 +12,7 @@ const EditUnit = () => {
   const [formData, setFormData] = React.useState<Partial<EditUnitRequest>>({});
   const { mutateAsync: editUnitAsync } = UnitQueries.useEditUnit();
 
-  console.log("UNIT ID", unitId.unitId);
+  console.log(unitId.unitId)
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -26,14 +26,13 @@ const EditUnit = () => {
   ) => {
     e.preventDefault();
     e.stopPropagation();
-
     const unitIdNum = Number(unitId.unitId);
-
-    console.log("BLAHH", unitIdNum);
+    console.log("Form data title ", formData.title)
+    console.log("UnitIdNum: ", unitIdNum)
 
     const request: EditUnitRequest = {
       title: formData.title ?? "Untitled",
-      unitId: unitIdNum,
+      id: unitIdNum,
     };
 
     await editUnitAsync(request);

@@ -45,6 +45,11 @@ public class UnitService : IUnitService
       
         var uuc = await dbContext.Units.Where(u => u.Id == request.Id).FirstOrDefaultAsync();
 
+        if (uuc == null)
+        {
+            throw new Exception("The unit under change could not be found by it's id");
+        }
+
         uuc.Title = request.Title;  
 
         dbContext.Update(uuc);

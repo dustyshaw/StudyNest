@@ -1,4 +1,4 @@
 export interface EditUnitRequest {
-  unitId: number;
+  id: number;
   title: string;
 }
