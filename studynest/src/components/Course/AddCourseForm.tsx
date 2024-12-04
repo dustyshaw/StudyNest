@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AddCourseRequest } from "../../@types/Requests/AddCourseRequest";
 import TextInput from "../Inputs/TextInput";
 import Button from "../LayoutComponents/Button";
 import { CourseQueries } from "../../Queries/courseQueries";
 import CancelButton from "../LayoutComponents/CancelButton";
 import CheckboxInput from "../Inputs/SelectInput";
+import { UserContext } from "../../context/UserContext";
 
 const AddCourseForm = () => {
   const [formData, setFormData] = React.useState<Partial<AddCourseRequest>>({});
+  const userContext = useContext(UserContext);
 
   const { mutateAsync: addCourseAsync } = CourseQueries.useAddACourse();
 
@@ -35,10 +37,17 @@ const AddCourseForm = () => {
     e.preventDefault();
     e.stopPropagation();
 
+    if (userContext?.user?.email == undefined)
+    {
+      console.error("You're not logged in.")
+      return;
+    }
+
     const newCourse: AddCourseRequest = {
       title: formData.title ?? "",
       description: formData.description ?? "",
       isPrivate: formData.isPrivate ?? true,
+      userEmail: userContext?.user?.email
     };
 
     addCourseAsync(newCourse);

@@ -63,14 +63,28 @@ public class CourseService : ICourseService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
+        var user = await dbContext.Useraccounts.Where(x => x.Email == addCourseRequest.UserEmail).FirstOrDefaultAsync();
+
         Course newCourse = new Course()
         {
             Title = addCourseRequest.Title,
             Description = addCourseRequest.Description,
         };
-
         dbContext.Add(newCourse);
+        await dbContext.SaveChangesAsync();
 
+        if (user == null) { return false; }
+
+        var courseJustAdded = await dbContext.Courses.Where(x => x.Title == newCourse.Title && x.Description == newCourse.Description).FirstOrDefaultAsync();
+
+        if (courseJustAdded == null) { return false; }
+
+        Courseenroll newCourseEnroll = new Courseenroll()
+        {
+            Userid = user.Id,
+            Courseid = courseJustAdded.Id
+        };
+        dbContext.Add(newCourseEnroll);
         await dbContext.SaveChangesAsync();
 
         return true;
