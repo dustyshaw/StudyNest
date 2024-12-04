@@ -26,12 +26,35 @@ public class StatsService : IStatsService
 
         var courseNames = userCourses.Select(x => x.Title).ToList();    
 
-        var courseUnits = await dbContext.Courseunits.Select(x => x.Unit).ToListAsync();
+        var courseUnits = await dbContext.Courseunits
+            .Where(x => courseIds.Contains(x.Courseid))
+            .Select(x => x.Unit).ToListAsync();
         
         var unitTasks = await dbContext.UnitTasks.Where(x => courseUnits.Contains(x.Unit)).ToListAsync();
         var unitTaskIds = unitTasks.Select(x => x.Taskid).ToList();
 
         var tasks = await dbContext.Studytasks.Where(x => unitTaskIds.Contains(x.Id)).ToListAsync();
+
+
+        var taskDurations = tasks.Select(task =>
+        {
+            if (task.Eventstart != null && task.Eventend != null)
+            {
+                var duration = task.Eventend - task.Eventstart;
+
+                return new
+                {
+                    TaskId = task.Id,
+                    DurationInMinutes = (int)duration.Value.TotalMinutes // Assuming StartTime and EndTime are not null
+                };
+            }
+
+            return new
+            {
+                TaskId = task.Id,
+                DurationInMinutes = 0 // Default to 0 if times are null
+            };
+        }).ToList();
 
 
         StatsReport statsReport = new StatsReport()
