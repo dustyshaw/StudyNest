@@ -16,8 +16,6 @@ const UserCoursesList: FC<UserCourseListProps> = ({ userCourses }) => {
           key={key}
           className="w-full sm:w-1/2 xl:w-1/3 p-2"
         >
-          {" "}
-          {/* Ensures half width on small and large screens */}
           <div className="flex flex-col md:flex-row m-3">
             <div className="h-full bg-lilac-300 text-sky-300 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:rounded-bl-lg p-3">
               <img

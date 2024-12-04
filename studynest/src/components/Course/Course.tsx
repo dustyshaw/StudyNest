@@ -73,9 +73,9 @@ const Course = () => {
           courseUnits
             .map((x) => ({
               ...x,
-              unitTasks: x.unit.unitTasks.sort((a) =>
-                a.task.iscomplete ? -1 : 1
-              ), // Sort tasks by completion
+              unitTasks:
+                x.unit.unitTasks?.sort((a) => (a.task.iscomplete ? -1 : 1)) ||
+                [], 
             }))
             .sort((a, b) => {
               // Sort units based on the completion of their tasks (completed tasks come first)
