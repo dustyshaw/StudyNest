@@ -4,16 +4,29 @@ import TextInput from "../Inputs/TextInput";
 import Button from "../LayoutComponents/Button";
 import { CourseQueries } from "../../Queries/courseQueries";
 import CancelButton from "../LayoutComponents/CancelButton";
+import CheckboxInput from "../Inputs/SelectInput";
 
 const AddCourseForm = () => {
   const [formData, setFormData] = React.useState<Partial<AddCourseRequest>>({});
+
   const { mutateAsync: addCourseAsync } = CourseQueries.useAddACourse();
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setFormData({
-      ...formData,
-      [e.currentTarget.id]: e.currentTarget.value,
-    });
+    const { id, value, type, checked } = e.currentTarget;
+
+    if (type === "checkbox") {
+      setFormData({
+        ...formData,
+        [id]: checked,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [id]: value,
+      });
+    }
+
+    console.log(formData)
   };
 
   const handleSubmission = (
@@ -25,12 +38,20 @@ const AddCourseForm = () => {
     const newCourse: AddCourseRequest = {
       title: formData.title ?? "",
       description: formData.description ?? "",
+      isPrivate: formData.isPrivate ?? true,
     };
+
     addCourseAsync(newCourse);
   };
 
   return (
     <form>
+      <CheckboxInput
+        id="isPrivate" // Set the correct ID for checkbox to bind properly
+        value={formData.isPrivate ?? false} // Pass value (not checked)
+        onChange={handleForm} // Handle checkbox change
+        title={"Private (just for me to see)"}
+      />
       <TextInput
         label="* Course Title"
         placeholder="Enter Course Title"
