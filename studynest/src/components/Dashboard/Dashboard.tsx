@@ -5,6 +5,7 @@ import UserCoursesList from "../LayoutComponents/DashboardCourse";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import Stats from "../Stats/Stats";
+import LoadingComponent from "../LoadingComponent";
 
 const Dashboard = () => {
   const userContext = useContext(UserContext);
@@ -14,7 +15,7 @@ const Dashboard = () => {
     UserCourseQueries.useGetAllUserCoursesByUserId(userContext?.user?.id ?? 0);
 
   if (isLoading) {
-    return <p>Loading your courses...</p>;
+    return <LoadingComponent />;
   }
 
   return (

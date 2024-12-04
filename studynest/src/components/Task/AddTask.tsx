@@ -46,8 +46,6 @@ const AddTask = () => {
 
     const courseUnitIdNum = Number(courseUnitId);
 
-    console.log("EVENT START", formData.eventstart);
-
     const newTask: AddTaskRequest = {
       unitid: courseUnitIdNum ?? 0,
       title: formData.title ?? "",

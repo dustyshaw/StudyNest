@@ -4,11 +4,12 @@ import { UserCourseQueries } from "../../Queries/userCourseQueries";
 import BrowseCourseList from "../LayoutComponents/BrowseCourse";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import LoadingComponent from "../LoadingComponent";
 
 const Browse = () => {
   const userContext = useContext(UserContext);
 
-  const { data } = CourseQueries.useGetAllPublicCourses();
+  const { data, isLoading } = CourseQueries.useGetAllPublicCourses();
   const { mutateAsync } = UserCourseQueries.useAddACourse();
 
   const handleAddCourseEnroll = async (courseId: number) => {
@@ -18,6 +19,10 @@ const Browse = () => {
     };
     mutateAsync(newUserCourseRequest);
   };
+
+  if (isLoading) {
+    return <LoadingComponent />
+  }
 
   return (
     <BrowseCourseList

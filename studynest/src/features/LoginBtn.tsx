@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
+import LoadingComponent from "../components/LoadingComponent";
 
 function LoginButton() {
   const auth = useAuth();
@@ -19,7 +20,7 @@ function LoginButton() {
   }
 
   if (auth.isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingComponent />;
   }
 
   if (auth.error) {

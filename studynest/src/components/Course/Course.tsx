@@ -12,6 +12,7 @@ import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 import AddCourseBtn from "./AddCourseBtn";
 import Button from "../LayoutComponents/Button";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
+import LoadingComponent from "../LoadingComponent";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
@@ -21,10 +22,9 @@ const Course = () => {
   const email = authuser?.profile.email ?? "";
   const { data: user } = UserQueries.useGetUserByEmail(email);
 
-  // TODO: Change this back to 0
-  const { data: userCourses } = UserCourseQueries.useGetAllUserCoursesByUserId(
-    user?.id ?? 0
-  );
+  const { data: userCourses, isLoading } =
+    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
+
   const [filteredUserCourse, setFilteredCourse] = useState<
     courseEnrollDto | undefined
   >();
@@ -42,8 +42,8 @@ const Course = () => {
     Number(userCourseId)
   );
 
-  if (!userCourses) {
-    return <div>Loading...</div>; // Loading state while data is being fetched
+  if (!userCourses || isLoading) {
+    return <LoadingComponent />;
   }
 
   return (
@@ -75,7 +75,7 @@ const Course = () => {
               ...x,
               unitTasks:
                 x.unit.unitTasks?.sort((a) => (a.task.iscomplete ? -1 : 1)) ||
-                [], 
+                [],
             }))
             .sort((a, b) => {
               // Sort units based on the completion of their tasks (completed tasks come first)

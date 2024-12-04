@@ -6,11 +6,12 @@ import { useParams } from "react-router";
 import { EditUnitRequest } from "../../@types/Requests/EditUnitRequest";
 import FormLayout from "../LayoutComponents/FormLayout";
 import CancelButton from "../LayoutComponents/CancelButton";
+import LoadingComponent from "../LoadingComponent";
 
 const EditUnit = () => {
   const unitId = useParams();
   const [formData, setFormData] = React.useState<Partial<EditUnitRequest>>({});
-  const { mutateAsync: editUnitAsync } = UnitQueries.useEditUnit();
+  const { mutateAsync: editUnitAsync, isPending } = UnitQueries.useEditUnit();
 
   console.log(unitId.unitId)
 
@@ -37,6 +38,8 @@ const EditUnit = () => {
 
     await editUnitAsync(request);
   };
+
+  if (isPending) return <LoadingComponent />;
 
   return (
     <FormLayout formTitle="Edit Unit">

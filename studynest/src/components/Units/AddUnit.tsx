@@ -7,11 +7,12 @@ import { useParams } from "react-router";
 import FormLayout from "../LayoutComponents/FormLayout";
 import { Link } from "react-router-dom";
 import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
+import LoadingComponent from "../LoadingComponent";
 
 const AddUnit = () => {
   const { courseId } = useParams();
   const [formData, setFormData] = React.useState<Partial<AddUnitRequest>>({});
-  const { mutateAsync: addUnitAsync } = UnitQueries.useAddUnit();
+  const { mutateAsync: addUnitAsync, isPending } = UnitQueries.useAddUnit();
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -33,6 +34,8 @@ const AddUnit = () => {
 
     await addUnitAsync(request);
   };
+
+  if (isPending) return <LoadingComponent />;
 
   return (
     <FormLayout formTitle="Add Unit">
