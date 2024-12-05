@@ -89,7 +89,7 @@ function App() {
                 <Route path="*" element={<FallbackComponent />} />
               </Routes>
             </div>
-            <div className="md:hidden">
+            <div className="sm:hidden sticky bottom-0">
               <BottomNav />
             </div>
           </ErrorBoundary>

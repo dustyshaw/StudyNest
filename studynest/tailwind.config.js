@@ -38,7 +38,7 @@ export default {
         'sky': {
           100: '#FAFDFF',
           200: '#E7F6FE',
-          300: '#D5F0FD',
+          300: '#cfefff',
           400: '#6DCBF8',
           500: '#1FAFF4',
           600: '#0D2855',
