@@ -79,7 +79,7 @@ const Course = () => {
               {courseUnit.unit != undefined && courseUnit.unit.unitTasks != undefined && courseUnit.unit.unitTasks.length <= 0 && (
                 <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
               )}
-              <AddCourseBtn courseUnitId={courseUnit.id} />
+              <AddCourseBtn courseUnitId={courseUnit.unitid} />
             </div>
           ))}
 
