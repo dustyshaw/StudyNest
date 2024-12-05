@@ -22,7 +22,7 @@ describe("calculateThreshold", () => {
     const streak = 3;
     const result = calculateThreshold(dayNumber, streak);
     expect(result).toEqual([
-      "WILL FAIL", // Add test failure
+      "inactive",
       "inactive",
       "active",
       "active",
