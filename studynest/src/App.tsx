@@ -24,14 +24,16 @@ import LandingPage from "./components/LandingPage";
 import LeftNav from "./components/NavComponents/LeftNav";
 import BottomNav from "./components/NavComponents/BottomNav";
 import EditUnit from "./components/Units/EditUnit";
+import { CourseQueries } from "./Queries/courseQueries";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
 function App() {
   const { user: authuser } = useAuth();
 
-  const layoutContext = useContext(DynamicLayoutContext);
+  const unusedVariable = 5;
 
+  const layoutContext = useContext(DynamicLayoutContext);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
