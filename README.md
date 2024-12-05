@@ -83,17 +83,17 @@ Total: 86 / 146 pts
 Total: 86 / 146 pts
 --- 
 ## Nov 26 - Edit Modules
-- [ ] Order assignments based on completion
-- [ ] Update module progress based on assignment
-- [ ] Edit Module titles
-- [ ] Show User Progress on Dashboard
+- [x] Order assignments based on completion
+- [x] Update module progress based on assignment
+- [x] Edit Module titles
+- [x] Show User Progress on Dashboard
 
 5 pts - Local Storage  
 
 ---   
 ## Dec 4
-- [ ] Final Polishing
-- [ ] Improve experience to be professional and organized
+- [x] Final Polishing
+- [x] Improve experience to be professional and organized
 
 **Points for this week**  
 20 pts - Professional, organized and smooth experience  
