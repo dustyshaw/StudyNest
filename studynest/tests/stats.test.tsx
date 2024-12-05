@@ -1,6 +1,4 @@
-// calculateThreshold.test.ts
 import { calculateThreshold } from "../src/components/Stats/CalculateThreshold";
-
 import { describe, it, expect } from "vitest";
 
 describe("calculateThreshold", () => {
@@ -16,7 +14,7 @@ describe("calculateThreshold", () => {
     const streak = 3;
     const result = calculateThreshold(dayNumber, streak);
     expect(result).toEqual([
-      "inactive",
+      "WILL FAIL", // Add test failure
       "inactive",
       "active",
       "active",
