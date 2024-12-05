@@ -28,7 +28,6 @@ const AddCourseForm = () => {
       });
     }
 
-    console.log(formData)
   };
 
   const handleSubmission = (

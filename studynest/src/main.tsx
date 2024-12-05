@@ -14,7 +14,6 @@ const oidcConfig: AuthProviderProps = {
       ? "https://studynest.duckdns.org/"
       : "http://localhost:5173/",
   onSigninCallback: async (user) => {
-    console.log(process.env.NODE_ENV);
     const request: AddUserRequest = {
       userName: user?.profile.name ?? "",
       email: user?.profile.email ?? "",

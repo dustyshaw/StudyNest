@@ -13,7 +13,6 @@ const LeftNav = () => {
     layoutContext?.handleNavbarWidthChange();
   };
 
-  console.log(layoutContext?.smallWidth)
 
   return (
     <>

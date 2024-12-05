@@ -24,7 +24,6 @@ export const UserService = {
       console.error("No user email provided.")
     }
     try {
-      console.log("hbaa")
       const response = await axios.post<UserAccount>(
         `${import.meta.env.VITE_URL}/user/getByEmail`,
         email,
@@ -34,7 +33,6 @@ export const UserService = {
           },
         }
       );
-      console.log("RESPONSE ", response.data)
       return response.data;
     } catch {
       console.error("Couldn't find user.");

@@ -50,7 +50,6 @@ function App() {
       ? 'ml-0'
       : 'ml-' + layoutContext?.navbarWidth?.slice(2, 4);
 
-
   if (!authuser) {
     return (
       <QueryClientProvider client={queryClient}>
@@ -67,7 +66,7 @@ function App() {
           <LeftNav />
           <TopNav />
           <ErrorBoundary FallbackComponent={FallbackComponent}>
-            <div className={` ${marginLeft} transition-all duration-300 in-app-tsx`}>
+            <div className={` ${marginLeft} ${marginLeft === "ml-48" ? "ml-48" : ""} transition-all duration-300 in-app-tsx`}>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/browse" element={<Browse />} />

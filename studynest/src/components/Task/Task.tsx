@@ -16,7 +16,6 @@ const ViewTask = () => {
     return <p>No Task...</p>;
   }
 
-  console.log("tasl ", task)
 
   return (
     <div className="m-8">
