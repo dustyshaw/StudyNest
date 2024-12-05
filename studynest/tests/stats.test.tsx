@@ -1,6 +1,14 @@
 import { calculateThreshold } from "../src/components/Stats/CalculateThreshold";
 import { describe, it, expect } from "vitest";
 
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    watch: false,  // setting to false so it will run in pipeline
+  },
+});
+
 describe("calculateThreshold", () => {
   it("should return an array of 7 elements", () => {
     const dayNumber = 5;
