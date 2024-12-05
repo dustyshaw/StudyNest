@@ -4,10 +4,11 @@ COPY ./package*.json .
 RUN NODE_ENV=development npm i
 COPY . .
 
+ENV VITE_URL="https://api.studynest.duckdns.org"
+
 # This also lints
 RUN npm run build
 
-ENV VITE_URL="https://api.studynest.duckdns.org"
 
 FROM nginx:1.27.0
 RUN rm -rf /usr/share/nginx/html/*
