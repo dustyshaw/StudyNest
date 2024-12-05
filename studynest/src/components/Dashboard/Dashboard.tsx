@@ -7,6 +7,7 @@ import { UserContext } from "../../context/UserContext";
 import Stats from "../Stats/Stats";
 import LoadingComponent from "../LoadingComponent";
 import NoItemsComponent from "../LayoutComponents/NoItemsComponent";
+import feather from "../../assets/feather-white.svg";
 
 const Dashboard = () => {
   const userContext = useContext(UserContext);
@@ -20,7 +21,11 @@ const Dashboard = () => {
   }
 
   if (userCourses == undefined || userCourses?.length <= 0) {
-    <NoItemsComponent linkToAdd={"/addcourse"} itemName={"Course"} supportingText={"Looks like you don't have any courses yet..."} />
+    <NoItemsComponent
+      linkToAdd={"/addcourse"}
+      itemName={"Course"}
+      supportingText={"Looks like you don't have any courses yet..."}
+    />;
   }
 
   return (
@@ -30,7 +35,9 @@ const Dashboard = () => {
           <div className="flex flex-row justify-between">
             <div className="text-2xl">Your Dashboard</div>
             <Link to={"/addcourse"}>
-              <Button>Add a Course</Button>
+              <Button className="flex flex-row">
+                <img src={feather} className="mt-1 me-1" /> Add a Course
+              </Button>
             </Link>
           </div>
           <div className="flex flex-row flex-wrap">
