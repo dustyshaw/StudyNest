@@ -19,7 +19,7 @@ builder.Services.AddDbContextFactory<DbDustyshaw25Context>(config => config.UseN
 
 builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
     {
-        options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend/";
+        options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend";
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
