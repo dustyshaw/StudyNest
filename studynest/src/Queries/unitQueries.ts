@@ -14,7 +14,7 @@ export const UnitQueries = {
         toast.success("Successfully Added Unit");
       },
       onError: () => {
-        toast.error("Failed to add unit")
+        toast.error("Failed to add unit");
       }
     });
   },

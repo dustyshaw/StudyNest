@@ -15,11 +15,13 @@ export const UnitService = {
         }
       );
       if (response.data == false) {
+        console.error("Failed to add unit")
         throw new Error("Failed to add unit");
       }
       return response.data;
     } catch {
       console.error("Couldn't add unit.");
+      throw new Error("Failed to add unit");
     }
   },
   EditUnit: async (request: EditUnitRequest) => {
@@ -39,6 +41,7 @@ export const UnitService = {
       return response.data;
     } catch {
       console.error("Couldn't edit unit.");
+      throw new Error("Failed to add unit");
     }
   },
 };

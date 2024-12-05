@@ -16,6 +16,11 @@ public class UnitService : IUnitService
     {
         using var dbContext = dbContextFactory.CreateDbContext();
 
+        if (addUnitRequest.Title == null || addUnitRequest.Title.Length == 0)
+        {
+            return false;
+        }
+
         Unit newUnit = new Unit()
         {
             Title = addUnitRequest.Title,

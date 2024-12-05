@@ -18,6 +18,7 @@ export const TaskService = {
       return response.data;
     } catch {
       console.error("Couldn't get enrolled courses");
+      throw new Error("Failed to get enrolled courses");
     }
   },
   AddTask: async (request: AddTaskRequest) => {
@@ -34,6 +35,7 @@ export const TaskService = {
       return response.data;
     } catch {
       console.error("Failed to add Task");
+      throw new Error("Failed to add Task");
     }
   },
   UpdateTaskTime: async (request: UpdateTaskTimeRequest) => {
@@ -49,7 +51,8 @@ export const TaskService = {
       );
       return response.data;
     } catch {
-      console.error("Failed to update Task");
+      console.error("Failed to update Task time");
+      throw new Error("Failed to update Task time");
     }
   },
   UpdateTask: async (request: UpdateTaskRequest) => {
@@ -66,6 +69,7 @@ export const TaskService = {
       return response.data;
     } catch {
       console.error("Failed to update Task");
+      throw new Error("Failed to update Task");
     }
   },
 };
