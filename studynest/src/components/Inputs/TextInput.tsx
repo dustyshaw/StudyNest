@@ -7,8 +7,8 @@ interface TextInputProps {
   required: boolean;
   id: string;
   defaultValue: string;
-  className: string;
-  helperText: string;
+  className?: string;
+  helperText?: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
 }
 

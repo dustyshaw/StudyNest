@@ -4,20 +4,22 @@ import TextInput from "../Inputs/TextInput";
 import React, { useEffect, useState } from "react";
 import { UpdateTaskRequest } from "../../@types/Requests/UpdateTaskRequest";
 import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
+import LoadingComponent from "../LoadingComponent";
 
 const EditTask = () => {
   const { taskId } = useParams();
   const { data: task } = TaskQueries.GetTasksByTaskIdQuery(Number(taskId));
   const [formData, setFormData] = React.useState<Partial<UpdateTaskRequest>>(
-    { }
+    {}
   );
-  const { mutateAsync: updateTaskAsync } = TaskQueries.useUpdateTask();
+  const { mutateAsync: updateTaskAsync, isPending } =
+    TaskQueries.useUpdateTask();
 
-  const [duedate, setDuedate] = useState<string>(task?.duedate ? task.duedate.toString().slice(0, 16) : "");
-
+  const [duedate, setDuedate] = useState<string>(
+    task?.duedate ? task.duedate.toString().slice(0, 16) : ""
+  );
 
   useEffect(() => {
-    // Once task data is available, set it in formData state
     if (task) {
       setFormData({
         title: task.title,
@@ -27,9 +29,8 @@ const EditTask = () => {
       });
 
       setDuedate(task.duedate ? task.duedate.toString().slice(0, 16) : "");
-
     }
-  }, [task, duedate]);  
+  }, [task, duedate]);
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -42,21 +43,27 @@ const EditTask = () => {
     }
   };
 
-  const handleSubmission = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const taskIdNumber = Number(taskId)
+  const handleSubmission = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-      const request: UpdateTaskRequest = {
-        title: formData.title ?? "",
-        description: formData.description ?? "",
-        taskid: taskIdNumber,
-        duedate: duedate ? duedate : new Date(),
-        iscomplete: false
-      };
-      await updateTaskAsync(request);
+    const taskIdNumber = Number(taskId);
+
+    const request: UpdateTaskRequest = {
+      title: formData.title ?? "",
+      description: formData.description ?? "",
+      taskid: taskIdNumber,
+      duedate: duedate ? duedate : new Date(),
+      iscomplete: false,
     };
+    await updateTaskAsync(request);
+  };
+
+  if (isPending) {
+    return <LoadingComponent />;
+  }
 
   return (
     <div className="mt-8">
@@ -69,25 +76,25 @@ const EditTask = () => {
           required={true}
           id="title"
           defaultValue={task?.title || ""}
-          onChange={handleForm} className={""} helperText={""}        />
+          onChange={handleForm}
+        />
         <TextInput
           label="Task Description"
           placeholder="Enter Task Description"
           error="Task Description is Required"
           required={true}
           id="description"
-          defaultValue={task?.description || ''}
-          onChange={handleForm} className={""} helperText={""}        />
+          defaultValue={task?.description || ""}
+          onChange={handleForm}
+        />
         <p className="mt-6">Due Date</p>
-        <div className="">
-          <input
-            aria-label="Due Date"
-            type="datetime-local"
-            id="duedate"
-            value={formData.duedate ? formData.duedate.toString() : ""}
-            onChange={handleForm}
-          />
-        </div>
+        <input
+          aria-label="Due Date"
+          type="datetime-local"
+          id="duedate"
+          value={formData.duedate ? formData.duedate.toString() : ""}
+          onChange={handleForm}
+        />
         <SecondaryBtn onClick={handleSubmission}>
           <p>Edit Task</p>
         </SecondaryBtn>

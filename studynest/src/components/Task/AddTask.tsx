@@ -6,11 +6,12 @@ import Button from "../LayoutComponents/Button";
 import { useParams } from "react-router";
 import DatePicker from "../Inputs/DatePicker";
 import FormLayout from "../LayoutComponents/FormLayout";
+import LoadingComponent from "../LoadingComponent";
 
 const AddTask = () => {
   const { courseUnitId } = useParams();
   const [formData, setFormData] = React.useState<Partial<AddTaskRequest>>({});
-  const { mutateAsync: addTaskAsync } = TaskQueries.useAddTask();
+  const { mutateAsync: addTaskAsync, isPending } = TaskQueries.useAddTask();
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { id, value } = e.currentTarget;
@@ -53,6 +54,10 @@ const AddTask = () => {
     addTaskAsync(newTask);
   };
 
+  if (isPending) {
+    return <LoadingComponent />
+  }
+  
   return (
     <FormLayout formTitle="Task Title">
       <form className="p-5">

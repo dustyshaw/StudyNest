@@ -2,13 +2,15 @@ import { useState } from "react";
 import Button from "../LayoutComponents/Button";
 import { TaskQueries } from "../../Queries/taskQueries";
 import { UpdateTaskTimeRequest } from "../../@types/Requests/UpdateTaskTimeRequest";
+import NumberInput from "../Inputs/NumberInput";
+import { BounceLoader } from "react-spinners";
 
 interface LogHoursProps {
   taskId: number;
 }
 
 const LogHours: React.FC<LogHoursProps> = ({ taskId }) => {
-  const { mutateAsync } = TaskQueries.useUpdateTaskTime();
+  const { mutateAsync, isPending } = TaskQueries.useUpdateTaskTime();
 
   const [hours, setHours] = useState(0); // Default to 0 hours
   const [minutes, setMinutes] = useState(0); // Default to 0 minutes
@@ -22,34 +24,39 @@ const LogHours: React.FC<LogHoursProps> = ({ taskId }) => {
 
     await mutateAsync(request);
   };
+
+  if (isPending) {
+    return (
+      <BounceLoader
+        loading={true}
+        size={50}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        speedMultiplier={1}
+        color="#C4ABE6"
+      />
+    );
+  }
   return (
     <div>
       <h2 className="text-xl">Log Hours</h2>
       <div>
         <form>
-          <p>Hours</p>
-          <input
-            type="number"
+          <NumberInput
+            label="Hours"
             value={hours}
-            onChange={(e) => setHours(Number(e.target.value))}
-            className="rounded border border-gray-200 p-2"
-            min="0"
+            onChange={setHours}
+            min={0}
           />
-          <p>Minutes</p>
-          <input
-            type="number"
+          <NumberInput
+            label="Minutes"
             value={minutes}
-            onChange={(e) => setMinutes(Number(e.target.value))}
-            className="rounded border border-gray-200 p-2"
-            min="0"
-            max="59"
+            onChange={setMinutes}
+            min={0}
+            max={59}
           />
         </form>
-        <Button
-          onClick={handleUpdateHours} // Call handleUpdateHours on button click
-        >
-          Log Hours
-        </Button>
+        <Button onClick={handleUpdateHours}>Log Hours</Button>
       </div>
     </div>
   );

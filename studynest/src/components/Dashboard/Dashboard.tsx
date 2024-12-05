@@ -12,11 +12,10 @@ import feather from "../../assets/feather-white.svg";
 const Dashboard = () => {
   const userContext = useContext(UserContext);
 
-  // TODO change this back to userContext?.user?.id ?? 0
   const { data: userCourses, isLoading } =
     UserCourseQueries.useGetAllUserCoursesByUserId(userContext?.user?.id ?? 0);
 
-  if (isLoading) {
+  if (isLoading || userContext?.isLoading) {
     return <LoadingComponent />;
   }
 
