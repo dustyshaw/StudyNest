@@ -8,6 +8,7 @@ ENV VITE_URL="https://api.studynest.duckdns.org"
 
 # This also lints
 RUN npm run build
+RUN npm test
 
 
 FROM nginx:1.27.0
