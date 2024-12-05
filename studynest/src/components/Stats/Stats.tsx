@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BarChartComponent from "./RadialBarChart";
 import { UserAccount } from "../../@types/userAccount";
 import { BoltIcon } from "@heroicons/react/24/solid";
+import { calculateThreshold } from "./CalculateThreshold";
 
 interface StatsProps {
   user: UserAccount;
@@ -14,11 +15,7 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
 
   const [streakDots, setStreakDots] = useState<string[]>([]);
   useEffect(() => {
-    const threshold = dayNumber - streak;
-
-    const newStreakDots = Array.from({ length: 7 }, (_, i) =>
-      i >= threshold && i < dayNumber ? "active" : "inactive"
-    );
+    const newStreakDots = calculateThreshold(dayNumber, streak);
 
     setStreakDots(newStreakDots);
   }, [streak, dayNumber]);
