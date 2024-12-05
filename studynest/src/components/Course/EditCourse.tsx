@@ -46,36 +46,38 @@ const EditCourse = () => {
   };
 
   return (
-    <FormLayout formTitle="Edit Course">
-      <form>
-        <TextInput
-          label="* Course Title"
-          placeholder="Enter Course Title"
-          error="Course Title is Required"
-          required={true}
-          id="title"
-          onChange={handleForm}
-          defaultValue={""}
-          className={""}
-          helperText={""}
-        />
-        <TextInput
-          label="Course Description"
-          placeholder="Enter Course Description"
-          error="Course Description is Required"
-          required={true}
-          id="description"
-          onChange={handleForm}
-          defaultValue={""}
-          className={""}
-          helperText={""}
-        />
-        <Button onClick={handleSubmission} className="mt-6">
-          <p>Save Changes</p>
-        </Button>
-        <CancelButton></CancelButton>
-      </form>
-    </FormLayout>
+    <>
+      <FormLayout formTitle="Edit Course">
+        <form>
+          <TextInput
+            label="* Course Title"
+            placeholder="Enter Course Title"
+            error="Course Title is Required"
+            required={true}
+            id="title"
+            onChange={handleForm}
+            defaultValue={""}
+            className={""}
+            helperText={""}
+          />
+          <TextInput
+            label="Course Description"
+            placeholder="Enter Course Description"
+            error="Course Description is Required"
+            required={true}
+            id="description"
+            onChange={handleForm}
+            defaultValue={""}
+            className={""}
+            helperText={""}
+          />
+          <Button onClick={handleSubmission} className="mt-6">
+            <p>Save Changes</p>
+          </Button>
+          <CancelButton></CancelButton>
+        </form>
+      </FormLayout>
+    </>
   );
 };
 
