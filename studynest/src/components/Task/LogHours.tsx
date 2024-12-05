@@ -42,19 +42,22 @@ const LogHours: React.FC<LogHoursProps> = ({ taskId }) => {
       <h2 className="text-xl">Log Hours</h2>
       <div>
         <form>
-          <NumberInput
-            label="Hours"
-            value={hours}
-            onChange={setHours}
-            min={0}
-          />
-          <NumberInput
-            label="Minutes"
-            value={minutes}
-            onChange={setMinutes}
-            min={0}
-            max={59}
-          />
+          <div className="flex flex-row">
+            <NumberInput
+              label="Hours"
+              value={hours}
+              onChange={setHours}
+              min={0}
+              className="w-full"
+            />
+            <NumberInput
+              label="Minutes"
+              value={minutes}
+              onChange={setMinutes}
+              min={0}
+              max={59}
+            />
+          </div>
         </form>
         <Button onClick={handleUpdateHours}>Log Hours</Button>
       </div>

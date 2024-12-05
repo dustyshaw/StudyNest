@@ -3,8 +3,10 @@ import { TaskQueries } from "../../Queries/taskQueries";
 import TextInput from "../Inputs/TextInput";
 import React, { useEffect, useState } from "react";
 import { UpdateTaskRequest } from "../../@types/Requests/UpdateTaskRequest";
-import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 import LoadingComponent from "../LoadingComponent";
+import FormLayout from "../LayoutComponents/FormLayout";
+import Button from "../LayoutComponents/Button";
+import DatePicker from "../Inputs/DatePicker";
 
 const EditTask = () => {
   const { taskId } = useParams();
@@ -58,6 +60,7 @@ const EditTask = () => {
       duedate: duedate ? duedate : new Date(),
       iscomplete: false,
     };
+    console.log("update task request", request);
     await updateTaskAsync(request);
   };
 
@@ -66,8 +69,7 @@ const EditTask = () => {
   }
 
   return (
-    <div className="mt-8">
-      <p>Edit Task {taskId}</p>
+    <FormLayout formTitle="Edit Task">
       <form className="p-5">
         <TextInput
           label="* Task Title"
@@ -87,19 +89,26 @@ const EditTask = () => {
           defaultValue={task?.description || ""}
           onChange={handleForm}
         />
-        <p className="mt-6">Due Date</p>
+        <DatePicker
+          id={"duedate"}
+          label={"Due Date"}
+          value={formData.duedate?.toString()}
+          onChange={handleForm}
+        />
+        {/* <p className="mt-6">Due Date</p>
         <input
           aria-label="Due Date"
           type="datetime-local"
           id="duedate"
           value={formData.duedate ? formData.duedate.toString() : ""}
           onChange={handleForm}
-        />
-        <SecondaryBtn onClick={handleSubmission}>
-          <p>Edit Task</p>
-        </SecondaryBtn>
+        /> */}
+        <br />
+        <Button onClick={handleSubmission} className="mt-5">
+          <p>Save Changes</p>
+        </Button>
       </form>
-    </div>
+    </FormLayout>
   );
 };
 

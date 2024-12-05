@@ -8,6 +8,7 @@ interface NumberInputProps {
   min?: number;
   max?: number;
   step?: number;
+  className?: string;
 }
 
 const NumberInput: React.FC<NumberInputProps> = ({
@@ -17,6 +18,7 @@ const NumberInput: React.FC<NumberInputProps> = ({
   min = 0,
   max,
   step = 1,
+  className,
 }) => {
   return (
     <div className="mb-4">
@@ -28,7 +30,7 @@ const NumberInput: React.FC<NumberInputProps> = ({
         min={min}
         max={max}
         step={step}
-        className="rounded border border-gray-200 p-2"
+        className={`rounded border border-gray-200 p-2 ${className}`}
       />
     </div>
   );
