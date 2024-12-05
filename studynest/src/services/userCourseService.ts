@@ -12,9 +12,6 @@ export const UserCourseService = {
           params: {
             userId: userId,
           },
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
         }
       );
 
@@ -31,12 +28,8 @@ export const UserCourseService = {
           params: {
             userCourseId: userCourseId,
           },
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
         }
       );
-
       return response.data;
     } catch {
       console.error("Couldn't get enrolled courses");
@@ -53,9 +46,12 @@ export const UserCourseService = {
           },
         }
       );
+      if (response.data == false) {
+        throw new Error("Already enrolled in course");
+      }
       return response.data;
     } catch {
-      console.error("Couldn't add course.");
+      throw new Error("Failed to enroll in course");
     }
   },
 };

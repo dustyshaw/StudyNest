@@ -14,6 +14,9 @@ export const UnitService = {
           },
         }
       );
+      if (response.data == false) {
+        throw new Error("Failed to add unit");
+      }
       return response.data;
     } catch {
       console.error("Couldn't add unit.");
@@ -30,6 +33,9 @@ export const UnitService = {
           },
         }
       );
+      if (response.data == false) {
+        throw new Error("Failed to edit unit");
+      }
       return response.data;
     } catch {
       console.error("Couldn't edit unit.");

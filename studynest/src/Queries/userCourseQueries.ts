@@ -19,6 +19,9 @@ export const UserCourseQueries = {
         queryClient.invalidateQueries({ queryKey: ["usercourses"] }); // Explicitly pass it as an array
         toast.success("Successfully Added Enrolled User in Course!")
       },
+      onError: () => {
+        toast.error("You're already enrolled in this course...");
+      }
     });
   },
 };

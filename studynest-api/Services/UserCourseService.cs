@@ -16,6 +16,13 @@ public class UserCourseService : IUserCourseService
     {
         using var context = dbContextFactory.CreateDbContext();
 
+        var thisUsersCourses = await context.Courseenrolls.Where(x => x.Userid == addCourseEnrollRequest.UserId).ToListAsync();
+
+        if (thisUsersCourses.Any( x=> x.Courseid == addCourseEnrollRequest.CourseId))
+        {
+            return false;
+        }
+
         Courseenroll newCourseEnroll = new Courseenroll()
         {
             Userid = addCourseEnrollRequest.UserId,

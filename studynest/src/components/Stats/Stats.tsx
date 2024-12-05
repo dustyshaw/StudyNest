@@ -16,8 +16,6 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
   useEffect(() => {
     const threshold = dayNumber - streak;
 
-    console.log(dayNumber)
-
     const newStreakDots = Array.from({ length: 7 }, (_, i) =>
       i >= threshold && i < dayNumber ? "active" : "inactive"
     );
@@ -51,7 +49,7 @@ const Stats: React.FC<StatsProps> = ({ user }) => {
       </div>
       <div className="xl:px-16 text-gray-600 flex flex-row mt-2">
         <BoltIcon className="w-6 text-gray-950 me-1" />
-        <span className="font-semibold text-gray-700">{user.streak}</span> day
+        <span className="font-semibold text-gray-700 me-1">{user.streak}</span>{" "}day
         streak
       </div>
       <BarChartComponent />

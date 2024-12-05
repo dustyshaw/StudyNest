@@ -67,11 +67,12 @@ public class UserService : IUserService
             return 0;
         }
 
+        var today = DateOnly.FromDateTime(DateTime.Today);
         var yesterday = DateOnly.FromDateTime(DateTime.Today.AddDays(-1));
 
         if (user.Lastactivedate == null)
         {
-            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
+            user.Lastactivedate = today;
             user.Streak = (user.Streak ?? 0) + 1;
             await context.SaveChangesAsync();
         }
@@ -79,15 +80,16 @@ public class UserService : IUserService
         if (user.Lastactivedate == yesterday)
         {
             user.Streak = (user.Streak ?? 0) + 1;
-            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
+            user.Lastactivedate = today;
             await context.SaveChangesAsync();
         }
-        else
+        else if (user.Lastactivedate < yesterday)
         {
             user.Streak = 0;
-            user.Lastactivedate = DateOnly.FromDateTime(DateTime.Today);
+            user.Lastactivedate = today;
             await context.SaveChangesAsync();
         }
+
 
         return user.Streak ?? 0;
     }

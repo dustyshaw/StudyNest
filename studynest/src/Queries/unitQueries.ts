@@ -13,6 +13,9 @@ export const UnitQueries = {
         queryClient.invalidateQueries({ queryKey: ["units"] });
         toast.success("Successfully Added Unit");
       },
+      onError: () => {
+        toast.error("Failed to add unit")
+      }
     });
   },
   useEditUnit: () => {
@@ -21,8 +24,11 @@ export const UnitQueries = {
       mutationFn: (request: EditUnitRequest) => UnitService.EditUnit(request),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["units"] });
-        toast.success("Successfully Added Unit");
+        toast.success("Successfully Edited Unit");
       },
+      onError: () => {
+        toast.error("Failed to Edit unit")
+      }
     });
   },
 };
