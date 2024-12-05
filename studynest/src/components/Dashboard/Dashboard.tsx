@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import Stats from "../Stats/Stats";
 import LoadingComponent from "../LoadingComponent";
+import NoItemsComponent from "../LayoutComponents/NoItemsComponent";
 
 const Dashboard = () => {
   const userContext = useContext(UserContext);
@@ -16,6 +17,10 @@ const Dashboard = () => {
 
   if (isLoading) {
     return <LoadingComponent />;
+  }
+
+  if (userCourses == undefined || userCourses?.length <= 0) {
+    <NoItemsComponent linkToAdd={"/addcourse"} itemName={"Course"} supportingText={"Looks like you don't have any courses yet..."} />
   }
 
   return (
