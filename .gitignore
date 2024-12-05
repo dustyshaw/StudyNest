@@ -1,6 +1,9 @@
 .env
 *.env
 
+secrets.json
+*secrets.json
+
 # CSVs
 **/CSVs/
 
