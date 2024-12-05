@@ -16,9 +16,5 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# TODO ADD ENVIRONMENT VARIABLES
-# ENV MY_VARIABLE=123
-# docker build -t --build-arg TEST_ENV="123" -t .
-# COPY default.conf /etc/nginx/conf.d/default.conf for later
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

@@ -13,10 +13,6 @@ RUN dotnet format
 RUN dotnet publish -c Release -o out
 
 
-# TODO ADD ENVIRONMENT VARIABLES
-# ENV VITE=123
-
-
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /App
 COPY --from=build-env /App/out .

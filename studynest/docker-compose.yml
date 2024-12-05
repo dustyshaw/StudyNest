@@ -1,25 +1,11 @@
 version: '3.8'
 
 services:
-  # app:
-  #   container_name: inventory
-  #   image: inventory
-  #   build:
-  #     context: .
-  #   volumes: 
-  #     - ./src:/app/src
-  #     # - images
-  #   ports:
-  #     - 3000:80 
-  
   api:
     container_name: api
     image: codebras/studynest-api:latest
     ports:
       - 5225:8080
-    # volumes:
-    #   - images:/App/imageuploads
-
 
 volumes:
   images:
