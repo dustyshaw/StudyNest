@@ -3,9 +3,11 @@ import LoginButton from "../features/LoginBtn";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { RectangleGroupIcon } from "@heroicons/react/24/outline";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
+import BrowseCourseList from "./LayoutComponents/BrowseCourse";
+import { CourseQueries } from "../Queries/courseQueries";
 
 const LandingPage = () => {
-  // const { data } = CourseQueries.useGetAllPublicCourses();
+  const { data } = CourseQueries.useGetAllPublicCourses();
 
   return (
     <>
@@ -43,7 +45,7 @@ const LandingPage = () => {
       <div className="flex align-middle text-center flex-col mt-16">
         <h2 className="text-2xl font-semibold">Enroll in user made courses</h2>
         <div className="w-full">
-          {/* <BrowseCourseList data={data?.slice(0, 3)} /> */}
+          <BrowseCourseList data={data?.slice(0, 3)} />
         </div>
       </div>
     </>

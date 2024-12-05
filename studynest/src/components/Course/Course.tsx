@@ -1,29 +1,23 @@
 import { useParams } from "react-router";
 import { UserCourseQueries } from "../../Queries/userCourseQueries";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { courseEnrollDto } from "../../@types/Dtos/courseEnrollDto";
 import { Link } from "react-router-dom";
 import { CourseUnitQueries } from "../../Queries/courseUnitQueries";
-import formatDate from "../../services/DateFormatter";
-import { useAuth } from "react-oidc-context";
-import { UserQueries } from "../../Queries/userQueries";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import SecondaryBtn from "../LayoutComponents/SecondaryBtn";
 import AddCourseBtn from "./AddCourseBtn";
 import Button from "../LayoutComponents/Button";
-import { PencilSquareIcon } from "@heroicons/react/24/solid";
 import LoadingComponent from "../LoadingComponent";
+import { UserContext } from "../../context/UserContext";
+import UnitTitleBox from "./UnitTitleBox";
+import TaskTitleBox from "./TaskTitleBox";
 
 const Course = () => {
   const { courseId: userCourseId } = useParams();
-
-  const { user: authuser } = useAuth();
-
-  const email = authuser?.profile.email ?? "";
-  const { data: user } = UserQueries.useGetUserByEmail(email);
+  const userContext = useContext(UserContext);
 
   const { data: userCourses, isLoading } =
-    UserCourseQueries.useGetAllUserCoursesByUserId(user?.id ?? 0);
+    UserCourseQueries.useGetAllUserCoursesByUserId(userContext?.user?.id ?? 0);
 
   const [filteredUserCourse, setFilteredCourse] = useState<
     courseEnrollDto | undefined
@@ -41,6 +35,8 @@ const Course = () => {
   const { data: courseUnits } = CourseUnitQueries.useGetCourseById(
     Number(userCourseId)
   );
+
+  console.log(courseUnits)
 
   if (!userCourses || isLoading) {
     return <LoadingComponent />;
@@ -70,12 +66,29 @@ const Course = () => {
         {courseUnits && courseUnits.length <= 0 && <p>No units yet...</p>}
 
         {courseUnits &&
+          courseUnits.map((courseUnit, key) => (
+            <div key={key} className="mb-8 md:w-1/2">
+              <UnitTitleBox unitCourse={courseUnit} />
+
+              {courseUnit.unit != undefined && courseUnit.unit.unitTasks != undefined &&
+                courseUnit.unit.unitTasks.map((task, key) => (
+                  <Link to={`/task/${task.taskid}`} key={key}>
+                    <TaskTitleBox task={task} />
+                  </Link>
+                ))}
+              {courseUnit.unit != undefined && courseUnit.unit.unitTasks != undefined && courseUnit.unit.unitTasks.length <= 0 && (
+                <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
+              )}
+              <AddCourseBtn courseUnitId={courseUnit.id} />
+            </div>
+          ))}
+
+        {/* {courseUnits &&
           courseUnits
             .map((x) => ({
               ...x,
               unitTasks:
-                x.unit.unitTasks?.sort((a) => (a.task.iscomplete ? -1 : 1)) ||
-                [],
+                x.unit?.unitTasks?.sort((a) => (a.task.iscomplete ? -1 : 1)) || [],
             }))
             .sort((a, b) => {
               // Sort units based on the completion of their tasks (completed tasks come first)
@@ -132,7 +145,50 @@ const Course = () => {
                 )}
                 <AddCourseBtn courseUnitId={x.id} />
               </div>
-            ))}
+            ))} */}
+
+        {/* {courseUnits &&
+          courseUnits.map((x, key) => 
+        
+              <div key={key} className="mb-8 md:w-1/2">
+                <div className="bg-gray-200 rounded-lg flex flex-row justify-between items-center">
+                  <p className="text-xl p-4">{x.unit.title}</p>
+                  <span className="m-4">
+                    <Link to={`/editunit/${x.unit.id}`}>
+                      <PencilSquareIcon className="w-5 h-5 text-gray-600" />
+                    </Link>
+                  </span>
+                </div>
+                {x.unitTasks.map((unitTask, key) => (
+                  <Link to={`/task/${unitTask.taskid}`} key={key}>
+                    <div
+                      key={key}
+                      className={`px-3 border-b-2 text-lg p-3 border-l-8 rounded-lg flex flex-row ${
+                        unitTask.task.iscomplete
+                          ? "border-l-lime-400 text-gray-600"
+                          : "border-l-black"
+                      } my-2 ml-8`}
+                    >
+                      {unitTask.task?.iscomplete && (
+                        <CheckCircleIcon className="w-6 me-2 text-lime-600" />
+                      )}
+                      <span className="flex flex-row justify-between w-full">
+                        <p>{unitTask.task.title}</p>
+                        <p className="text-sm">
+                          due{" "}
+                          {unitTask.task.duedate &&
+                            formatDate(unitTask.task.duedate)}
+                        </p>
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+                {x.unitTasks.length <= 0 && (
+                  <p className="my-2 ml-8 text-lg p-3">No tasks yet...</p>
+                )}
+                <AddCourseBtn courseUnitId={x.id} />
+              </div>
+            ))} */}
       </div>
     </div>
   );
