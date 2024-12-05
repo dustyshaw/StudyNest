@@ -13,7 +13,7 @@ const AddTask = () => {
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { id, value } = e.currentTarget;
-  
+
     // If it's a date input, convert to ISO string and format it to match the required format
     if (id === "eventstart" || id === "eventend" || id === "duedate") {
       const date = new Date(value);
@@ -30,7 +30,7 @@ const AddTask = () => {
       });
     }
   };
-  
+
   // const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
   //   setFormData({
   //     ...formData,
@@ -86,38 +86,6 @@ const AddTask = () => {
           className={""}
           helperText={""}
         />
-        {/* <DatePicker
-          id={"eventstart"}
-          label={"Event End"}
-          value={formData.eventstart?.toString()}
-          onChange={handleForm}
-        /> */}
-
-        <input
-          aria-label="Event Start"
-          type="datetime-local"
-          id="eventstart"
-          value={
-            formData.eventstart != undefined
-              ? formData.eventstart.toString()
-              : ""
-          }
-          onChange={handleForm}
-        />
-
-        <DatePicker
-          id={"eventend"}
-          label={"Event End"}
-          value={formData.eventend?.toString()}
-          onChange={handleForm}
-        />
-        {/* <input
-            aria-label="Event End"
-            type="datetime-local"
-            id="eventend"
-            value={formData.eventend ? formData.eventend.toString() : ""}
-            onChange={handleForm}
-          /> */}
 
         <DatePicker
           id={"duedate"}
@@ -125,16 +93,6 @@ const AddTask = () => {
           value={formData.duedate?.toString()}
           onChange={handleForm}
         />
-        {/* <p className="mt-6">Due Date</p>
-        <div className="">
-          <input
-            aria-label="Due Date"
-            type="datetime-local"
-            id="duedate"
-            value={formData.duedate ? formData.duedate.toString() : ""}
-            onChange={handleForm}
-          />
-        </div> */}
 
         <Button onClick={handleSubmission}>
           <p>Add Task</p>

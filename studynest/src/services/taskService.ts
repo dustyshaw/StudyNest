@@ -8,7 +8,7 @@ export const TaskService = {
   GetTaskByTaskId: async (taskId: number) => {
     try {
       const response = await axios.get<Task>(
-        "${import.meta.env.VITE_URL}/task/gettaskbytaskid",
+        `${import.meta.env.VITE_URL}/task/gettaskbytaskid`,
         {
           params: {
             taskId: taskId,
