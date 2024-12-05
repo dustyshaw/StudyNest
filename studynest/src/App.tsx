@@ -18,7 +18,7 @@ import { UserContextProvidor } from "./context/userContextProvidor";
 import AddUnit from "./components/Units/AddUnit";
 import AddCourseWithUnitsForm from "./components/Course/AddCourseWithUnits/AddCourseWithUnits";
 import { DynamicLayoutContext } from "./context/DynamicLayoutContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth } from "react-oidc-context";
 import LandingPage from "./components/LandingPage";
 import LeftNav from "./components/NavComponents/LeftNav";
@@ -31,7 +31,25 @@ function App() {
   const { user: authuser } = useAuth();
 
   const layoutContext = useContext(DynamicLayoutContext);
-  const marginLeft = "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const marginLeft =
+    windowWidth < 640 || !layoutContext?.navbarWidth
+      ? 'ml-0'
+      : 'ml-' + layoutContext?.navbarWidth?.slice(2, 4);
+
 
   if (!authuser) {
     return (
@@ -49,7 +67,7 @@ function App() {
           <LeftNav />
           <TopNav />
           <ErrorBoundary FallbackComponent={FallbackComponent}>
-            <div className={`${marginLeft === "ml-48" ? "ml-48" : "ml-16"} transition-all duration-300`}>
+            <div className={` ${marginLeft} transition-all duration-300 in-app-tsx`}>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/browse" element={<Browse />} />

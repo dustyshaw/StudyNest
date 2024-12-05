@@ -5,6 +5,7 @@ import TextInput from "../Inputs/TextInput";
 import Button from "../LayoutComponents/Button";
 import { useParams } from "react-router";
 import DatePicker from "../Inputs/DatePicker";
+import FormLayout from "../LayoutComponents/FormLayout";
 
 const AddTask = () => {
   const { courseUnitId } = useParams();
@@ -14,14 +15,12 @@ const AddTask = () => {
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { id, value } = e.currentTarget;
 
-    // If it's a date input, convert to ISO string and format it to match the required format
     if (id === "eventstart" || id === "eventend" || id === "duedate") {
       const date = new Date(value);
-      // Format the date as 'yyyy-MM-ddTHH:mm'
-      const formattedDate = date.toISOString().slice(0, 16); // Removes seconds and timezone
+      const formattedDate = date.toISOString().slice(0, 16);
       setFormData({
         ...formData,
-        [id]: formattedDate, // Store the formatted date string
+        [id]: formattedDate,
       });
     } else {
       setFormData({
@@ -30,13 +29,6 @@ const AddTask = () => {
       });
     }
   };
-
-  // const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.currentTarget.id]: e.currentTarget.value,
-  //   });
-  // };
 
   const handleSubmission = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -62,7 +54,7 @@ const AddTask = () => {
   };
 
   return (
-    <div className="bg-gray-200 rounded-md border-gray-400 border-solid border-2 p-4 m-8">
+    <FormLayout formTitle="Task Title">
       <form className="p-5">
         <TextInput
           label="* Task Title"
@@ -94,11 +86,11 @@ const AddTask = () => {
           onChange={handleForm}
         />
 
-        <Button onClick={handleSubmission}>
+        <Button onClick={handleSubmission} className="mt-3">
           <p>Add Task</p>
         </Button>
       </form>
-    </div>
+    </FormLayout>
   );
 };
 

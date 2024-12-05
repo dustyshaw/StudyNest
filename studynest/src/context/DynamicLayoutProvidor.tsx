@@ -17,6 +17,7 @@ export const DynamicLayoutContextProvider: FC<{ children: ReactNode }> = ({
     setNavbarWidth(newWidth);
     localStorage.setItem("navbarWidth", newWidth);
   };
+  console.log(navbarWidth)
 
   return (
     <DynamicLayoutContext.Provider
