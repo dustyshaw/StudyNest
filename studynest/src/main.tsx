@@ -13,10 +13,8 @@ const oidcConfig: AuthProviderProps = {
     process.env.NODE_ENV === "production"
       ? "https://studynest.duckdns.org/"
       : "http://localhost:5173/",
-  // redirect_uri: "https://studynest.duckdns.org/",
-  // redirect_uri: "http://localhost:5173/", // TODO: Add duckdns url if in development
   onSigninCallback: async (user) => {
-    console.log(process.env.NODE_ENV)
+    console.log(process.env.NODE_ENV);
     const request: AddUserRequest = {
       userName: user?.profile.name ?? "",
       email: user?.profile.email ?? "",

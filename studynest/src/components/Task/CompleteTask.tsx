@@ -25,7 +25,8 @@ const CompleteTask: FC<{ task: Task }> = ({ task }) => {
 
   return (
     <div>
-      <Button onClick={handleSubmission}>
+      <Button onClick={handleSubmission} 
+      className="">
         {task.iscomplete ? "Mark as Incomplete" : "Complete this task"}
       </Button>
     </div>

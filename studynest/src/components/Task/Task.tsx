@@ -16,12 +16,18 @@ const ViewTask = () => {
     return <p>No Task...</p>;
   }
 
+  console.log("tasl ", task)
+
   return (
     <div className="m-8">
       <BackButton />
-      <h1 className="text-2xl">{task.title}</h1>
-      <p>Due at {formatDate(task.duedate)}</p>
-      <CompleteTask task={task} />
+      <div className="flex flex-row justify-between">
+        <div>
+          <h1 className="text-2xl">{task.title}</h1>
+          <p>Due at {formatDate(task.duedate)}</p>
+        </div>
+        <CompleteTask task={task} />
+      </div>
       <div className="flex flex-row">
         <div className=" bg-gray-50 rounded-lg p-8 w-full">
           {task?.description}

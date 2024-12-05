@@ -8,7 +8,7 @@ import { UpdateTaskTimeRequest } from "../@types/Requests/UpdateTaskTimeRequest"
 export const TaskQueries = {
   GetTasksByTaskIdQuery: (taskId: number) => {
     return useQuery({
-      queryKey: ["tasks"],
+      queryKey: ["tasks", "updatetask"],
       queryFn: () => TaskService.GetTaskByTaskId(taskId),
     });
   },

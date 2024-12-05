@@ -36,8 +36,6 @@ const Course = () => {
     Number(userCourseId)
   );
 
-  console.log(courseUnits)
-
   if (!userCourses || isLoading) {
     return <LoadingComponent />;
   }

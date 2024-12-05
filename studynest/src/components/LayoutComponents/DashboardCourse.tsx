@@ -14,7 +14,7 @@ const UserCoursesList: FC<UserCourseListProps> = ({ userCourses }) => {
         <Link
           to={`/course/${course.userCourseId}`}
           key={key}
-          className="w-full sm:w-1/2 xl:w-1/3 p-2"
+          className="w-full sm:w-1/2 md:w-full xl:w-1/3 p-2"
         >
           <div className="flex flex-col md:flex-row m-3">
             <div className="h-full bg-lilac-300 text-sky-300 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:rounded-bl-lg p-3">

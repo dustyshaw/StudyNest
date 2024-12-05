@@ -42,8 +42,12 @@ public static class DtoConverter
 
     public static StudytaskDto ToDto(this Studytask task)
     {
+        if (task is null || task.Eventend is null || task.Eventstart is null)
+        {
+            throw new ArgumentNullException(nameof(task));
+        }
+
         var timeDifference = task.Eventend.Value - task.Eventstart.Value;
-        // Get the total hours and minutes from the TimeSpan
         int hoursSpent = (int)timeDifference.TotalHours;
         int minutesSpent = (int)timeDifference.TotalMinutes % 60;
 
@@ -58,6 +62,7 @@ public static class DtoConverter
             UnitTasks=task.UnitTasks,
             Hours=hoursSpent,
             Minutes=minutesSpent,
+            Iscomplete=task.Iscomplete
         };
         
         return dto;
