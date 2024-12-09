@@ -1,4 +1,3 @@
-// NumberInput.tsx
 import React from "react";
 
 interface NumberInputProps {

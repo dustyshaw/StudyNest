@@ -4,11 +4,13 @@ import { Course } from "../../@types/course";
 interface CourseListProps {
   data: Course[] | undefined;
   handleAddCourseEnroll?: (courseId: number) => void;
+  showEnrollBtns:boolean;
 }
 
 const BrowseCourseList: FC<CourseListProps> = ({
   data,
   handleAddCourseEnroll,
+  showEnrollBtns,
 }) => {
   return (
     <div className="ml-16 flex flex-wrap w-full">
@@ -28,7 +30,7 @@ const BrowseCourseList: FC<CourseListProps> = ({
             <p className="text-lime-800 ms-5"></p>
           </div>
           <p className="mb-6">{x.description}</p>
-          {handleAddCourseEnroll && (
+          {showEnrollBtns && handleAddCourseEnroll && (
             <button
               className="bg-gray-900 rounded-lg text-white px-5 py-2 m-5 shadow hover:bg-white hover:text-gray-900 transition-all hover:shadow-none font-semibold"
               onClick={() => handleAddCourseEnroll(x.id)}

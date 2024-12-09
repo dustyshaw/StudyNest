@@ -21,13 +21,14 @@ const Browse = () => {
   };
 
   if (isLoading) {
-    return <LoadingComponent />
+    return <LoadingComponent />;
   }
 
   return (
     <BrowseCourseList
       data={data}
       handleAddCourseEnroll={handleAddCourseEnroll}
+      showEnrollBtns={true}
     />
   );
 };

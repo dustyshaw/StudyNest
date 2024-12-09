@@ -47,9 +47,6 @@ const AddUnit = () => {
           required={true}
           id="title"
           onChange={handleForm}
-          defaultValue={""}
-          className={""}
-          helperText={""}
         />
         <Button onClick={handleSubmission} className={"mt-6"}>
           <p>Add Unit</p>

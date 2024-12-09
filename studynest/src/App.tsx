@@ -24,6 +24,7 @@ import LandingPage from "./components/LandingPage";
 import LeftNav from "./components/NavComponents/LeftNav";
 import BottomNav from "./components/NavComponents/BottomNav";
 import EditUnit from "./components/Units/EditUnit";
+import PublicBrowse from "./components/Browse/PublicBrowse";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
@@ -38,16 +39,16 @@ function App() {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const marginLeft =
     windowWidth < 640 || !layoutContext?.navbarWidth
-      ? 'ml-0'
-      : 'ml-' + layoutContext?.navbarWidth?.slice(2, 4);
+      ? "ml-0"
+      : "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
 
   if (!authuser) {
     return (
@@ -56,7 +57,6 @@ function App() {
       </QueryClientProvider>
     );
   }
-
   return (
     <QueryClientProvider client={queryClient}>
       <UserContextProvidor>
@@ -65,7 +65,11 @@ function App() {
           <LeftNav />
           <TopNav />
           <ErrorBoundary FallbackComponent={FallbackComponent}>
-            <div className={` ${marginLeft} ${marginLeft === "ml-48" ? "ml-48" : ""} transition-all duration-300 in-app-tsx`}>
+            <div
+              className={` ${marginLeft} ${
+                marginLeft === "ml-48" ? "ml-48" : ""
+              } transition-all duration-300 in-app-tsx`}
+            >
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/browse" element={<Browse />} />
