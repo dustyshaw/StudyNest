@@ -8,10 +8,15 @@ import { BoltIcon } from "@heroicons/react/24/solid";
 import { CourseQueries } from "../Queries/courseQueries";
 import { useAuth } from "react-oidc-context";
 import feather from "../assets/feather.svg";
+import LoadingComponent from "./LoadingComponent";
 
 const LandingPage = () => {
-  const { data: courses } = CourseQueries.useGetAllPublicCourses();
+  const { data: courses, isLoading } = CourseQueries.useGetAllPublicCourses();
   const auth = useAuth();
+
+  if (isLoading) {
+    return <LoadingComponent />
+  }
 
   return (
     <>
