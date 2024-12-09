@@ -24,7 +24,6 @@ import LandingPage from "./components/LandingPage";
 import LeftNav from "./components/NavComponents/LeftNav";
 import BottomNav from "./components/NavComponents/BottomNav";
 import EditUnit from "./components/Units/EditUnit";
-import PublicBrowse from "./components/Browse/PublicBrowse";
 
 const queryClient = new QueryClient(); // stay OUTSIDE of function App() !!!
 
