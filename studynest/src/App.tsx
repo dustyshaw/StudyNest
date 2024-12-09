@@ -52,7 +52,12 @@ function App() {
   if (!authuser) {
     return (
       <QueryClientProvider client={queryClient}>
-        <LandingPage />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="*" element={<FallbackComponent />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     );
   }
