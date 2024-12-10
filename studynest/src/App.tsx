@@ -49,22 +49,15 @@ function App() {
       ? "ml-0"
       : "ml-" + layoutContext?.navbarWidth?.slice(2, 4);
 
-  // if (!authuser) {
-  //   return (
-  //     <QueryClientProvider client={queryClient}>
-  //       <BrowserRouter>
-  //         <Routes>
-  //           <Route path="/" element={<LandingPage />} />
-  //           <Route path="*" element={<FallbackComponent />} />
-  //         </Routes>
-  //       </BrowserRouter>
-  //     </QueryClientProvider>
-  //   );
-  // }
   if (!authuser) {
     return (
       <QueryClientProvider client={queryClient}>
-        <LandingPage />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="*" element={<FallbackComponent />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     );
   }
